@@ -8,22 +8,6 @@ interface Props {
   data: Project[];
 }
 export default function Recent({ data }: Props) {
-  const [isAnimationPlaying, setIsAnimationPlaying] = useState(false);
-
-  const divAnimationControls = useAnimation();
-  const divAnimationVariants = {
-    init: {
-      y: 0,
-    },
-    anim: {
-      y: -20,
-      transition: {
-        type: "tween",
-        repeat: 1,
-        repeatType: "reverse",
-      },
-    },
-  };
   return (
     <div>
       <h4 className="text-4xl font-semibold text-center text-brand-blue my-16">
@@ -35,7 +19,6 @@ export default function Recent({ data }: Props) {
             <Card {...project} />
           </SwiperSlide>
         ))}
-        ...
       </Swiper>
       {/* <section className="flex">
         <div className="  flex flex-col justify-end  h-72  bg-cover bg-center bg-no-repeat bg-Atura-Dandenong-South-Night"></div>

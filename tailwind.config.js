@@ -6,6 +6,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundPosition: {
+        "top-center": "top center",
+      },
+      height: {
+        350: "460px",
+      },
+
+      fontSize: {
+        hero: "5.2rem",
+      },
       fontFamily: {
         montserrat: ["var(--montserrat-font)"],
         roboto: ["var(--roboto-font)"],

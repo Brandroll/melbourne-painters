@@ -1,6 +1,7 @@
 .blog-section {
   flex: 3;
 }
+
 .dot {
   display: inline-block;
   margin-bottom: 2px;
@@ -563,4 +564,23 @@ a img.aligncenter {
   width: auto;
   z-index: 100000;
   /* Above WP toolbar. */
+}
+
+._change{
+  color: #b38afd 
+}
+span.change2 {
+  color: #7f8afc !important;
+}
+span.change3 {
+  color: #2aaff8 !important;
+}
+span.change4 {
+  color: #4687ea !important;
+}
+span.change5 {
+  color: #3ad5b1 !important;
+}
+span.change6 {
+  color: #1cf1f9 !important;
 }

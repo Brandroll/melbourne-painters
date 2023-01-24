@@ -180,6 +180,32 @@ export interface Project {
   yoast_head_json: YoastSeoData;
   x_featured_media_large: string;
 }
+export interface Service {
+  id: number;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  slug: string;
+  acf: {
+    content: {
+      information: {
+        heading: string;
+        info: string;
+      };
+      image: string;
+    }[];
+    grid: {
+      heading: string;
+      content: string;
+    }[];
+    images: AcfImage[];
+  };
+  yoast_head_json: YoastSeoData;
+  x_featured_media_large: string;
+}
 
 export interface AcfImage {
   id: number;

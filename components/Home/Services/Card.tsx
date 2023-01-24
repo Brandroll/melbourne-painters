@@ -20,16 +20,16 @@ export default function Card(props: any) {
     >
       <motion.div
         className={`bg-dark-overlay flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-150  ${
-          isAnimationPlaying ? " h-full  py-4 opacity-100 " : "h-4  opacity-0"
+          isAnimationPlaying ? " h-full  py-4 opacity-100 " : "h-0  opacity-0"
         }`}
       >
         <h4 className="text-center  lg:px-16 text-white text-md font-medium">
           {props.title.rendered}
         </h4>
 
-        <Link href={"/" + props.slug}>
+        <Link href={"/projects/" + props.slug}>
           <button className="font-roboto uppercase font-semibold text-white py-2 px-8 mt-2 rounded-full   bg-brand-blue hover:bg-brand-blue-dark active:outline-none">
-            View Service
+            View Projects
           </button>
         </Link>
       </motion.div>

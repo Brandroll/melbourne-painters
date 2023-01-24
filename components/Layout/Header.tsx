@@ -38,9 +38,9 @@ export default function Header() {
 
   return (
     <div>
-      <nav className="py-3  fixed top-0  w-full px-9 flex justify-between items-center text-white text-xl bg-navbar  ">
+      <nav className="py-4 z-40  fixed top-0  w-full px-9 flex justify-between items-center text-white text-xl bg-navbar  ">
         <Link className="lg:block hidden" href={"/"}>
-          <Image alt="logo" src={"/imgs/logo.png"} width={390} height={100} />
+          <Image alt="logo" src={"/imgs/logo.png"} width={500} height={100} />
         </Link>
         <Link className="lg:hidden " href={"/"}>
           <Image alt="logo" src={"/imgs/logo.png"} width={150} height={100} />
