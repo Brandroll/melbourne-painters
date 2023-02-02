@@ -4,16 +4,40 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, useAnimation } from "framer-motion";
 import "swiper/css";
 import Card from "./Card";
+
+import SwiperCore, { Autoplay } from "swiper";
+SwiperCore.use([Autoplay]);
 interface Props {
   data: Project[];
 }
 export default function Recent({ data }: Props) {
   return (
     <div>
-      <h4 className="text-4xl font-semibold text-center text-brand-blue my-16">
+      <h4 className="lg:text-3xl text-xl scale-100 font-semibold text-center text-brand-blue my-8 lg:my-16">
         A FEW OF OUR RECENT PROJECTS
       </h4>
-      <Swiper className="flex" spaceBetween={0} slidesPerView={4}>
+      <Swiper
+        className="flex"
+        spaceBetween={0}
+        loop
+        autoplay={{ delay: 2000 }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+          // when window width is >= 640px
+          800: {
+            slidesPerView: 4,
+            spaceBetween: 0,
+          },
+        }}
+        // slidesPerView={4}
+      >
         {data.map((project) => (
           <SwiperSlide>
             <Card {...project} />

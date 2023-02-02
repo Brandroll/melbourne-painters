@@ -1,0 +1,27 @@
+=>Content needs to be boxed to 1200px aligned centre
+
+=>Overall lots of responsive issues
+
+=> Free Quote Popup modal needs to be completed
+
+=> Remove or lower the gradient on top of carousel images and make sure the services carousel has a title shown before hovering like the customers site it can be your gradient but you need to improve it lower the spread and slightly reduce opacity
+
+=>Check the slugs
+
+=>Check the button styles
+
+=> Check the spelling of buttons and make sure it matches the client's site
+
+=> Check the spelling of slugs and make sure it matches the client's site
+
+=> Make sure the footer sits at the bottom of the viewport on all pages
+
+=> Make sure the button for an individual project is a project and not projects on the all projects page and carousel
+
+=>Make sure the project page content width is boxed, and the gallery is aligned to the centre
+
+=>Check the banner for all pages and projects to make sure it looks accurate
+
+=> The hamburger icon down not have a dropdown for services. We need to make sure the services dropdown is not clickable
+
+We need the transition for the content to reveal (try this on one page so I can test if it affects page speed or dom size etc.)

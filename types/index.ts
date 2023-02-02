@@ -164,6 +164,33 @@ export interface MyReportsQueryOptions extends QueryOptions {
 export interface SettingsQueryOptions extends QueryOptions {}
 
 export interface WishlistQueryOptions extends QueryOptions {}
+
+export interface HomePage {
+  id: number;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  slug: string;
+  acf: {
+    content: {
+      information: {
+        heading: string;
+        info: string;
+      };
+      image: string;
+    }[];
+    grid: {
+      heading: string;
+      content: string;
+    }[];
+    clients: AcfImage[];
+  };
+  yoast_head_json: YoastSeoData;
+  x_featured_media_large: string;
+}
 export interface Project {
   id: number;
   title: {
@@ -180,6 +207,43 @@ export interface Project {
   yoast_head_json: YoastSeoData;
   x_featured_media_large: string;
 }
+export interface Reason {
+  id: number;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  slug: string;
+  acf: {
+    reasons: {
+      image: string;
+      info: string;
+    }[];
+  };
+  yoast_head_json: YoastSeoData;
+  x_featured_media_large: string;
+}
+export interface Reasons {
+  id: number;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  slug: string;
+  acf: {
+    reasons: {
+      image: string;
+      info: string;
+    }[];
+  };
+  yoast_head_json: YoastSeoData;
+  x_featured_media_large: string;
+}
+
 export interface Service {
   id: number;
   title: {

@@ -1,9 +1,21 @@
 import "../styles/globals.css";
 import "../styles/blog.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import type { AppProps } from "next/app";
-import { Open_Sans, Montserrat, Raleway, Roboto } from "@next/font/google";
+import { Open_Sans, Montserrat, Roboto } from "@next/font/google";
 import localFont from "@next/font/local";
+import { ModalProvider } from "@/components/UI/Modal/Modal.context";
+import React from "react";
+import ManagedModal from "@/components/UI/Modal/Managed-modal";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import ManagedDrawer from "@/components/UI/Drawer/Managed-drawer";
+import config from "react-reveal/globals";
+
+config({ ssrFadeout: true });
+const queryClient = new QueryClient();
+
 const isidorasansRegular = localFont({
   src: "../public/fonts/Isidora-sans/IsidoraSans-Regular.ttf",
   weight: "400",
@@ -16,6 +28,13 @@ const isidorasansmedium = localFont({
 
   display: "swap",
   variable: "--font-isidorasans-medium",
+});
+const isidorasanssemibold = localFont({
+  src: "../public/fonts/Isidora-sans/IsidoraSans-SemiBold.ttf",
+  weight: "400",
+
+  display: "swap",
+  variable: "--font-isidorasans-semibold",
 });
 const isidorasans = localFont({
   src: "../public/fonts/Isidora-sans/IsidoraSans-SemiBold.ttf",
@@ -40,7 +59,7 @@ const roboto = Roboto({
 });
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <style jsx global>{`
         :root {
           --roboto-font: ${roboto.style.fontFamily};
@@ -49,9 +68,20 @@ export default function App({ Component, pageProps }: AppProps) {
           --isidorasans-font: ${isidorasans.style.fontFamily};
           --isidorasans-regular-font: ${isidorasansRegular.style.fontFamily};
           --isidorasans-medium-font: ${isidorasansmedium.style.fontFamily};
+          --isidorasans-semi-bold-font: ${isidorasanssemibold.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />;
-    </>
+      <ModalProvider>
+        <>
+          <Header />
+
+          <Component {...pageProps} />
+
+          <Footer />
+          <ManagedModal />
+          <ManagedDrawer />
+        </>
+      </ModalProvider>
+    </QueryClientProvider>
   );
 }

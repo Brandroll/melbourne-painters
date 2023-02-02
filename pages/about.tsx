@@ -1,17 +1,26 @@
 import Why from "@/components/Home/Why";
-import Footer from "@/components/Layout/Footer";
-import Header from "@/components/Layout/Header";
+import SimpleHero from "@/components/UI/SimpleHero";
+import WPHTMLContent from "@/components/UI/WPHTMLContent";
+import YoastNextSeo from "@/components/UI/YoastNextSeo";
+import { useModalAction } from "@/components/UI/Modal/Modal.context";
+
 import Image from "next/image";
 import React from "react";
 
-export default function About() {
+export default function About(props: { data: any }) {
+  const { openModal } = useModalAction();
+  const onFreeQuote = () => {
+    openModal("FREE_QUOTE_HOME");
+  };
   return (
     <>
-      <Header />
-      <section className="grid mt-32 md:grid-cols-8 md:mx-16">
+      <YoastNextSeo {...props.data.yoast_head_json} />
+      <SimpleHero />
+
+      <section className="grid max-w-site-full   md:grid-cols-8 md:mx-auto">
         <div className="col-span-2 bg-gray-300">
           <div className="p-8 bg-brand-blue ">
-            <h1 className="text-white font-semibold text-7xl">ABOUT US</h1>
+            <h1 className="text-white font-semibold text-5xl">ABOUT US</h1>
           </div>
         </div>
         <div className="col-span-6">
@@ -30,87 +39,62 @@ export default function About() {
               alt=""
             />
           </div>
-          <div className="bg-gray-50 px-16 py-12 font-thin text-xl">
-            <p>
-              Melbourne Painters Group is a top quality painting firm, Located
-              in the South East of Melbourne and servicing all over Victoria,
-              it’s our absolute commitment to safety and quality that has made
-              us one of Victorias leading Painting and Decorating companies. We
-              know that a satisfied customer is our best form of advertisement,
-              and as such we are always striving to give you the best possible
-              results. Our trademarks are reliability, preparation, top quality
-              finishes and absolute regard for our customers.
-            </p>
-            <p>
-              Here are some of the steps we take to ensure 100% satisfaction and
-              peace of mind for our clients.
-            </p>
+          <div className="bg-gray-50 px-4 lg:px-16 py-12 font-thin post-content">
+            <WPHTMLContent html={props.data.content.rendered} />
 
-            <div className="flex md:gap-8 mt-32">
-              <div className="px-8 font-semibold h-16 flex justify-center items-center oval   rounded-full  text-md bg-brand-blue   text-white  ">
-                STEP01.
-              </div>
-              <p>
-                A Melbourne Painters supervisor will go through all the work
-                that is to be carried out and answer your entire questions at
-                any time. Safety comes first at Melbourne Painters we value
-                safety and as such all our employees are trained in OHS and are
-                fully insured. Melbourne Painters can also supply all types of
-                access equipment upon request. All our staff are fully qualified
-                Painters and Decorators and highly trained in all sectors of the
-                painting and decorating industry to ensure 100% satisfaction and
-                peace of mind for our clients.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <Image src="/imgs/down.png" width={50} height={50} alt="icon" />
-            </div>
-
-            <div className="flex md:gap-8 mt-32">
-              <div className="px-8 font-semibold h-16 flex justify-center items-center oval   rounded-full  text-md bg-brand-blue   text-white  ">
-                STEP02.
-              </div>
-              <p>
-                From the initial quote to the completion of your project,
-                Melbourne Painters will work with you in a highly professional
-                manner and take care of all your painting and decorating
-                requirements. These will include but not limited to colour
-                consulting, permits, access equipment and problem solving.
-              </p>
-            </div>
-            <div className="flex justify-center items-center my-8">
-              <Image src="/imgs/down.png" width={50} height={50} alt="icon" />
-            </div>
-
-            <div className="flex md:gap-8 mt-32">
-              <div className="px-8 font-semibold h-16 flex justify-center items-center oval   rounded-full  text-md bg-brand-blue   text-white  ">
-                STEP02.
-              </div>
-              <p>
-                Melbourne Painters understands all requirements as either
-                domestic, commercial or industrial client. Please contact us for
-                all your enquiries and quotes. Our friendly and highly trained
-                staffs are looking forward to assisting you.
-              </p>
-            </div>
+            {props.data.acf.steps.map((step: any, i: number) => (
+              <>
+                <div className="flex gap-2 md:gap-8 my-8">
+                  <div className="lg:px-8 md:mt-16  max-h-5 px-1 py-5 text-xs font-semibold lg:h-16  flex justify-center items-center lg:oval   rounded-full    bg-brand-blue   text-white  ">
+                    {step.step_no}
+                  </div>
+                  <p dangerouslySetInnerHTML={{ __html: step.info }}></p>
+                </div>
+                <div
+                  className={`flex my-8 justify-center ${
+                    i === props.data.acf.steps.length - 1 ? "hidden" : `${i}`
+                  } `}
+                >
+                  <Image
+                    src="/imgs/down.png"
+                    width={20}
+                    height={20}
+                    alt="icon"
+                  />
+                </div>
+              </>
+            ))}
           </div>
         </div>
       </section>
       <div className="my-16">
         <Why />
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <p className="text-3xl font-semibold text-brand-blue my-2">
+      <div className="flex px-4 flex-col items-center justify-center">
+        <p className="text-3xl text-center font-semibold text-brand-blue my-2">
           ASK FOR A NEXT DAY FREE QUOTE!
         </p>
-        <p className="my-4">
+        <p className="my-4 text-center">
           To get started on your quick quote please click button below.
         </p>
-        <button className="text-xl bg-brand-blue hover:bg-brand-blue-dark rounded-full text-white px-16 py-4 font-thin">
+        <button
+          onClick={onFreeQuote}
+          className="text-xl  text-center bg-brand-blue hover:bg-brand-blue-dark rounded-full text-white px-16 py-4 font-thin"
+        >
           NEXT DAY FREE QUOTE
         </button>
       </div>
-      <Footer />
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const url = process.env.NEXT_WP_API_URL + "/pages?slug=about-us";
+  const data = await fetch(url).then((r) => r.json());
+
+  return {
+    props: {
+      data: data[0],
+    },
+  };
+};

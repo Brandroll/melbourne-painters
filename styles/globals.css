@@ -23,11 +23,18 @@ h3,
 h4 {
   @apply font-isidorasans;
 }
+.elementor-widget-container{
+  @apply font-isidorasans_regular leading-6;
 
+}
 h4 > p{
   @apply text-4xl font-bold  font-isidorasans
 }
 
 p,form {
-  @apply font-isidorasans_regular leading-10;
+  @apply font-isidorasans_regular leading-6;
 }
+/* .project  p,h1,h2,h3,h4{
+  @apply font-roboto  ;
+ 
+} */

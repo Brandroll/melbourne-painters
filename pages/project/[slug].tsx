@@ -1,13 +1,10 @@
-import Footer from "@/components/Layout/Footer";
-import Header from "@/components/Layout/Header";
 import WPHTMLContent from "@/components/UI/WPHTMLContent";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import Image from "next/image";
-import DOMPurify from "isomorphic-dompurify";
-import { NextSeo } from "next-seo";
 import { Project } from "@/types";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
 import ImageGallery from "@/components/UI/ImageGallery";
+import Fade from "react-reveal/Fade";
 
 interface Props {
   project: Project;
@@ -20,25 +17,29 @@ export default function SingleProject({ project }: Props) {
   return (
     <>
       <YoastNextSeo {...yoast_head_json} />
-      <Header />
-      <div>
+
+      <div className="flex w-full mt-16  justify-center">
         <Image
+          style={{ objectFit: "cover" }}
           src={x_featured_media_large}
           width={2040}
-          height={600}
+          height={1020}
           alt={title.rendered}
         />
       </div>
-      <section className="mt-40 mx-16">
-        <h1 className="mt-16 text-4xl text-center my-4 font-semibold text-brand-blue">
+      <section className="lg:mt-16 max-w-site-full mx-auto  px-4">
+        <h1 className="  text-2xl lg:text-4xl text-center my-4 font-semibold text-brand-blue">
           {title.rendered}
         </h1>
         <hr />
+        <Fade bottom>
+          <div className="project">
+            <WPHTMLContent html={content.rendered} />
+          </div>
 
-        <WPHTMLContent html={content.rendered} />
-        <ImageGallery images={acf.images} />
+          <ImageGallery images={acf.images} />
+        </Fade>
       </section>
-      <Footer />
     </>
   );
 }

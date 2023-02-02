@@ -1,8 +1,8 @@
 import DOMPurify from "isomorphic-dompurify";
 
-export default function WPHTMLContent({ html }: any) {
+export default function WPHTMLContent({ html }: { html: string }) {
   return (
-    <div className="text-xl my-4 post-content">
+    <div className="  post-content">
       <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}></div>
     </div>
   );

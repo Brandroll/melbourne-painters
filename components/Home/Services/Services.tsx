@@ -1,20 +1,38 @@
 import { Service } from "@/types";
-import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion, useAnimation } from "framer-motion";
 import "swiper/css";
-import Card from "../Card";
+import Card from "./Card";
 interface Props {
   data: Service[];
 }
+import SwiperCore, { Autoplay } from "swiper";
+SwiperCore.use([Autoplay]);
 
 export default function Services({ data }: Props) {
   return (
     <div>
-      <Swiper className="flex" spaceBetween={0} slidesPerView={4}>
-        {data.map((project) => (
+      <Swiper
+        className="flex"
+        autoplay={{ delay: 2000 }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+          // when window width is >= 640px
+          800: {
+            slidesPerView: 4,
+            spaceBetween: 0,
+          },
+        }}
+      >
+        {data.map((project, i) => (
           <SwiperSlide>
-            <Card {...project} />
+            <Card href={`/${project.slug}`} {...project} />
           </SwiperSlide>
         ))}
       </Swiper>

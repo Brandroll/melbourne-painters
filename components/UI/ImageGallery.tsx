@@ -1,25 +1,34 @@
 import { AcfImage } from "@/types";
 import Image from "next/image";
 import React from "react";
+
+import "lightbox.js-react/dist/index.css";
+import { SlideshowLightbox } from "lightbox.js-react";
 interface Props {
   images: AcfImage[];
 }
 
 export default function ImageGallery({ images }: Props) {
   if (images.length > 0) {
+    const imgs = images.map((img, i) => {
+      return {
+        src: img.full_image_url,
+        width: 320,
+        height: 174,
+        // isSelected: i == 0 ? true : false,
+        caption: img.title,
+      };
+    });
     return (
-      <div className="grid grid-cols-4 gap-8 ">
+      <SlideshowLightbox className="container grid justify-center  md:grid-cols-3 gap-8 mx-auto">
         {images.map((image) => (
-          <div key={image.id}>
-            <Image
-              src={image.full_image_url}
-              width={400}
-              height={300}
-              alt={image.title}
-            />
-          </div>
+          <img
+            alt={image.title}
+            className="w-full hover:scale-110 rounded"
+            src={image.full_image_url}
+          />
         ))}
-      </div>
+      </SlideshowLightbox>
     );
   }
   return null;
