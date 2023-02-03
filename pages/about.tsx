@@ -20,7 +20,7 @@ export default function About(props: { data: any }) {
       <section className="grid max-w-site-full  px-4  md:grid-cols-8 md:mx-auto">
         <div
           style={{ backgroundColor: "#EBEBEB" }}
-          className="col-span-2 -mt-8 mb-8  "
+          className="col-span-2 -mt-10 mb-8  "
         >
           <div className="p-8  bg-brand-blue ">
             <h1 className="text-white mt-4 font-semibold text-5xl">

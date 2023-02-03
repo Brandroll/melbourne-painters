@@ -17,6 +17,7 @@ export default function Services({ data }: Props) {
         breakpoints={{
           320: {
             slidesPerView: 1,
+            autoplay: { delay: 50000 },
           },
           // when window width is >= 480px
           480: {

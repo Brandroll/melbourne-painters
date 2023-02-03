@@ -735,6 +735,8 @@ ul.wp-block-gallery>li>figure>img {
   }
 
 }
+
+
 @media (max-width: 484px) {
   .hero-btn {
       padding-top: 115px;
@@ -742,6 +744,11 @@ ul.wp-block-gallery>li>figure>img {
 }
 
 
+@media (max-width:390px) {
+  .hero-btn {
+      padding-top: 124px;
+    }
+}
 
 @media(min-width:1500px) {
   .hero-section {
