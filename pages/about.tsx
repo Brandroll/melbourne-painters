@@ -17,35 +17,43 @@ export default function About(props: { data: any }) {
       <YoastNextSeo {...props.data.yoast_head_json} />
       <SimpleHero />
 
-      <section className="grid max-w-site-full   md:grid-cols-8 md:mx-auto">
-        <div className="col-span-2 bg-gray-300">
-          <div className="p-8 bg-brand-blue ">
-            <h1 className="text-white font-semibold text-5xl">ABOUT US</h1>
+      <section className="grid max-w-site-full  px-4  md:grid-cols-8 md:mx-auto">
+        <div
+          style={{ backgroundColor: "#EBEBEB" }}
+          className="col-span-2 -mt-8 mb-8  "
+        >
+          <div className="p-8  bg-brand-blue ">
+            <h1 className="text-white mt-4 font-semibold text-5xl">
+              ABOUT <br /> US
+            </h1>
           </div>
         </div>
         <div className="col-span-6">
-          <div className="flex justify-end">
+          <div className="flex justify-center gap-2 lg:justify-end">
             <Image
               src="/imgs/Painters-Melbourne-Accredited-Painter-512px-300x300.jpg"
-              width={200}
+              width={150}
               height={100}
               alt=""
             />
             <Image
               src="/imgs/warranty.png"
-              width={100}
+              width={75}
               style={{ objectFit: "contain" }}
-              height={50}
+              height={40}
               alt=""
             />
           </div>
-          <div className="bg-gray-50 px-4 lg:px-16 py-12 font-thin post-content">
+          <div
+            style={{ backgroundColor: "#FAFAFA" }}
+            className="  px-4 lg:px-16 py-12 font-thin post-content"
+          >
             <WPHTMLContent html={props.data.content.rendered} />
 
             {props.data.acf.steps.map((step: any, i: number) => (
               <>
-                <div className="flex gap-2 md:gap-8 my-8">
-                  <div className="lg:px-8 md:mt-16  max-h-5 px-1 py-5 text-xs font-semibold lg:h-16  flex justify-center items-center lg:oval   rounded-full    bg-brand-blue   text-white  ">
+                <div className="lg:flex gap-2 md:gap-8 my-8">
+                  <div className="lg:px-8 mb-4 md:mb-0 md:mt-16  max-h-5 px-1 py-5 text-xs font-semibold lg:h-16  flex justify-center items-center lg:oval   rounded-full    bg-brand-blue   text-white  ">
                     {step.step_no}
                   </div>
                   <p dangerouslySetInnerHTML={{ __html: step.info }}></p>
@@ -68,9 +76,9 @@ export default function About(props: { data: any }) {
         </div>
       </section>
       <div className="my-16">
-        <Why />
+        <Why cta={false} />
       </div>
-      <div className="flex px-4 flex-col items-center justify-center">
+      <div className="flex px-4 flex-col items-center justify-center lg:items-start lg:justify-start">
         <p className="text-3xl text-center font-semibold text-brand-blue my-2">
           ASK FOR A NEXT DAY FREE QUOTE!
         </p>

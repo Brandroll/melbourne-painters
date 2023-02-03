@@ -14,7 +14,7 @@ export default function Header() {
     { href: Routes.home, label: "Home" },
     { href: Routes.about, label: "About" },
     {
-      href: Routes.service,
+      href: "#",
       label: "Service",
       subItems: [
         {
@@ -35,14 +35,21 @@ export default function Header() {
         },
       ],
     },
-    { href: Routes.project, label: "Portfolio" },
-    { href: Routes.freeQuote, label: "Free Quote" },
+    { href: Routes.project, label: "Projects" },
+    // { href: Routes.freeQuote, label: "Free Quote" },
     { href: Routes.contactUs, label: "Contact" },
   ];
   const [_, setDrawerView] = useAtom(drawerAtom);
 
   function handleSidebar(view: string) {
     setDrawerView({ display: true, view });
+  }
+  function handleClick(path: string) {
+    const hasSubItems = navLinks.find((hed) => hed.href === path)?.subItems;
+    if (hasSubItems) {
+      return;
+    }
+    router.push(path);
   }
 
   return (

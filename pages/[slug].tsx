@@ -19,7 +19,7 @@ export default function SinglePage(props: Props) {
 
       <Hero bgImg={service.x_featured_media_large} />
       <BelowHero />
-      <Why />
+      <Why cta={false} />
 
       <Grid grid={service.acf.grid} />
       <AlternateGrid content={service.acf.content} />

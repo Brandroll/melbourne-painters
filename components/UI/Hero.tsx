@@ -1,4 +1,5 @@
 import ButtonGroup from "./ButtonGroup";
+import ButtonGroupMobile from "./ButtonGroupMobile";
 // className="  relative lg:mt-0  hero-section  w-full  lg:py-0  bg-no-repeat bg-contain md:bg-cover    flex flex-col lg:items-center  justify-items-center"
 //
 export default function Hero(props: { bgImg?: string }) {
@@ -30,18 +31,7 @@ export default function Hero(props: { bgImg?: string }) {
             </div>
           </div>
         </div>
-        <div className="relative  hero-btn  ">
-          <div className="md:hidden   w-full mx-auto">
-            <div className="grid grid-cols-2 px-3">
-              <button className="p-4  md:px-16 font-semibold rounded-l-3xl text-xs sm:text-sm bg-brand-blue lg:text-2xl text-white">
-                FREE <span className="font-bold">QUOTE</span>{" "}
-              </button>
-              <button className="p-4   md:px-12 hover:bg-brand-blue  font-semibold rounded-r-3xl text-xs sm:text-sm bg-brand-blue-dark  lg:text-2xl text-white">
-                VIEW <span className="font-bold">PROJECTS</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        <ButtonGroupMobile />
       </section>
     </>
   );

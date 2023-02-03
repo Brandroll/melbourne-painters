@@ -12,6 +12,9 @@ export default function Grid({
     content: string;
   }[];
 }) {
+  if (!grid) {
+    return null;
+  }
   return (
     <Fade bottom>
       <section className="grid my-8 px-4 max-w-site-full md:grid-cols-2 gap-2 mx-auto">

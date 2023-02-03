@@ -22,13 +22,16 @@ export default function AlternateGrid({
   const calc = (i: number) => {
     return oddOrEven(i + 1);
   };
+  if (!content) {
+    return null;
+  }
 
   return (
     <section className="grid alternate-grid px-4 max-w-site-full mx-auto ">
       {content.map((content, i) => (
         <>
           <section className="grid lg:grid-cols-2   ">
-            <div className={`${calc(i) === "even" ? "md:order-2" : ""}`}>
+            <div className={`${calc(i) === "even" ? "md:order-2 mt-8" : ""}`}>
               {calc(i) === "even" ? (
                 <Fade right>
                   <Image src={content.image} alt="" width={900} height={700} />
@@ -41,8 +44,8 @@ export default function AlternateGrid({
             </div>
             <div
               className={`${
-                calc(i) === "even" ? "mdorder-1 lg:mr-16 " : "lg:ml-16"
-              }  mt-8 lg:mt-0`}
+                calc(i) === "even" ? "md:order-1 lg:mr-16 " : "lg:ml-16"
+              }  mt-8  `}
             >
               <h4
                 dangerouslySetInnerHTML={{

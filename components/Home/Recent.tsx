@@ -16,11 +16,16 @@ export default function Recent({ data }: Props) {
       <h4 className="lg:text-3xl text-xl scale-100 font-semibold text-center text-brand-blue my-8 lg:my-16">
         A FEW OF OUR RECENT PROJECTS
       </h4>
+
       <Swiper
         className="flex"
         spaceBetween={0}
         loop
-        autoplay={{ delay: 2000 }}
+        autoplay={{
+          delay: 2000,
+
+          pauseOnMouseEnter: true,
+        }}
         breakpoints={{
           320: {
             slidesPerView: 1,

@@ -30,7 +30,7 @@ export default function Home(props: Props) {
 
       <Services data={services} />
 
-      <Why />
+      <Why cta />
       <Recent data={projects} />
       <Testinominal images={homePageData.acf.clients} />
 

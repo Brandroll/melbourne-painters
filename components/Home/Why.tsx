@@ -2,10 +2,8 @@ import { useReasons } from "@/framework/rest/reasons";
 import Image from "next/image";
 import ButtonGroup from "../UI/ButtonGroup";
 import Fade from "react-reveal/Fade";
-import config from "react-reveal/globals";
 
-config({ ssrFadeout: true });
-export default function Why() {
+export default function Why({ cta }: { cta: Boolean }) {
   const { reasons, error } = useReasons();
 
   return (
@@ -44,21 +42,25 @@ export default function Why() {
                 </>
               ))}
           </div>
-          <div className="my-8 px-10 lg:px-0">
-            <h4 className=" text-md   font-medium my-8 text-brand-blue  text-center">
-              Are You Ready To Make Melbourne's Leading Painting Firm Your
-              Choice?
-            </h4>
-            <p className="lg:px-16 font-isidorasans_regular text-gray-900 text-center font-light">
-              With only a few clicks you can book a time with one of experts and
-              discuss your painting requirements. Our painting experts can
-              assist with all aspects of you painting requirements. Book a time
-              today for a free measure and quote consultation.
-            </p>
-          </div>
-          <div className=" lg:w-2/3 px-4 md:px-0 mt-20 md:mt-0 mx-auto">
-            <ButtonGroup />
-          </div>
+          {cta && (
+            <>
+              <div className="my-8 px-10 lg:px-0">
+                <h4 className=" text-md   font-medium my-8 text-brand-blue  text-center">
+                  Are You Ready To Make Melbourne's Leading Painting Firm Your
+                  Choice?
+                </h4>
+                <p className="lg:px-16 font-isidorasans_regular text-gray-900 text-center font-light">
+                  With only a few clicks you can book a time with one of experts
+                  and discuss your painting requirements. Our painting experts
+                  can assist with all aspects of you painting requirements. Book
+                  a time today for a free measure and quote consultation.
+                </p>
+              </div>
+              <div className=" lg:w-2/3 px-4 md:px-0 mt-20 md:mt-0 mx-auto">
+                <ButtonGroup />
+              </div>
+            </>
+          )}
         </div>
       </Fade>
     </div>

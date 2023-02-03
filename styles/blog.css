@@ -12,6 +12,7 @@ body {
   min-height: 100%;
   padding-top: -12px;
   padding-bottom: 18rem;
+  overflow-x: hidden;
 }
 
 footer {
@@ -218,7 +219,7 @@ footer {
 }
 
 .post-content a {
-  color: #3078ef;
+  color: #333;
 }
 
 .post-content h4 {
@@ -687,7 +688,7 @@ ul.wp-block-gallery>li>figure>img {
 
 @media (max-width:840px) {
   .simple-hero{
-    height: 20rem;
+    height: 12rem;
     max-height: 22rem;
     margin-top: 64px;
 

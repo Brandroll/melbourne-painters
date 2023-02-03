@@ -16,7 +16,7 @@ export default function Testinominal({ images }: { images: AcfImage[] }) {
       <Swiper
         className="h-40"
         spaceBetween={50}
-        autoplay={{ delay: 2000 }}
+        autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
         breakpoints={{
           320: {
             slidesPerView: 2,

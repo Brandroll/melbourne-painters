@@ -40,6 +40,7 @@ module.exports = {
         140: "140px",
         double: "200%",
         80: "20rem",
+        128: "32rem",
       },
 
       fontSize: {

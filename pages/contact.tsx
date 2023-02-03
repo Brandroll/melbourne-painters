@@ -7,8 +7,8 @@ export default function Contact(props: { data: any }) {
       <YoastNextSeo {...props.data.yoast_head_json} />
 
       <SimpleHero />
-      <section className="max-w-site-full mx-auto">
-        <section className="grid grid-cols-2 my-8 md:my-0 lg:my-8 px-4 lg:px-8 md:grid-cols-8 gap-1">
+      <section className="max-w-site-full  mx-auto">
+        <section className="grid grid-cols-2 lg:shadow-2xl bg-white lg:-mt-8 p-4 my-8 md:my-0 lg:my-8 px-4   md:grid-cols-8 gap-1">
           <div className="col-span-6 md:col-span-8 lg:col-span-6  bg-form">
             <div className="col-span-2 lg:hidden order-1 p-2 px-4">
               <div>

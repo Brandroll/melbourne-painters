@@ -30,7 +30,7 @@ export default function ServicePage(props: Props) {
 
       <Services data={services} />
 
-      <Why />
+      <Why cta={false} />
       <Recent data={projects} />
       <Testinominal images={homePageData.acf.clients} />
 

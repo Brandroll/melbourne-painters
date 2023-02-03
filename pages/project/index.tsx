@@ -13,11 +13,11 @@ export default function Portfolio(props: Props) {
 
       <section className="mt-32 mx-4   lg:mx-12">
         <div className="max-w-site-full  mx-auto">
-          <h1 className="mt-16 text-3xl font-roboto text-center my-4  font-medium text-brand-blue">
+          <h1 className="mt-16 text-3xl   font-isidorasans_medium my-4  font-medium text-brand-blue">
             PROJECTS
           </h1>
           <hr />
-          <p className=" mt-4 lg:mt-0 font-roboto leading-5">
+          <p className=" mt-4   leading-5">
             At Melbourne Painters Group our core value is delivering
             high-quality painting finishes that not only look great to the eye
             but will last many years to come. We believe that hard work,
@@ -44,7 +44,7 @@ export default function Portfolio(props: Props) {
                       {project.title.rendered}
                     </p>
                     <Link href={`/project/${project.slug}`}>
-                      <button className="px-6 py-3 text-sm hover:bg-brand-blue-dark bg-brand-blue rounded-3xl">
+                      <button className="px-6 py-3 text-xs hover:bg-brand-blue-dark bg-brand-blue rounded-3xl">
                         VIEW PROJECT
                       </button>
                     </Link>
