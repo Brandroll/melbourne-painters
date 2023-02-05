@@ -78,19 +78,21 @@ export default function About(props: { data: any }) {
       <div className="my-16">
         <Why cta={false} />
       </div>
-      <div className="flex px-4 flex-col items-center justify-center lg:items-start lg:justify-start">
-        <p className="text-3xl text-center font-semibold text-brand-blue my-2">
-          ASK FOR A NEXT DAY FREE QUOTE!
-        </p>
-        <p className="my-4 text-center">
-          To get started on your quick quote please click button below.
-        </p>
-        <button
-          onClick={onFreeQuote}
-          className="text-xl  text-center bg-brand-blue hover:bg-brand-blue-dark rounded-full text-white px-16 py-4 font-thin"
-        >
-          NEXT DAY FREE QUOTE
-        </button>
+      <div className="max-w-site-full mx-auto">
+        <div className="flex px-4 flex-col  items-center justify-center lg:items-start lg:justify-start">
+          <p className="text-3xl text-center font-semibold text-brand-blue my-2">
+            ASK FOR A NEXT DAY FREE QUOTE!
+          </p>
+          <p className="my-4 text-center">
+            To get started on your quick quote please click button below.
+          </p>
+          <button
+            onClick={onFreeQuote}
+            className="text-xl  text-center bg-brand-blue hover:bg-brand-blue-dark rounded-full text-white px-16 py-4 font-thin"
+          >
+            NEXT DAY FREE QUOTE
+          </button>
+        </div>
       </div>
     </>
   );

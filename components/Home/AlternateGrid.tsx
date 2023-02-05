@@ -31,7 +31,11 @@ export default function AlternateGrid({
       {content.map((content, i) => (
         <>
           <section className="grid lg:grid-cols-2   ">
-            <div className={`${calc(i) === "even" ? "md:order-2 mt-4" : ""}`}>
+            <div
+              className={`${
+                calc(i) === "even" ? "md:order-2 mt-4  lg:mt-0" : ""
+              }`}
+            >
               {calc(i) === "even" ? (
                 <Fade right>
                   <Image src={content.image} alt="" width={900} height={700} />
@@ -44,8 +48,8 @@ export default function AlternateGrid({
             </div>
             <div
               className={`${
-                calc(i) === "even" ? "md:order-1 lg:mr-16 " : "lg:ml-16"
-              }  mt-8  `}
+                calc(i) === "even" ? "md:order-1 lg:mr-12 " : "lg:ml-16"
+              }  mt-8 lg:mt-0  `}
             >
               <h4
                 dangerouslySetInnerHTML={{

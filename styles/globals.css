@@ -28,7 +28,7 @@ h4 {
 
 }
 h4 > p{
-  @apply text-4xl font-bold  font-isidorasans
+  @apply   font-bold  font-isidorasans leading-8
 }
 
 p,form {

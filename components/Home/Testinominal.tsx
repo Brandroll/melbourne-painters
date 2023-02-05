@@ -14,7 +14,7 @@ export default function Testinominal({ images }: { images: AcfImage[] }) {
         JOIN THE THOUSANDS WHO MAKE MELBOURNE PAINTERS THEIR CHOICE
       </h3>
       <Swiper
-        className="h-40"
+        className="h-40 max-h-44"
         spaceBetween={50}
         autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
         breakpoints={{
