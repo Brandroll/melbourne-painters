@@ -31,7 +31,7 @@ export default function AlternateGrid({
       {content.map((content, i) => (
         <>
           <section className="grid lg:grid-cols-2   ">
-            <div className={`${calc(i) === "even" ? "md:order-2 mt-8" : ""}`}>
+            <div className={`${calc(i) === "even" ? "md:order-2 mt-4" : ""}`}>
               {calc(i) === "even" ? (
                 <Fade right>
                   <Image src={content.image} alt="" width={900} height={700} />
@@ -53,9 +53,8 @@ export default function AlternateGrid({
                 }}
                 className="text-brand-blue text-3xl lg:text-2xl  font-medium md:mb-8"
               />
-              <div className="post-content">
-                <WPHTMLContent html={content.information.info} />
-              </div>
+
+              <WPHTMLContent html={content.information.info} />
             </div>
           </section>
         </>

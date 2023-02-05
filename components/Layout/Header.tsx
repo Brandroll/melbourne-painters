@@ -1,45 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
+import { useQuery } from "@apollo/client";
 
 import { Routes } from "../../config/routes";
+import { GET_HEADER_MENU } from "@/apollo/queries/headerMenu";
+interface NavLink {
+  href: string;
+  label: string;
+  subItems?: { href: string; label: string }[];
+}
 export default function Header() {
   const router = useRouter();
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-  const navLinks = [
-    { href: Routes.home, label: "Home" },
-    { href: Routes.about, label: "About" },
-    {
-      href: "#",
-      label: "Service",
-      subItems: [
-        {
-          href: Routes.exteriorPaintersMelbourne,
-          label: "Exterior Painters ",
-        },
-        {
-          href: Routes.interiorPaintersmelbourne,
-          label: "Interior Painters ",
-        },
-        {
-          href: Routes.housePaintersMelbourne,
-          label: "Residential Painters ",
-        },
-        {
-          href: Routes.commercialPaintersMelbourne,
-          label: "Commercial Painters ",
-        },
-      ],
-    },
-    { href: Routes.project, label: "Projects" },
-    // { href: Routes.freeQuote, label: "Free Quote" },
-    { href: Routes.contactUs, label: "Contact" },
-  ];
+  const [navLinks, setNavLinks] = useState<NavLink[]>([]);
   const [_, setDrawerView] = useAtom(drawerAtom);
+
+  const { data } = useQuery(GET_HEADER_MENU);
+
+  useEffect(() => {
+    const navLinks = [
+      { href: Routes.home, label: "Home" },
+      { href: Routes.about, label: "About" },
+      {
+        href: "#",
+        label: "Service",
+        subItems: [
+          {
+            href: Routes.exteriorPaintersMelbourne,
+            label: "Exterior Painters ",
+          },
+          {
+            href: Routes.interiorPaintersmelbourne,
+            label: "Interior Painters ",
+          },
+          {
+            href: Routes.housePaintersMelbourne,
+            label: "Residential Painters ",
+          },
+          {
+            href: Routes.commercialPaintersMelbourne,
+            label: "Commercial Painters ",
+          },
+        ],
+      },
+      { href: Routes.project, label: "Projects" },
+      // { href: Routes.freeQuote, label: "Free Quote" },
+      { href: Routes.contactUs, label: "Contact" },
+    ];
+
+    if (data && data.menuItems) {
+      const formattedNavs = data.menuItems.edges.map((r: any) => {
+        return {
+          href: r.node.path,
+          label: r.node.label,
+          subItems: r.node?.childItems?.edges.map((subItem: any) => ({
+            href: subItem.node.path,
+            label: subItem.node.label,
+          })),
+        };
+      });
+
+      setNavLinks(formattedNavs);
+    }
+  }, [data]);
 
   function handleSidebar(view: string) {
     setDrawerView({ display: true, view });
@@ -111,62 +139,65 @@ export default function Header() {
               1300 662 344
             </a>
             <div className="lg:flex hidden top-12 md:top-0 md:py-0 py bg-navbar w-full left-0 absolute md:relative justify-end gap-6">
-              {navLinks.map((i) => (
-                <Link
-                  key={Math.random()}
-                  href={i.href}
-                  onMouseOver={() => {
-                    if (i.subItems) {
-                      setIsSubMenuOpen(true);
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (i.subItems) {
-                      setIsSubMenuOpen(false);
-                    }
-                  }}
-                >
-                  <div>
-                    <p
-                      className={`font-isidorasans ${
-                        router.asPath === i.href ? "text-brand-blue-dark" : ""
-                      }  hover:text-brand-blue cursor-pointer relative`}
-                    >
-                      {i.label}
-                    </p>
-                    {i.subItems && isSubMenuOpen && (
-                      <>
-                        <div
-                          onMouseOver={() => {
-                            if (i.subItems) {
-                              setIsSubMenuOpen(true);
-                            }
-                          }}
-                          onMouseLeave={() => {
-                            if (i.subItems) {
-                              setIsSubMenuOpen(false);
-                            }
-                          }}
-                          className="lg:absolute   top-7 bg-navbar"
-                        >
-                          <div className="flex flex-col gap-4 p-2">
-                            {i.subItems.map((l) => (
-                              <>
-                                <Link
-                                  className="hover:text-brand-blue-dark"
-                                  href={l.href}
-                                >
-                                  {l.label}
-                                </Link>
-                              </>
-                            ))}
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </Link>
-              ))}
+              {navLinks &&
+                navLinks.map((i) => (
+                  <Link
+                    key={Math.random()}
+                    href={i.href}
+                    onMouseOver={() => {
+                      if (i.subItems && i.subItems.length > 0) {
+                        setIsSubMenuOpen(true);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (i.subItems && i.subItems.length > 0) {
+                        setIsSubMenuOpen(false);
+                      }
+                    }}
+                  >
+                    <div>
+                      <p
+                        className={`font-isidorasans ${
+                          router.asPath === i.href ? "text-brand-blue-dark" : ""
+                        }  hover:text-brand-blue cursor-pointer relative`}
+                      >
+                        {i.label}
+                      </p>
+                      {i.subItems &&
+                        i.subItems?.length > 0 &&
+                        isSubMenuOpen && (
+                          <>
+                            <div
+                              onMouseOver={() => {
+                                if (i.subItems) {
+                                  setIsSubMenuOpen(true);
+                                }
+                              }}
+                              onMouseLeave={() => {
+                                if (i.subItems) {
+                                  setIsSubMenuOpen(false);
+                                }
+                              }}
+                              className="lg:absolute   top-7 bg-navbar"
+                            >
+                              <div className="flex flex-col gap-4 p-2">
+                                {i.subItems.map((l) => (
+                                  <>
+                                    <Link
+                                      className="hover:text-brand-blue-dark"
+                                      href={l.href}
+                                    >
+                                      {l.label}
+                                    </Link>
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          </>
+                        )}
+                    </div>
+                  </Link>
+                ))}
             </div>
           </div>
         </div>

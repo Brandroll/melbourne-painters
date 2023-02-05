@@ -12,6 +12,8 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import ManagedDrawer from "@/components/UI/Drawer/Managed-drawer";
 import config from "react-reveal/globals";
+import { ApolloProvider } from "@apollo/client";
+import client from "../apollo";
 
 config({ ssrFadeout: true });
 const queryClient = new QueryClient();
@@ -71,17 +73,19 @@ export default function App({ Component, pageProps }: AppProps) {
           --isidorasans-semi-bold-font: ${isidorasanssemibold.style.fontFamily};
         }
       `}</style>
-      <ModalProvider>
-        <>
-          <Header />
+      <ApolloProvider client={client}>
+        <ModalProvider>
+          <>
+            <Header />
 
-          <Component {...pageProps} />
+            <Component {...pageProps} />
 
-          <Footer />
-          <ManagedModal />
-          <ManagedDrawer />
-        </>
-      </ModalProvider>
+            <Footer />
+            <ManagedModal />
+            <ManagedDrawer />
+          </>
+        </ModalProvider>
+      </ApolloProvider>
     </QueryClientProvider>
   );
 }

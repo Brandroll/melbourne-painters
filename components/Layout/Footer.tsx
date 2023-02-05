@@ -11,7 +11,7 @@ export default function Footer() {
     { href: Routes.home, label: "Home" },
     { href: Routes.about, label: "About" },
 
-    { href: Routes.project, label: "Portfolio" },
+    { href: Routes.project, label: "Projects" },
 
     { href: Routes.contactUs, label: "Contact" },
   ];
