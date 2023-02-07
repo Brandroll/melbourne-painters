@@ -3,7 +3,9 @@ import { Routes } from "@/config/routes";
 import DrawerWrapper from "@/components/UI/Drawer/Drawer-wrapper";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
+import { GET_HEADER_MENU } from "@/apollo/queries/headerMenu";
 
 const headerLinks = [
   { href: Routes.home, label: "Home" },
@@ -34,14 +36,38 @@ const headerLinks = [
   { href: Routes.freeQuote, label: "Free Quote" },
   { href: Routes.contactUs, label: "Contact" },
 ];
+interface NavLink {
+  href: string;
+  label: string;
+  subItems?: { href: string; label: string }[];
+}
 
 export default function MobileMainMenu() {
   const [showSubItems, setShowSubItems] = useState(false);
+  const [navLinks, setNavLinks] = useState<NavLink[]>([]);
+
   const router = useRouter();
   const [_, closeSidebar] = useAtom(drawerAtom);
+  const { data } = useQuery(GET_HEADER_MENU);
+  useEffect(() => {
+    if (data && data.menuItems) {
+      const formattedNavs = data.menuItems.edges.map((r: any) => {
+        return {
+          href: r.node.path,
+          label: r.node.label,
+          subItems: r.node?.childItems?.edges.map((subItem: any) => ({
+            href: subItem.node.path,
+            label: subItem.node.label,
+          })),
+        };
+      });
 
+      setNavLinks(formattedNavs);
+    }
+  }, [data]);
   function handleClick(path: string) {
-    const hasSubItems = headerLinks.find((hed) => hed.href === path)?.subItems;
+    const hasSubItems = navLinks.find((hed) => hed.href === path)?.subItems
+      ?.length;
     if (hasSubItems) {
       setShowSubItems(!showSubItems);
       return;
@@ -53,7 +79,7 @@ export default function MobileMainMenu() {
   return (
     <DrawerWrapper>
       <ul className="flex-grow">
-        {headerLinks.map(({ href, label, subItems }) => (
+        {navLinks.map(({ href, label, subItems }) => (
           <li key={`${href}${label}`}>
             <button
               onClick={() => handleClick(href)}
@@ -61,7 +87,7 @@ export default function MobileMainMenu() {
             >
               {label}
 
-              {subItems && (
+              {subItems && subItems?.length > 0 && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

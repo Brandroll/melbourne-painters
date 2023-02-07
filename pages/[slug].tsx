@@ -12,7 +12,9 @@ interface Props {
 }
 export default function SinglePage(props: Props) {
   const { service } = props;
-
+  if (!service) {
+    return null;
+  }
   return (
     <>
       <YoastNextSeo {...service.yoast_head_json} />

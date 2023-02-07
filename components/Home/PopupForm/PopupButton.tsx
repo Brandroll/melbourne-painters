@@ -8,10 +8,12 @@ export default function PopupButton(props: any) {
         setIsSelected(!isSelected);
       }}
       className={` ${
-        isSelected ? "bg-brand-blue" : "bg-popup-button "
-      }  py-1 text-sm rounded-full uppercase border  text-white   active:bg-brand-blue-dark`}
+        isSelected ? "bg-brand-blue-dark" : "bg-brand-blue "
+      } info-btn bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer `}
     >
-      <span className="whitespace-nowrap px-4">{props.label}</span>
+      <span className="font-isidorasans_regular whitespace-nowrap capitalize px-4">
+        {props.label.toUpperCase()}
+      </span>
     </button>
     /* <input
         id={props.label}

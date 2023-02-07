@@ -959,7 +959,7 @@ span.change6 {
   color: #fff;
   display: inline-block;
   width: 192px;
-  background: #646464;
+  /* background: #646464; */
   text-align: center;
   padding: 7px 0 !important;
   border-radius: 50px;

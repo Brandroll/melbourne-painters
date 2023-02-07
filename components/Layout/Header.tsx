@@ -23,36 +23,6 @@ export default function Header() {
   const { data } = useQuery(GET_HEADER_MENU);
 
   useEffect(() => {
-    const navLinks = [
-      { href: Routes.home, label: "Home" },
-      { href: Routes.about, label: "About" },
-      {
-        href: "#",
-        label: "Service",
-        subItems: [
-          {
-            href: Routes.exteriorPaintersMelbourne,
-            label: "Exterior Painters ",
-          },
-          {
-            href: Routes.interiorPaintersmelbourne,
-            label: "Interior Painters ",
-          },
-          {
-            href: Routes.housePaintersMelbourne,
-            label: "Residential Painters ",
-          },
-          {
-            href: Routes.commercialPaintersMelbourne,
-            label: "Commercial Painters ",
-          },
-        ],
-      },
-      { href: Routes.project, label: "Projects" },
-      // { href: Routes.freeQuote, label: "Free Quote" },
-      { href: Routes.contactUs, label: "Contact" },
-    ];
-
     if (data && data.menuItems) {
       const formattedNavs = data.menuItems.edges.map((r: any) => {
         return {
@@ -178,7 +148,7 @@ export default function Header() {
                                   setIsSubMenuOpen(false);
                                 }
                               }}
-                              className="lg:absolute   top-7 bg-navbar"
+                              className="lg:absolute   top-6 bg-navbar"
                             >
                               <div className="flex flex-col gap-4 p-2">
                                 {i.subItems.map((l) => (

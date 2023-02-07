@@ -71,9 +71,9 @@ export const YourProject: React.FC<any> = ({
       }}
     >
       {({ register, formState: {} }) => (
-        <div className="max-w-site-full md:px-32">
+        <div className="max-w-site-full text-brand-blue md:px-32">
           <section className="my-4">
-            <h4>WHEN DO YOU EXPECT YOUR PROJECT TO START?*</h4>
+            <h4 className="mb-2">WHEN DO YOU EXPECT YOUR PROJECT TO START?*</h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {expections.map((b) => (
                 <PopupButton label={b} />
@@ -81,7 +81,7 @@ export const YourProject: React.FC<any> = ({
             </div>
           </section>
           <section className="my-4">
-            <h4>RESIDENTIAL, COMMERCIAL OR INDUSTRIAL*</h4>
+            <h4 className="mb-2">RESIDENTIAL, COMMERCIAL OR INDUSTRIAL*</h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {resident.map((b) => (
                 <PopupButton label={b} />
@@ -89,17 +89,15 @@ export const YourProject: React.FC<any> = ({
             </div>
           </section>
           <section className="my-4">
-            <h4>WHAT KIND OF PAINTING SERVICE DO YOU REQUIRE?*</h4>
+            <h4 className="mb-2">
+              WHAT KIND OF PAINTING SERVICE DO YOU REQUIRE?*
+            </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {serviceKinf.map((b) => (
                 <PopupButton label={b} />
               ))}
             </div>
           </section>
-
-          <Button className="col-span-2 bg-brand-blue border w-full">
-            Next
-          </Button>
         </div>
       )}
     </Form>

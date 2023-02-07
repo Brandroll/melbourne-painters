@@ -33,14 +33,14 @@ export default function About(props: { data: any }) {
             <Image
               src="/imgs/Painters-Melbourne-Accredited-Painter-512px-300x300.jpg"
               width={150}
-              height={100}
+              height={300}
               alt=""
             />
             <Image
               src="/imgs/warranty.png"
-              width={75}
+              width={100}
               style={{ objectFit: "contain" }}
-              height={40}
+              height={80}
               alt=""
             />
           </div>
@@ -52,8 +52,8 @@ export default function About(props: { data: any }) {
 
             {props.data.acf.steps.map((step: any, i: number) => (
               <>
-                <div className="lg:flex gap-2 md:gap-8 my-8">
-                  <div className="lg:px-8 mb-4 md:mb-0 md:mt-16  max-h-5 px-1 py-5 text-xs font-semibold lg:h-16  flex justify-center items-center lg:oval   rounded-full    bg-brand-blue   text-white  ">
+                <div className="lg:flex   gap-2 md:gap-8 my-8">
+                  <div className="lg:px-8 mb-4 md:mb-0 md:mt-16 lg:my-auto  max-h-5 px-1 py-5 text-xs font-semibold lg:h-16  flex justify-center items-center lg:oval   rounded-full    bg-brand-blue   text-white  ">
                     {step.step_no}
                   </div>
                   <p dangerouslySetInnerHTML={{ __html: step.info }}></p>

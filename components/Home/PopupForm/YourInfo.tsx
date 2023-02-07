@@ -5,7 +5,9 @@ const RadioFormGroup = ({ value }: { value: string }) => {
     <>
       <div className="gchoice  ">
         <input className="hidden" value={value} tabIndex={26} />
-        <label className="info-btn ">{value}</label>
+        <label className="info-btn bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer ">
+          {value}
+        </label>
       </div>
     </>
   );
@@ -18,14 +20,14 @@ const FormGroup = ({
   type: "email" | "text";
 }) => {
   return (
-    <div className="grid my-2 md:w-64 ">
-      <label className="uppercase font-roboto font-medium text-left">
+    <div className="grid my-2   ">
+      <label className=" text-brand-blue   font-roboto font-medium text-left">
         {label}
       </label>
       <input
         type={type}
-        className="border w-80 py-2 px-2 "
-        placeholder={label.toLowerCase() + ":"}
+        className="   w-80 py-2 px-2 p-4 border-b-4 border-brand-blue rounded-md outline-none"
+        placeholder={label + " :"}
       />
     </div>
   );
@@ -43,12 +45,14 @@ const YourInfo: React.FC<any> = ({ onSubmit }) => {
   return (
     <div className="lg:w-240 mx-auto py-8">
       <form className="flex flex-col items-center justify-center">
-        <FormGroup label="First Name" type="text" />
-        <FormGroup label="Last Name" type="text" />
-        <FormGroup label="Email" type="email" />
-        <FormGroup label="Phone" type="text" />
+        <div className="grid grid-cols-2 gap-4">
+          <FormGroup label="First Name" type="text" />
+          <FormGroup label="Last Name" type="text" />
+          <FormGroup label="Email" type="email" />
+          <FormGroup label="Mobile" type="text" />
+        </div>
         <div className="my-2">
-          <h3>WHEN CAN WE CONTACT YOU?</h3>
+          <h3 className="mb-2 text-brand-blue">WHEN CAN WE CONTACT YOU?</h3>
 
           <div className="grid md:grid-cols-3 gap-4">
             {_contact.map((value) => (
@@ -56,8 +60,12 @@ const YourInfo: React.FC<any> = ({ onSubmit }) => {
             ))}
           </div>
         </div>
-
-        <FormGroup label="POSTCODE/SUBURB*" type="text" />
+        <textarea
+          className="p-4 w-2/3 border-b-4 border-brand-blue rounded-md outline-none"
+          placeholder="Postcode / Suburb"
+          required
+        />
+        {/* <FormGroup label="POSTCODE/SUBURB*" type="text" /> */}
       </form>
     </div>
   );

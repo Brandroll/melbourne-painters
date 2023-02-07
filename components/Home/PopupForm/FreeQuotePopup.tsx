@@ -51,7 +51,7 @@ export default function CreateOrUpdateAddressForm() {
   function onProjectDetails(values: FormValues) {}
   function onInfo(values: FormValues) {}
   return (
-    <div className="min-h-screen w-full bg-white lg:px-16  p-5 sm:p-8 md:min-h-0 md:rounded-xl">
+    <div className="min-h-screen w-full bg-form lg:px-16  p-5 sm:p-8 md:min-h-0 md:rounded-xl">
       <div className="hidden md:block">
         <h5 className="font-roboto  font-semibold text-xl">Free Quote</h5>
         <div className="flex gap-8 justify-center">
@@ -72,7 +72,7 @@ export default function CreateOrUpdateAddressForm() {
                 width={100}
                 height={50}
               />
-              <p className="my-2 font-roboto text-sm font-medium  ">
+              <p className="my-2 text-brand-blue-dark font-roboto text-sm font-medium  ">
                 {i.label}
               </p>
             </div>
@@ -111,17 +111,24 @@ export default function CreateOrUpdateAddressForm() {
               </button>
             )}
 
-            <button
-              onClick={() => {
-                if (currentForm < 3) {
-                  setCurrentForm(currentForm + 1);
-                } else {
-                }
-              }}
-              className="rounded-xl outline-none text-white py-2 px-16 w-16 flex justify-center bg-brand-blue border "
-            >
-              NEXT
-            </button>
+            {currentForm != 3 && (
+              <button
+                onClick={() => {
+                  if (currentForm < 3) {
+                    setCurrentForm(currentForm + 1);
+                  } else {
+                  }
+                }}
+                className="rounded-xl outline-none text-white py-2 px-16 w-16 flex justify-center bg-brand-blue border "
+              >
+                NEXT
+              </button>
+            )}
+            {currentForm == 3 && (
+              <button className="rounded-xl outline-none text-white py-2 px-16 w-16 flex justify-center bg-brand-blue border ">
+                SUBMIT
+              </button>
+            )}
           </div>
         </div>
       </div>
