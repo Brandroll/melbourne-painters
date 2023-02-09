@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function Testinominal({ images }: { images: AcfImage[] }) {
   return (
     <div className="md:px-9 px-2 max-w-site-full mx-auto my-2 lg:py-4">
-      <h3 className="text-center md:my-8 text-brand-blue text-xl font-medium">
+      <h3 className="text-center md:my-8 text-brand-blue text-xl font-medium leading-9">
         JOIN THE THOUSANDS WHO MAKE MELBOURNE PAINTERS THEIR CHOICE
       </h3>
       <Swiper
@@ -23,13 +23,13 @@ export default function Testinominal({ images }: { images: AcfImage[] }) {
             spaceBetween: 50,
           },
           // when window width is >= 480px
-          480: {
-            slidesPerView: 2,
+          400: {
+            slidesPerView: 3,
             spaceBetween: 50,
           },
           // when window width is >= 640px
           800: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 50,
           },
         }}
