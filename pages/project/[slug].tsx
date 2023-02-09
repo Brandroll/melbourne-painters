@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async ({
   params,
 }: GetStaticPropsContext) => {
   const { slug } = params!;
-  const url = process.env.NEXT_WP_API_URL + `/projects?slug=${slug}`;
+  const url = process.env.NEXT_WP_API_URL + `/project?slug=${slug}`;
   const project = await fetch(url).then((r) => r.json());
 
   return {
@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps = async ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const projects = await fetch(process.env.NEXT_WP_API_URL + "/projects").then(
+  const projects = await fetch(process.env.NEXT_WP_API_URL + "/project").then(
     (r) => r.json()
   );
 

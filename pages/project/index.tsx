@@ -60,7 +60,7 @@ export default function Portfolio(props: Props) {
 }
 
 export const getStaticProps = async () => {
-  const url = process.env.NEXT_WP_API_URL + `/projects`;
+  const url = process.env.NEXT_WP_API_URL + `/project`;
   const projects = await fetch(url).then((r) => r.json());
 
   return {
