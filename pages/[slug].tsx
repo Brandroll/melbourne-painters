@@ -35,25 +35,49 @@ export const getStaticProps: GetStaticProps = async ({
   const { slug } = params!;
   const url = process.env.NEXT_WP_API_URL + `/service?slug=${slug}`;
   const services = await fetch(url).then((r) => r.json());
+ 
   const t = services.length > 0 ? services[0] : null;
-  return {
+  
+  if(t===null){
+    
+     const url = process.env.NEXT_WP_API_URL + `/suburbs?slug=${slug}`;
+  const suburbs = await fetch(url).then((r) => r.json());
+     return {
+    props: {
+      service: suburbs.length>0 ?suburbs[0]:null,
+    },
+  };
+  }else{
+     return {
     props: {
       service: t,
     },
   };
+  }
+ 
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const suburbs_url= process.env.NEXT_WP_API_URL + "/suburbs"
   const projects = await fetch(process.env.NEXT_WP_API_URL + "/service").then(
     (r) => r.json()
   );
+  
+  const suburbs= await fetch(suburbs_url).then(
+    (r) => r.json()
+  );
 
-  const paths = projects.map((project: any) => {
+  const projects_path = projects.map((project: any) => {
     return {
       params: { slug: project.slug.toString() },
     };
   });
-
+  const suburbs_path = suburbs.map((project: any) => {
+    return {
+      params: { slug: project.slug.toString() },
+    };
+  });
+const paths = projects_path.concat(suburbs_path);
   return {
     paths,
     fallback: "blocking",

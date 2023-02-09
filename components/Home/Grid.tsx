@@ -19,7 +19,7 @@ export default function Grid({
     <Fade bottom>
       <section className="grid my-4 px-4 max-w-site-full md:grid-cols-2 gap-2 mx-auto">
         {grid.map((blog) => (
-          <div>
+          <div key={Math.random()}>
             <h4
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(blog.heading),
