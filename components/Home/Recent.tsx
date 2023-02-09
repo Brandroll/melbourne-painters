@@ -14,6 +14,7 @@ export default function Recent({ data }: Props) {
   if(!data){
     return null;
   }
+ 
   return (
     <div>
       <h4 className="lg:text-3xl text-xl scale-100 font-semibold text-center text-brand-blue my-8 lg:my-16">

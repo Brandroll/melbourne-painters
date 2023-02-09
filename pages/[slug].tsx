@@ -9,6 +9,7 @@ import AlternateGrid from "@/components/Home/AlternateGrid";
 import BelowHero from "@/components/UI/BelowHero";
 interface Props {
   service: Service;
+  isSuburbs:Boolean;
 }
 export default function SinglePage(props: Props) {
   const { service } = props;
@@ -21,7 +22,9 @@ export default function SinglePage(props: Props) {
 
       <Hero bgImg={service.x_featured_media_large} />
       <BelowHero />
+       <Services data={services} />
       <Why cta={false} />
+      <Recent data={projects} />
 
       <Grid grid={service.acf.grid} />
       <AlternateGrid content={service.acf.content} />
@@ -45,12 +48,15 @@ export const getStaticProps: GetStaticProps = async ({
      return {
     props: {
       service: suburbs.length>0 ?suburbs[0]:null,
+       isSuburbs:true
+  
     },
   };
   }else{
      return {
     props: {
       service: t,
+       isSuburbs:false
     },
   };
   }
@@ -78,7 +84,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
   });
 const paths = projects_path.concat(suburbs_path);
-console.log({paths})
+ 
   return {
     paths,
     fallback: "blocking",

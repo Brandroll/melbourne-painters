@@ -49,9 +49,9 @@ export default function AlternateGrid({
             <div
               className={`${
                 calc(i) === "even" ? "md:order-1 lg:mr-12 " : "lg:ml-16"
-              }  mt-8 lg:mt-0  `}
+              }  mt-8 lg:mt-0  flex`}
             >
-              <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col justify-center  ">
                 <h4
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(content.information.heading),
