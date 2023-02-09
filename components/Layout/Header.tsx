@@ -26,6 +26,7 @@ export default function Header() {
     if (data && data.menuItems) {
       const formattedNavs = data.menuItems.edges.map((r: any) => {
         return {
+          
           href: r.node.path,
           label: r.node.label,
           subItems: r.node?.childItems?.edges.map((subItem: any) => ({

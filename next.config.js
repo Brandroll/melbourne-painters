@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["www.melbourne-painters.com.au", "cms.melbourne-painters.com.au"],
+    domains: ["www.melbourne-painters.com.au", "cms.melbourne-painters.com.au","res.cloudinary.com"],
   },
 
   typescript: {

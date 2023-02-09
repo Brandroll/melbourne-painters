@@ -78,6 +78,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
   });
 const paths = projects_path.concat(suburbs_path);
+console.log({paths})
   return {
     paths,
     fallback: "blocking",
