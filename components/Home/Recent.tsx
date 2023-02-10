@@ -17,7 +17,7 @@ export default function Recent({ data }: Props) {
 
   return (
     <div>
-      <h4 className="lg:text-3xl text-xl scale-100 font-semibold text-center text-brand-blue my-8 lg:my-16">
+      <h4 className="md:text-3xl text-xl scale-100 font-isidorasans_semi_bold  font-semibold text-center text-brand-blue my-8 lg:my-16">
         Our Recent Projects
       </h4>
 
@@ -41,6 +41,14 @@ export default function Recent({ data }: Props) {
           },
           // when window width is >= 640px
           800: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          1080: {
             slidesPerView: 4,
             spaceBetween: 0,
           },

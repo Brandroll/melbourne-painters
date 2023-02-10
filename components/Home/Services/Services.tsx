@@ -26,6 +26,10 @@ export default function Services({ data }: Props) {
           },
           // when window width is >= 640px
           800: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          1080: {
             slidesPerView: 4,
             spaceBetween: 0,
           },

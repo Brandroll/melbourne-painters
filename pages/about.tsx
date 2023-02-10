@@ -3,6 +3,7 @@ import SimpleHero from "@/components/UI/SimpleHero";
 import WPHTMLContent from "@/components/UI/WPHTMLContent";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
 import { useModalAction } from "@/components/UI/Modal/Modal.context";
+import Fade from "react-reveal/Fade";
 
 import Image from "next/image";
 import React from "react";
@@ -22,11 +23,13 @@ export default function About(props: { data: any }) {
           style={{ backgroundColor: "#EBEBEB" }}
           className="col-span-2 -mt-10 mb-8  "
         >
-          <div className="p-8  bg-brand-blue ">
-            <h1 className="text-white mt-4 font-semibold text-5xl">
-              ABOUT <br /> US
-            </h1>
-          </div>
+          <Fade bottom>
+            <div className="p-8 pb-12 bg-brand-blue ">
+              <h1 className="text-white mt-4 font-semibold text-5xl">
+                ABOUT <br /> US
+              </h1>
+            </div>
+          </Fade>
         </div>
         <div className="col-span-6">
           <div className="flex justify-center gap-2 lg:justify-end">
@@ -79,7 +82,7 @@ export default function About(props: { data: any }) {
         <Why cta={false} />
       </div>
       <div className="max-w-site-full mx-auto">
-        <div className="flex px-4 flex-col  items-center justify-center lg:items-start lg:justify-start">
+        <div className="flex px-4 flex-col  items-center justify-center   lg:justify-start">
           <p className="text-3xl text-center font-semibold text-brand-blue my-2">
             ASK FOR A NEXT DAY FREE QUOTE!
           </p>

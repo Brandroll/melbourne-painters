@@ -23,6 +23,9 @@ module.exports = {
       maxWidth: {
         "site-full": "1200px",
       },
+      padding: {
+        3.67: "3.67em",
+      },
       minHeight: {
         "113-rem": "113rem",
       },

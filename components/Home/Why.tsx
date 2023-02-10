@@ -46,7 +46,7 @@ export default function Why({ cta }: { cta: Boolean }) {
           {cta && (
             <>
               <div className="my-8  px-10 lg:px-0">
-                <h4 className=" text-md   font-medium my-8 text-brand-blue  text-center">
+                <h4 className=" text-md font-isidorasans_semi_bold  font-medium my-8 text-brand-blue  text-center">
                   Are You Ready To Make Melbourne's Leading Painting Firm Your
                   Choice?
                 </h4>

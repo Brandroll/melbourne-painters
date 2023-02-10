@@ -15,7 +15,7 @@ export default function Testinominal({ images }: { images: AcfImage[] }) {
         Our Clients
       </h3>
       <Swiper
-        className="md:h-40 mb-16 max-h-44"
+        className="md:h-24 mb-12 lg:my-8 max-h-44"
         spaceBetween={50}
         autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
         breakpoints={{
@@ -25,12 +25,12 @@ export default function Testinominal({ images }: { images: AcfImage[] }) {
           },
           // when window width is >= 480px
           400: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 50,
           },
           // when window width is >= 640px
           800: {
-            slidesPerView: 5,
+            slidesPerView: 7,
             spaceBetween: 50,
           },
         }}

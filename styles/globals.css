@@ -19,9 +19,9 @@ button:active {
 
 h1,
 h2,
-h3,
-h4 {
-  @apply font-isidorasans;
+h3
+  {
+  @apply font-isidorasans ;
 }
 .elementor-widget-container{
   @apply font-isidorasans_regular leading-6;
@@ -29,6 +29,15 @@ h4 {
 }
 h4 > p{
   @apply   font-bold  font-isidorasans leading-8
+}
+.elementor-heading-title .elementor-size-default{
+  @apply font-isidorasans_regular leading-6;
+
+}
+ 
+h4> h1 {
+  @apply font-isidorasans_regular leading-6;
+
 }
 
 p,form {

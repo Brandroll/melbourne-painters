@@ -65,7 +65,7 @@ export default function Contact(props: { data: any }) {
                       </span>
                     </a>
                   </div>
-                  <div className="flex font-bold gap-2">
+                  {/* <div className="flex font-bold gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -79,13 +79,13 @@ export default function Contact(props: { data: any }) {
                       />
                     </svg>
                     <p>16 Boston Court Narre Warren VIC 3805</p>
-                  </div>
+                  </div> */}
                   <h3 className="text-2xl my-2  text-brand-blue">
                     Contact Form
                   </h3>
                 </div>
               </div>
-              <h3 className="px-4 py-4 text-3xl font-isidorasans_medium text-brand-blue">
+              <h3 className="px-4 py-4 text-3xl font-isidorasans_semi_bold text-brand-blue">
                 Contact Us
               </h3>
               <form className="grid grid-cols-2 py-4 font-isidorasans_medium  px-4 gap-8 font-normal">
@@ -196,7 +196,7 @@ export default function Contact(props: { data: any }) {
                   <label className=" text-brand-blue mb-3 ">Message</label>
                   <textarea
                     className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                    placeholder="Postcode / Suburb"
+                    placeholder="Message"
                     required
                   />
                 </div>
@@ -258,7 +258,7 @@ export default function Contact(props: { data: any }) {
                     </span>
                   </a>
                 </div>
-                <div className="flex gap-2">
+                {/* <div className="flex gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -272,7 +272,7 @@ export default function Contact(props: { data: any }) {
                     />
                   </svg>
                   <p>16 Boston Court Narre Warren VIC 3805</p>
-                </div>
+                </div> */}
                 <iframe
                   loading="lazy"
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBYNrbU8OCzRjyyGyjxOWqVWSSWsTFpb2Q&amp;q=Melbourne&amp;zoom=9"
