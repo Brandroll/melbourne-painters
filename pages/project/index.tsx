@@ -13,8 +13,8 @@ export default function Portfolio(props: Props) {
 
       <section className="mt-32 mx-4   lg:mx-12">
         <div className="max-w-site-full  mx-auto">
-          <h1 className="mt-16 text-3xl   font-isidorasans_medium my-4  font-medium text-brand-blue">
-            PROJECTS
+          <h1 className="mt-16 text-3xl   font-isidorasans_semi_bold my-4  font-medium text-brand-blue">
+            Projects
           </h1>
           <hr />
           <p className=" mt-4   leading-5">

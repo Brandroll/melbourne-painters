@@ -32,7 +32,7 @@ export default function Card(props: any) {
           </h4>
 
           <Link href={href}>
-            <button className="font-roboto uppercase   font-semibold text-white py-3 px-8 text-12  mt-2 rounded-full   bg-brand-blue hover:bg-brand-blue-dark active:outline-none">
+            <button className="font-roboto uppercase   font-semibold text-white py-2 px-8 text-12  mt-2 rounded-full   bg-brand-blue hover:bg-brand-blue-dark active:outline-none">
               View Project
             </button>
           </Link>

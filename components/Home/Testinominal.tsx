@@ -9,18 +9,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Testinominal({ images }: { images: AcfImage[] }) {
   return (
-    <div className="md:px-9 px-2 max-w-site-full mx-auto my-2 lg:py-4">
-      <h3 className="text-center md:my-8 text-brand-blue text-xl font-medium leading-9">
-        JOIN THE THOUSANDS WHO MAKE MELBOURNE PAINTERS THEIR CHOICE
+    <div className="mt-12 md:mt-0 md:px-9 px-2 max-w-site-full mx-auto my-2 lg:py-4">
+      <h3 className=" mb-4 text-center md:my-8 text-brand-blue font-isidorasans text-xl md:text-3xl font-medium leading-9">
+        {/* JOIN THE THOUSANDS WHO MAKE MELBOURNE PAINTERS THEIR CHOICE */}
+        Our Clients
       </h3>
       <Swiper
-        className="h-40 max-h-44"
+        className="md:h-40 mb-16 max-h-44"
         spaceBetween={50}
         autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
         breakpoints={{
           320: {
-            slidesPerView: 2,
-            spaceBetween: 50,
+            slidesPerView: 3,
+            spaceBetween: 20,
           },
           // when window width is >= 480px
           400: {

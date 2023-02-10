@@ -7,26 +7,27 @@ export default function Why({ cta }: { cta: Boolean }) {
   const { reasons, error } = useReasons();
 
   return (
-    <div className="bg-why-section py-8 md:px-8">
+    <div className={`bg-why-section py-8 ${!cta && "pb-12 md:pb-20"}  md:px-8`}>
       <Fade bottom>
         <div className="max-w-site-full mx-auto">
-          <h3 className="text-center mb-16  px-10 md:my-8 text-brand-blue text-why font-medium">
-            WHY SHOULD YOU MAKE MELBOURNE PAINTERS YOUR FIRST CHOICE?
+          <h3 className="text-center mb-4 md:mb-16 text-xl    px-10 md:my-8 text-brand-blue md:text-why font-medium">
+            {/* WHY CHOOSE MELBOURNE PAINTERS GROUP? */}
+            Why Choose Melbourne Painters Group?
           </h3>
-          <div className="grid gap-2 px-4  md:gap-4  mt-16 lg:mt-0  md:grid-cols-3">
+          <div className="grid gap-2 px-4  md:gap-4  md:mt-16 lg:mt-0 md:grid-cols-2 lg:grid-cols-3">
             {!error &&
               reasons &&
               reasons[0].acf.reasons &&
               reasons[0].acf.reasons.map((i: any) => (
                 <>
-                  <div className="flex gap-4  md:gap-6 items-center lg:justify-center pb-4 border border-r-0 border-l-0 border-t-0  border-white">
+                  <div className="flex gap-4   md:gap-6 items-center lg:justify-center pb-4 border border-r-0 border-l-0 border-t-0  border-white">
                     <Fade right>
                       <div className=" bg-white p-3 rounded-full ">
                         <Image
                           alt=""
                           style={{
                             objectFit: "contain",
-                            maxWidth: "51px",
+                            maxWidth: "45px",
                             maxHeight: "43px",
                           }}
                           src={i.image}
@@ -35,7 +36,7 @@ export default function Why({ cta }: { cta: Boolean }) {
                         />
                       </div>
                     </Fade>
-                    <div className=" font-isidorasans_medium text-md mb-2 font-normal  ">
+                    <div className="  font-isidorasans_medium text-md mb-2 font-normal  ">
                       {i.info}
                     </div>
                   </div>
@@ -44,7 +45,7 @@ export default function Why({ cta }: { cta: Boolean }) {
           </div>
           {cta && (
             <>
-              <div className="my-8 px-10 lg:px-0">
+              <div className="my-8  px-10 lg:px-0">
                 <h4 className=" text-md   font-medium my-8 text-brand-blue  text-center">
                   Are You Ready To Make Melbourne's Leading Painting Firm Your
                   Choice?
@@ -56,7 +57,7 @@ export default function Why({ cta }: { cta: Boolean }) {
                   a time today for a free measure and quote consultation.
                 </p>
               </div>
-              <div className=" lg:w-2/3 px-4 md:px-0 mt-20 md:mt-0 mx-auto">
+              <div className="pb-8 lg:w-2/3 px-4 md:px-0 mt-20 md:mt-0 mx-auto">
                 <ButtonGroup />
               </div>
             </>

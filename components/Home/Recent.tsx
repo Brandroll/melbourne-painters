@@ -11,14 +11,14 @@ interface Props {
   data: Project[];
 }
 export default function Recent({ data }: Props) {
-  if(!data){
+  if (!data) {
     return null;
   }
- 
+
   return (
     <div>
       <h4 className="lg:text-3xl text-xl scale-100 font-semibold text-center text-brand-blue my-8 lg:my-16">
-        A FEW OF OUR RECENT PROJECTS
+        Our Recent Projects
       </h4>
 
       <Swiper
@@ -47,11 +47,13 @@ export default function Recent({ data }: Props) {
         }}
         // slidesPerView={4}
       >
-        {data&&data.length>0&&data.map((project) => (
-          <SwiperSlide>
-            <Card {...project} />
-          </SwiperSlide>
-        ))}
+        {data &&
+          data.length > 0 &&
+          data.map((project) => (
+            <SwiperSlide>
+              <Card {...project} />
+            </SwiperSlide>
+          ))}
       </Swiper>
       {/* <section className="flex">
         <div className="  flex flex-col justify-end  h-72  bg-cover bg-center bg-no-repeat bg-Atura-Dandenong-South-Night"></div>

@@ -33,7 +33,7 @@ export default function AlternateGrid({
           <section className="grid lg:grid-cols-2 gap-4   ">
             <div
               className={`${
-                calc(i) === "even" ? "md:order-2 mt-4  lg:mt-0" : ""
+                calc(i) === "even" ? "lg:order-2 mt-4  lg:mt-0" : ""
               } flex justify-center items-center `}
             >
               {calc(i) === "even" ? (
@@ -49,16 +49,18 @@ export default function AlternateGrid({
             <div
               className={`${
                 calc(i) === "even" ? "md:order-1 lg:mr-12 " : "lg:ml-16"
-              }  mt-8 lg:mt-0  flex`}
+              }  mt-0 lg:mt-0  flex`}
             >
               <div className="flex flex-col justify-center  ">
                 <h4
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(content.information.heading),
                   }}
-                  className="text-brand-blue text-3xl lg:text-2xl  font-medium md:mb-2"
+                  className="text-brand-blue text-xl lg:text-2xl  font-medium md:mb-2"
                 />
-                <WPHTMLContent html={content.information.info} />
+                <div className="font-isidorasans_regular">
+                  <WPHTMLContent html={content.information.info} />
+                </div>
               </div>
             </div>
           </section>

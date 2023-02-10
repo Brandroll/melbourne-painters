@@ -26,7 +26,7 @@ export default function Hero(props: { bgImg?: string }) {
               <span className="change6 italic">s </span>
               to life
             </h3>
-            <div className="mt-8">
+            <div className="mt-4 lg:mt-8">
               <ButtonGroup />
             </div>
           </div>
