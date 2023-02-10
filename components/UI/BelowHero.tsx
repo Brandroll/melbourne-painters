@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function BelowHero() {
   return (
-    <section className="grid below-hero  mt-10 sm:mt-0   sm:py-0 lg:-mt-20 my-2 max-w-site-full mx-auto bg-white md:grid-cols-8 gap-8 items-center px-2 ">
+    <section className="grid below-hero  mt-10 sm:mt-0   sm:py-0 lg:-mt-20 my-2 max-w-site-full mx-auto bg-white md:grid-cols-8 lg:gap-8 items-center px-2 ">
       <div className="col-span-6 ">
         <h3
           className={` text-md  font-isidorasans font-medium my-2 md:mb-8 text-brand-blue `}
@@ -14,17 +14,17 @@ export default function BelowHero() {
           providing <br /> preventive and proactive maintenance.
         </p>
       </div>
-      <div className="col-span-6 md:col-span-2 flex justify-center md:justify-start  w-full md:items-center gap-4">
+      <div className="col-span-2  max-w-full md:col-span-2 flex justify-center md:justify-start   md:items-center gap-4">
         <Image
           src="/imgs/Painters-Melbourne-Accredited-Painter-512px-300x300.jpg"
-          width={150}
+          width={110}
           height={300}
           alt=""
         />
         <Image
           src="/imgs/warranty.png"
-          width={100}
-          style={{ objectFit: "cover" }}
+          width={80}
+          style={{ objectFit: "contain" }}
           height={80}
           alt=""
         />

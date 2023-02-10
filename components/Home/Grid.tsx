@@ -17,7 +17,7 @@ export default function Grid({
   }
   return (
     <Fade bottom>
-      <section className="grid my-4 px-4 max-w-site-full md:grid-cols-2 gap-2 mx-auto">
+      <section className="grid my-4 px-4 max-w-site-full lg:grid-cols-2 gap-2 mx-auto">
         {grid.map((blog) => (
           <div key={Math.random()}>
             <h4
