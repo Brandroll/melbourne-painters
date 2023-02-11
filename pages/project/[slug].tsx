@@ -19,7 +19,7 @@ export default function SingleProject({ project }: Props) {
   return (
     <>
       <YoastNextSeo {...yoast_head_json} />
-      <SimpleHero />
+      <SimpleHero bgImg={x_featured_media_large} />
 
       <section className="grid max-w-site-full   px-4  md:grid-cols-8 md:mx-auto">
         <div
@@ -36,21 +36,21 @@ export default function SingleProject({ project }: Props) {
           </Fade>
         </div>
         <div className="col-span-6">
-          <div className="flex justify-center gap-2 lg:justify-end">
+          {/* <div className="flex justify-center gap-2 lg:justify-end">
             <Image
               src="/imgs/Painters-Melbourne-Accredited-Painter-512px-300x300.jpg"
-              width={150}
+              width={120}
               height={300}
               alt=""
             />
             <Image
               src="/imgs/warranty.png"
-              width={100}
+              width={80}
               style={{ objectFit: "contain" }}
               height={80}
               alt=""
             />
-          </div>
+          </div> */}
           <div
             style={{ backgroundColor: "#FAFAFA" }}
             className="  px-4 lg:px-16 py-12 font-thin post-content"

@@ -24,7 +24,7 @@ export default function Recent({ data }: Props) {
       <Swiper
         className="flex"
         spaceBetween={0}
-        loop
+        loop={data.length > 3 ? true : false}
         autoplay={{
           delay: 2000,
 

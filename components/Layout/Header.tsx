@@ -26,7 +26,6 @@ export default function Header() {
     if (data && data.menuItems) {
       const formattedNavs = data.menuItems.edges.map((r: any) => {
         return {
-          
           href: r.node.path,
           label: r.node.label,
           subItems: r.node?.childItems?.edges.map((subItem: any) => ({
@@ -35,9 +34,8 @@ export default function Header() {
           })),
         };
       });
-      
-      
-      console.log({formattedNavs,data})
+
+      console.log({ formattedNavs, data });
 
       setNavLinks(formattedNavs);
     }
@@ -158,7 +156,7 @@ export default function Header() {
                                 {i.subItems.map((l) => (
                                   <>
                                     <Link
-                                      className="hover:text-brand-blue-dark"
+                                      className="font-isidorasans hover:text-brand-blue-dark"
                                       href={l.href}
                                     >
                                       {l.label}

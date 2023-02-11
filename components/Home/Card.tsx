@@ -27,7 +27,7 @@ export default function Card(props: any) {
             isAnimationPlaying ? " h-full  py-4 opacity-100 " : "h-4  opacity-0"
           }`}
         >
-          <h4 className="text-center  lg:px-16 text-white text-sm md:text-md font-medium">
+          <h4 className="text-center font-isidorasans_semi_bold  lg:px-16 text-white text-sm md:text-md font-medium">
             {props.title.rendered}
           </h4>
 

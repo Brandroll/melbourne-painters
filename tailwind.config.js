@@ -44,6 +44,9 @@ module.exports = {
         double: "200%",
         80: "20rem",
         128: "32rem",
+        150: "37.5rem",
+        192: "40rem",
+        890: "890px",
       },
 
       fontSize: {
