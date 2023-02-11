@@ -8,7 +8,7 @@ export default function PopupButton(props: any) {
         setIsSelected(!isSelected);
       }}
       className={` ${
-        isSelected ? "bg-brand-blue-dark" : "bg-brand-blue "
+        isSelected ? "bg-brand-blue-dark" : "bg-form-btn "
       } info-btn bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer `}
     >
       <span className="font-isidorasans_regular whitespace-nowrap capitalize px-4">

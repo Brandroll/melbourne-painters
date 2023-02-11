@@ -71,25 +71,29 @@ export const YourProject: React.FC<any> = ({
       }}
     >
       {({ register, formState: {} }) => (
-        <div className="max-w-site-full text-brand-blue md:px-32">
-          <section className="my-4">
-            <h4 className="mb-2">WHEN DO YOU EXPECT YOUR PROJECT TO START?*</h4>
+        <div className="max-w-site-full text-form-btn md:px-32">
+          <section className="my-6">
+            <h4 className="mb-4 text-left  font-isidorasans_semi_bold">
+              WHEN DO YOU EXPECT YOUR PROJECT TO START?*
+            </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {expections.map((b) => (
                 <PopupButton label={b} />
               ))}
             </div>
           </section>
-          <section className="my-4">
-            <h4 className="mb-2">RESIDENTIAL, COMMERCIAL OR INDUSTRIAL*</h4>
+          <section className="my-6">
+            <h4 className="mb-4 text-left  font-isidorasans_semi_bold">
+              RESIDENTIAL, COMMERCIAL OR INDUSTRIAL*
+            </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {resident.map((b) => (
                 <PopupButton label={b} />
               ))}
             </div>
           </section>
-          <section className="my-4">
-            <h4 className="mb-2">
+          <section className="my-6">
+            <h4 className="mb-4 text-left font-isidorasans_semi_bold">
               WHAT KIND OF PAINTING SERVICE DO YOU REQUIRE?*
             </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">

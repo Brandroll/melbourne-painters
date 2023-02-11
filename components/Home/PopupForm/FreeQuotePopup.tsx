@@ -53,7 +53,9 @@ export default function CreateOrUpdateAddressForm() {
   return (
     <div className="min-h-screen w-full bg-form lg:px-16  p-5 sm:p-8 md:min-h-0 md:rounded-xl">
       <div className="hidden md:block">
-        <h5 className="font-roboto  font-semibold text-xl">Free Quote</h5>
+        <h5 className="font-roboto  font-semibold text-form-btn text-xl">
+          Free Quote
+        </h5>
         <div className="flex gap-8 justify-center">
           {[
             { src: "1-done.png", label: "1 YOUR PROJECT" },
@@ -62,7 +64,9 @@ export default function CreateOrUpdateAddressForm() {
           ].map((i, n) => (
             <div
               className={`${
-                currentForm - 1 === n ? "opacity-100" : "opacity-50"
+                currentForm - 1 === n
+                  ? "opacity-100 text-form-btn"
+                  : "opacity-50"
               }`}
             >
               <Image
@@ -72,7 +76,9 @@ export default function CreateOrUpdateAddressForm() {
                 width={100}
                 height={50}
               />
-              <p className="my-2 text-brand-blue-dark font-roboto text-sm font-medium  ">
+              <p
+                className={` my-2 text-brand-blue-dark font-isidorasans_semi_bold text-sm font-medium   `}
+              >
                 {i.label}
               </p>
             </div>
@@ -105,7 +111,7 @@ export default function CreateOrUpdateAddressForm() {
                   } else {
                   }
                 }}
-                className="rounded-xl outline-none text-white py-2 px-16 w-16 flex justify-center bg-brand-blue border "
+                className="info-btn py-2 bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer"
               >
                 Previous
               </button>
@@ -119,14 +125,14 @@ export default function CreateOrUpdateAddressForm() {
                   } else {
                   }
                 }}
-                className="rounded-xl outline-none text-white py-2 px-16 w-16 flex justify-center bg-brand-blue border "
+                className="info-btn py-2 bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer"
               >
-                NEXT
+                Next
               </button>
             )}
             {currentForm == 3 && (
-              <button className="rounded-xl outline-none text-white py-2 px-16 w-16 flex justify-center bg-brand-blue border ">
-                SUBMIT
+              <button className="info-btn py-2 bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer">
+                Submit
               </button>
             )}
           </div>

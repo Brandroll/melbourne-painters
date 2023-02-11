@@ -5,7 +5,7 @@ const RadioFormGroup = ({ value }: { value: string }) => {
     <>
       <div className="gchoice  ">
         <input className="hidden" value={value} tabIndex={26} />
-        <label className="info-btn bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer ">
+        <label className="info-btn bg-popup-button uppercase hover:bg-brand-blue-dark hover:cursor-pointer ">
           {value}
         </label>
       </div>
@@ -21,7 +21,7 @@ const FormGroup = ({
 }) => {
   return (
     <div className="grid my-2   ">
-      <label className=" text-brand-blue   font-roboto font-medium text-left">
+      <label className=" text-popup-button  font-roboto font-medium text-left">
         {label}
       </label>
       <input
@@ -52,19 +52,21 @@ const YourInfo: React.FC<any> = ({ onSubmit }) => {
           <FormGroup label="Mobile" type="text" />
         </div>
         <div className="my-2">
-          <h3 className="mb-2 text-brand-blue">WHEN CAN WE CONTACT YOU?</h3>
+          <h3 className="mb-2 text-popup-button text-left -ml-4">
+            WHEN CAN WE CONTACT YOU?
+          </h3>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid -ml-4 justify-start md:grid-cols-3 gap-4">
             {_contact.map((value) => (
               <RadioFormGroup value={value} />
             ))}
           </div>
         </div>
-        <textarea
+        {/* <textarea
           className="p-4 w-2/3 border-b-4 border-brand-blue rounded-md outline-none"
-          placeholder="Postcode / Suburb"
+          placeholder="/ Suburb"
           required
-        />
+        /> */}
         {/* <FormGroup label="POSTCODE/SUBURB*" type="text" /> */}
       </form>
     </div>

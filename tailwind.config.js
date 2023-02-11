@@ -77,6 +77,7 @@ module.exports = {
         black: "#424242",
         footer: "#F5F5F5",
         "drawer-overlay": "#4242427d",
+        "form-btn": "#646464",
         accent: withOpacity("--color-accent"),
         light: withOpacity("--color-light"),
         dark: withOpacity("--color-dark"),
@@ -112,6 +113,7 @@ module.exports = {
         "orange-700": withOpacity("--color-orange-700"),
         "orange-800": withOpacity("--color-orange-800"),
         "orange-900": withOpacity("--color-orange-900"),
+
         social: {
           facebook: "#3b5998",
           "facebook-hover": "#35508a",
