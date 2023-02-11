@@ -20,7 +20,7 @@ export default function Grid({
       <section className="grid -mt-4 my-4 px-4 max-w-site-full xl:grid-cols-2 gap-2 mx-auto">
         {grid.map((blog) => (
           <div key={Math.random()}>
-            <h4
+            <div
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(blog.heading),
               }}
