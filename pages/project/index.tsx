@@ -26,7 +26,7 @@ export default function About(props: { projects: any }) {
         >
           <Fade bottom>
             <div className="p-8 pb-12 bg-brand-blue ">
-              <h1 className="text-white mt-4 font-semibold text-5xl">
+              <h1 className="text-white  mt-4  font-semibold text-1.8rem xl:text-5xl lg:text-4xl">
                 RECENT <br /> PROJECTS
               </h1>
             </div>
@@ -80,7 +80,9 @@ export default function About(props: { projects: any }) {
                 }}
                 className="  bg-overlay  font-semibold bg-center hover:scale-110 transition-all duration-700 ease-in-out  bg-dicken-streen text-xl text-white  bg-no-repeat bg-cover border flex flex-col items-center gap-8 justify-center py-24"
               >
-                <p className="uppercase text-md">{project.title.rendered}</p>
+                <p className="uppercase text-md text-white">
+                  {project.title.rendered}
+                </p>
                 <Link href={`/project/${project.slug}`}>
                   <button className="px-6 py-3 text-xs hover:bg-brand-blue-dark bg-brand-blue rounded-3xl">
                     VIEW PROJECT

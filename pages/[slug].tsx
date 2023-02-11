@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async ({
   const url = process.env.NEXT_WP_API_URL + `/service?slug=${slug}`;
 
   const services = await fetch(url).then((r) => r.json());
-  const homepage_url = process.env.NEXT_WP_API_URL + `/pages/107`;
+  const homepage_url = process.env.NEXT_WP_API_URL + `/custom-page/671`;
   const homePageData = await fetch(homepage_url).then((r) => r.json());
 
   const t = services.length > 0 ? services[0] : null;

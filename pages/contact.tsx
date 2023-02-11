@@ -7,7 +7,7 @@ export default function Contact(props: { data: any }) {
     <>
       <YoastNextSeo {...props.data.yoast_head_json} />
 
-      <SimpleHero />
+      <SimpleHero bgImg={props.data?.x_featured_media_large} />
       <Fade bottom>
         <section className="max-w-site-full  mx-auto">
           <section className="grid grid-cols-2 lg:shadow-2xl bg-white lg:-mt-8 p-4 my-8 md:my-0 lg:my-8 px-4   md:grid-cols-8 gap-1">

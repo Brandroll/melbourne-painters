@@ -16,7 +16,9 @@ button {
 button:active {
   @apply outline-none;
 }
-
+p {
+  @apply text-black;
+}
 h1,
 h2,
 h3
@@ -41,7 +43,7 @@ h4> h1 {
 }
 
 p,form {
-  @apply font-isidorasans_regular leading-6;
+  @apply font-isidorasans_regular leading-6 text-black;
 }
 /* .project  p,h1,h2,h3,h4{
   @apply font-roboto  ;

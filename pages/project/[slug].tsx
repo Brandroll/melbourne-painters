@@ -25,17 +25,17 @@ export default function SingleProject({ project }: Props) {
         <div
           style={{ backgroundColor: "#EBEBEB" }}
           // style={{ backgroundColor: "#FAFAFA" }}
-          className="col-span-2 -mt-10 mb-8  "
+          className="col-span-6 xl:col-span-2 -mt-10 mb-8  "
         >
           <Fade bottom>
-            <div className=" px-10 py-8  pb-3.67  bg-brand-blue ">
-              <h1 className="text-white mt-5 font-semibold text-4xl">
+            <div className="  px-8 xl:px-12 py-8  pb-3.67  bg-brand-blue ">
+              <h1 className="text-white    mt-4  font-semibold text-3xl xl:text-5xl lg:text-4xl">
                 {title.rendered}
               </h1>
             </div>
           </Fade>
         </div>
-        <div className="col-span-6">
+        <div className="col-span-8 xl:col-span-6">
           {/* <div className="flex justify-center gap-2 lg:justify-end">
             <Image
               src="/imgs/Painters-Melbourne-Accredited-Painter-512px-300x300.jpg"
@@ -53,7 +53,7 @@ export default function SingleProject({ project }: Props) {
           </div> */}
           <div
             style={{ backgroundColor: "#FAFAFA" }}
-            className="  px-4 lg:px-16 py-12 font-thin post-content"
+            className="  px-8 xl:px-16 py-12 font-thin post-content"
           >
             <Fade bottom>
               <div className="project">

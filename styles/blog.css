@@ -195,7 +195,7 @@ footer {
 .post-content h2 {
   font-size: 24px;
   font-weight: 700;
-  color: #100f0f;
+  color: #424242;
 
   margin: 10px 0;
 }
@@ -277,7 +277,7 @@ main {
   line-height: 1.6em;
   margin: 0.5rem 0;
   font-size: 16px;
-color:#171719;
+color:#424242;
 }
 
 .post-content li>img {
@@ -502,7 +502,7 @@ ul.wp-block-gallery>li>figure>img {
   height: 50px;
   border: none;
   outline: none;
-  color: #100f0f;
+  color: #424242;
   cursor: pointer;
 }
 

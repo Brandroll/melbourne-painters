@@ -42,11 +42,11 @@ export default function Home(props: Props) {
 export const getStaticProps = async () => {
   const url = process.env.NEXT_WP_API_URL + `/project`;
   const services_url = process.env.NEXT_WP_API_URL + `/service`;
-  const homepage_url = process.env.NEXT_WP_API_URL + `/pages/107`;
+  const homepage_url = process.env.NEXT_WP_API_URL + `/custom-page/671`;
   const projects = await fetch(url).then((r) => r.json());
   const services = await fetch(services_url).then((r) => r.json());
   const homePageData = await fetch(homepage_url).then((r) => r.json());
- 
+
   return {
     props: {
       projects,

@@ -37,9 +37,29 @@ export default function AlternateGrid({
               } flex xl:justify-center items-center `}
             >
               {calc(i) === "even" ? (
-                <Fade right>
-                  <Image src={content.image} alt="" width={1020} height={900} />
-                </Fade>
+                <>
+                  <div className="lg:block hidden">
+                    <Fade right>
+                      <Image
+                        src={content.image}
+                        alt=""
+                        width={1020}
+                        height={900}
+                      />
+                    </Fade>
+                  </div>
+
+                  <div className="block lg:hidden">
+                    <Fade left>
+                      <Image
+                        src={content.image}
+                        alt=""
+                        width={1020}
+                        height={900}
+                      />
+                    </Fade>
+                  </div>
+                </>
               ) : (
                 <Fade left>
                   <Image src={content.image} alt="" width={1020} height={900} />

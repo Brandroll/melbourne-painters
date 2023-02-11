@@ -7,7 +7,9 @@ export default function Why({ cta }: { cta: Boolean }) {
   const { reasons, error } = useReasons();
 
   return (
-    <div className={`bg-why-section py-8 ${!cta && "pb-12 md:pb-20"}  md:px-8`}>
+    <div
+      className={`bg-why-section py-8  ${!cta && "pb-12 md:pb-20"}  md:px-8`}
+    >
       <Fade bottom>
         <div className="max-w-site-full mx-auto">
           <h3 className="text-center mb-4 md:mb-16 text-xl    px-10 md:my-8 text-brand-blue md:text-why font-medium">
@@ -36,7 +38,7 @@ export default function Why({ cta }: { cta: Boolean }) {
                         />
                       </div>
                     </Fade>
-                    <div className="  font-isidorasans_medium text-md mb-2 font-normal  ">
+                    <div className=" text-navbar-drawer  font-isidorasans_medium text-md mb-2 font-normal  ">
                       {i.info}
                     </div>
                   </div>

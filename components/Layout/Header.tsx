@@ -129,7 +129,7 @@ export default function Header() {
                   >
                     <div>
                       <p
-                        className={`font-isidorasans ${
+                        className={`font-isidorasans text-white ${
                           router.asPath === i.href ? "text-brand-blue-dark" : ""
                         }  hover:text-brand-blue cursor-pointer relative`}
                       >

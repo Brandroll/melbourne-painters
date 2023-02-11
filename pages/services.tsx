@@ -36,8 +36,8 @@ export default function ServicePage(props: Props) {
           className="col-span-2 -mt-10 mb-8  "
         >
           <Fade bottom>
-            <div className="p-8 pb-12 bg-brand-blue ">
-              <h1 className="text-white mt-4 font-semibold text-5xl">
+            <div className=" p-8     pb-12 bg-brand-blue ">
+              <h1 className="text-white  mt-4  font-semibold text-3xl xl:text-5xl lg:text-4xl">
                 OUR <br /> SERVICES
               </h1>
             </div>
@@ -90,8 +90,10 @@ export default function ServicePage(props: Props) {
                 }}
                 className="  bg-overlay  font-semibold bg-center hover:scale-110 transition-all duration-700 ease-in-out  bg-dicken-streen text-xl text-white  bg-no-repeat bg-cover border flex flex-col items-center gap-8 justify-center py-24"
               >
-                <p className="uppercase text-md">{project.title.rendered}</p>
-                <Link href={`/project/${project.slug}`}>
+                <p className="uppercase text-white text-md">
+                  {project.title.rendered}
+                </p>
+                <Link href={`/${project.slug}`}>
                   <button className="px-6 py-3 text-xs hover:bg-brand-blue-dark bg-brand-blue rounded-3xl">
                     VIEW SERVICE
                   </button>

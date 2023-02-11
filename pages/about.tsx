@@ -16,7 +16,7 @@ export default function About(props: { data: any }) {
   return (
     <>
       <YoastNextSeo {...props.data.yoast_head_json} />
-      <SimpleHero />
+      <SimpleHero bgImg={props.data?.x_featured_media_large} />
 
       <section className="grid max-w-site-full  px-4  md:grid-cols-8 md:mx-auto">
         <div
@@ -25,7 +25,7 @@ export default function About(props: { data: any }) {
         >
           <Fade bottom>
             <div className="p-8 pb-12 bg-brand-blue ">
-              <h1 className="text-white mt-4 font-semibold text-5xl">
+              <h1 className="text-white  mt-4  font-semibold text-3xl xl:text-5xl lg:text-4xl">
                 ABOUT <br /> US
               </h1>
             </div>
@@ -102,12 +102,12 @@ export default function About(props: { data: any }) {
 }
 
 export const getStaticProps = async () => {
-  const url = process.env.NEXT_WP_API_URL + "/pages?slug=about-us";
+  const url = process.env.NEXT_WP_API_URL + "/custom-page/672";
   const data = await fetch(url).then((r) => r.json());
 
   return {
     props: {
-      data: data[0],
+      data: data,
     },
   };
 };
