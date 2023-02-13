@@ -279,7 +279,9 @@ main {
   font-size: 16px;
 color:#424242;
 }
-
+.text-grid-a-inline-block  a{
+display:  inline-block;
+}
 .post-content li>img {
   margin: 0 10px;
 }
