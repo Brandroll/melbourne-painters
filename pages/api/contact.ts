@@ -42,7 +42,9 @@ export default function handler(
         if (resp.data.is_valid) {
           res.status(200).json({ message: "Form Has Been Submitted" });
         } else {
-          res.status(404).json({ error: "Error While Submitting" });
+          res
+            .status(404)
+            .json({ error: "Error While Submitting", name: resp.data });
         }
       })
       .catch((err) => {
