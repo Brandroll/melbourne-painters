@@ -1,3 +1,4 @@
+import Form from "@/components/Contact/Form";
 import SimpleHero from "@/components/UI/SimpleHero";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
 import Fade from "react-reveal/Fade";
@@ -65,21 +66,7 @@ export default function Contact(props: { data: any }) {
                       </span>
                     </a>
                   </div>
-                  {/* <div className="flex font-bold gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-6 h-6 text-brand-blue"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <p>16 Boston Court Narre Warren VIC 3805</p>
-                  </div> */}
+
                   <h3 className="text-2xl my-2  text-brand-blue">
                     Contact Form
                   </h3>
@@ -88,122 +75,7 @@ export default function Contact(props: { data: any }) {
               <h3 className="px-4 py-4 text-3xl font-isidorasans_semi_bold text-brand-blue">
                 Contact Us
               </h3>
-              <form className="grid grid-cols-2 py-4 font-isidorasans_medium  px-4 gap-8 font-normal">
-                <div className="grid col-span-2 lg:col-span-1">
-                  <label className=" text-brand-blue mb-3  ">First Name</label>
-                  <input
-                    className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                    placeholder="First Name"
-                    type={"text"}
-                    required
-                  />
-                </div>
-                <div className="grid col-span-2 lg:col-span-1">
-                  <label className=" text-brand-blue mb-3 ">Last Name</label>
-                  <input
-                    className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                    placeholder="Last Name"
-                    type={"text"}
-                    required
-                  />
-                </div>
-                <div className="grid col-span-2 lg:col-span-1 ">
-                  <label className=" text-brand-blue mb-3 ">
-                    Your Email Address
-                  </label>
-                  <input
-                    className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                    placeholder="Your Email Address"
-                    type={"email"}
-                    required
-                  />
-                </div>
-                <div className="grid col-span-2 lg:col-span-1 ">
-                  <label className=" text-brand-blue mb-3  ">
-                    Your Phone Number
-                  </label>
-                  <input
-                    className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                    placeholder="Your Phone Number"
-                    type={"text"}
-                    required
-                  />
-                </div>
-
-                <div className="grid col-span-2 lg:col-span-1 ">
-                  <label className=" text-brand-blue mb-3 ">
-                    Enquire About
-                  </label>
-                  <select
-                    className="p-4 border-b-4 w-full border-brand-blue rounded-md outline-none"
-                    placeholder="Your Phone Number"
-                    required
-                  >
-                    <option value="Please select">Please select</option>
-                    <option value="Power Washing">Power Washing</option>
-                    <option value="Brick, Concrete, Drywall &amp; Plaster Painting">
-                      Brick, Concrete, Drywall &amp; Plaster Painting
-                    </option>
-                    <option value="Drywall &amp; Plaster Repair">
-                      Drywall &amp; Plaster Repair
-                    </option>
-                    <option value="Structural Steel Painting">
-                      Structural Steel Painting
-                    </option>
-                    <option value="Concrete Finishing">
-                      Concrete Finishing
-                    </option>
-                    <option value="Wood Finishing">Wood Finishing</option>
-                    <option value="Elastomer Coatings">
-                      Elastomer Coatings
-                    </option>
-                    <option value="Stripping &amp; Refinishing">
-                      Stripping &amp; Refinishing
-                    </option>
-                    <option value="Low Voc &amp; No Voc Paints">
-                      Low Voc &amp; No Voc Paints
-                    </option>
-                    <option value="Urethane &amp; Epoxy Coatings">
-                      Urethane &amp; Epoxy Coatings
-                    </option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div className="grid col-span-2 lg:col-span-1 ">
-                  <label className=" text-brand-blue mb-3 ">
-                    When can we contact you
-                  </label>
-                  <select
-                    className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                    placeholder="Your Phone Number"
-                    required
-                  >
-                    <option value="Please select">Please select</option>
-                    <option value="Morning 9am - 12pm">
-                      Morning 9am - 12pm
-                    </option>
-                    <option value="Afternoon 12pm - 5pm">
-                      Afternoon 12pm - 5pm
-                    </option>
-                    <option value="Evening 5pm - 7PM">Evening 5pm - 7PM</option>
-                    <option value="Late evening 7PM - 9PM">
-                      Late evening 7PM - 9PM
-                    </option>
-                  </select>
-                </div>
-                <div className="grid col-span-2">
-                  <label className=" text-brand-blue mb-3 ">Message</label>
-                  <textarea
-                    className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                    placeholder="Message"
-                    required
-                  />
-                </div>
-                <button className="py-2 uppercase px-8 bg-brand-blue rounded-3xl text-white max-w-fit">
-                  Submit
-                </button>
-              </form>
+              <Form />
             </div>
             <div className="col-span-2 hidden lg:block px-2">
               <div>

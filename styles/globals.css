@@ -45,9 +45,7 @@ h4> h1 {
 p,form {
   @apply font-isidorasans_regular leading-6 text-black;
 }
-.text-grid-a-inline-block > a{
-  @apply inline-block;
-}
+
 /* .project  p,h1,h2,h3,h4{
   @apply font-roboto  ;
  

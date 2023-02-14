@@ -419,6 +419,13 @@ autoprefixer@^10.4.13:
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
 
+axios-oauth-1.0a@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/axios-oauth-1.0a/-/axios-oauth-1.0a-0.3.6.tgz#fbf3efc25386cbc1e42475d4af38e60f81314bf0"
+  integrity sha512-WJqWaZ4JXsz31F38tljTZ8p+dGuTV8h7mjEpkZJuaEluR8NILvkFuHLSD9XPL0RLwThNe01tr8HXsiSJk8DNLg==
+  dependencies:
+    oauth-sign "^0.9.0"
+
 axios@^0.27.2:
   version "0.27.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
@@ -529,6 +536,11 @@ client-only@0.0.1, client-only@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
+
+clsx@^1.1.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
 
 color-name@^1.1.4:
   version "1.1.4"
@@ -1231,6 +1243,11 @@ nwsapi@^2.2.2:
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.2.tgz#e5418863e7905df67d51ec95938d67bf801f0bb0"
   integrity sha512-90yv+6538zuvUMnN+zCr8LuV6bPFdq50304114vJYJ8RDyK8D5O9Phpbd6SZWgI7PwzmmfN1upeOJlvybDSgCw==
 
+oauth-sign@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
+  integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -1540,6 +1557,13 @@ react-swipeable@^6.1.0:
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-6.2.2.tgz#52ba570f3a7a90db7093094ec476f3d151f727d1"
   integrity sha512-Oz7nSFrssvq2yvy05aNL3F+yBUqSvLsK6x1mu+rQFOpMdQVnt4izKt1vyjvvTb70q6GQOaSpaB6qniROW2MAzQ==
+
+react-toastify@^9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-9.1.1.tgz#9280caea4a13dc1739c350d90660a630807bf10b"
+  integrity sha512-pkFCla1z3ve045qvjEmn2xOJOy4ZciwRXm1oMPULVkELi5aJdHCN/FHnuqXq8IwGDLB7PPk2/J6uP9D8ejuiRw==
+  dependencies:
+    clsx "^1.1.1"
 
 react-zoom-pan-pinch@^2.1.3:
   version "2.2.1"

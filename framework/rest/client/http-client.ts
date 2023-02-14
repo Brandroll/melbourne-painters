@@ -11,14 +11,12 @@ const Axios = axios.create({
 
 export class HttpClient {
   static async get<T>(url: string, params?: unknown) {
-    // console.log({ url });
-
     const response = await Axios.get<T>(url, { params });
     return response.data;
   }
 
   static async post<T>(url: string, data: unknown, options?: any) {
-    // const response = await Axios.post<T>(url, data, options);
+    console.log(`Here`, url, data, options);
     const response = await Axios.post<T>(url, data, options);
     return response.data;
   }

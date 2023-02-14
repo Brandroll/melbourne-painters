@@ -724,10 +724,13 @@ export interface DownloadableFile {
 }
 
 export interface CreateContactUsInput {
-  name: string;
+  first_name: string;
+  last_name: string;
+  phone: string;
+  enquiry: string;
   email: string;
-  subject: string;
-  description: string;
+  contact: string;
+  message?: string;
 }
 
 export interface CardInput {

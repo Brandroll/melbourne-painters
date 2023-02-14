@@ -1,6 +1,9 @@
 import "../styles/globals.css";
 import "../styles/blog.css";
 import { QueryClient, QueryClientProvider } from "react-query";
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
 
 import type { AppProps } from "next/app";
 import { Open_Sans, Montserrat, Roboto } from "@next/font/google";
@@ -83,6 +86,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Footer />
             <ManagedModal />
             <ManagedDrawer />
+            <ToastContainer autoClose={2000} theme="colored" />
           </>
         </ModalProvider>
       </ApolloProvider>
