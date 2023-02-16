@@ -35,8 +35,6 @@ export default function Header() {
         };
       });
 
-      console.log({ formattedNavs, data });
-
       setNavLinks(formattedNavs);
     }
   }, [data]);
