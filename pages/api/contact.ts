@@ -47,7 +47,6 @@ export default async function handler(
       const formResp = await axios({
         method: "post",
         url: "https://cms.melbourne-painters.com.au/wp-json/gf/v2/forms/1/submissions",
-
         data,
       });
       try {

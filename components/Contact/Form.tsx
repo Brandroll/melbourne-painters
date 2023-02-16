@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { Form } from "@/components/UI/forms/Form";
 import { CreateContactUsInput } from "@/types";
-import { useContact } from "@/framework/rest/user";
+
 import React, { TextareaHTMLAttributes, useState } from "react";
 import Input from "./ContactInput";
 import { toast } from "react-toastify";
@@ -66,11 +66,11 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
 });
 export default function ContactForm() {
   const recaptchaRef = React.createRef();
-  const [resetForm, setResetForm] = useState("");
+  const [resetForm, setResetForm] = useState({});
   const onReCAPTCHAChange = (captchaCode: string) => {
     // If the reCAPTCHA code is null or undefined indicating that
     // the reCAPTCHA was expired then return early
-    console.log(captchaCode);
+
     if (!captchaCode) {
       return;
     }
@@ -81,7 +81,15 @@ export default function ContactForm() {
     // submits another email.
     // recaptchaRef.current.reset();
   };
-
+  const resetValues = {
+    first_name: "",
+    last_name: "",
+    phone: "",
+    email: "",
+    enquiry: "",
+    contact: "",
+    message: "",
+  };
   function onSubmit(values: CreateContactUsInput) {
     const token = recaptchaRef.current.getValue();
     if (!token) {
@@ -95,7 +103,7 @@ export default function ContactForm() {
       .then((res) => {
         if (res.data.message) {
           toast.success(res.data.message);
-          setResetForm(null);
+          setResetForm(resetValues);
         }
       })
       .catch((err) => {
@@ -124,21 +132,6 @@ export default function ContactForm() {
               type="text"
               error={errors.last_name?.message!}
             />
-
-            {/*         
-            <div className="grid col-span-2 lg:col-span-1">
-              <label className=" text-brand-blue mb-3  ">Last name</label>
-              <input
-                className="p-4 border-b-4 border-brand-blue rounded-md outline-none"
-                placeholder={"Last name"}
-                type={"text"}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="off"
-                spellCheck="false"
-                {...register("last_name")}
-              />
-            </div> */}
 
             <Input
               label="Your Email Address"

@@ -55,6 +55,8 @@ export const Form = <
   }, [serverError, methods]);
 
   useEffect(() => {
+    console.log({ resetValues });
+
     if (resetValues) {
       methods.reset(resetValues);
     }
