@@ -21,7 +21,7 @@ const FormGroup = ({
 
 const MobileForm: React.FC<any> = ({ onSubmit }) => {
   return (
-    <div className="lg:w-240 mx-auto py-8">
+    <div className=" mx-auto py-8">
       <form className="flex flex-col items-center justify-center">
         <FormGroup label="First Name" type="text" />
         <FormGroup label="Last Name" type="text" />

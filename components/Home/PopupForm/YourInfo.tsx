@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const RadioFormGroup = ({ value }: { value: string }) => {
   return (
@@ -21,7 +21,7 @@ const FormGroup = ({
 }) => {
   return (
     <div className="grid my-2   ">
-      <label className=" text-popup-button  font-roboto font-medium text-left">
+      <label className=" text-popup-button  font-isidorasans uppercase font-medium text-left">
         {label}
       </label>
       <input
@@ -42,9 +42,15 @@ const _contact = [
   "ASAP",
 ];
 const YourInfo: React.FC<any> = ({ onSubmit }) => {
+  const [selectTime, setTime] = useState("");
   return (
     <div className="lg:w-240 mx-auto py-8">
-      <form className="flex flex-col items-center justify-center">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+        className="flex flex-col items-center justify-center"
+      >
         <div className="grid grid-cols-2 gap-4">
           <FormGroup label="First Name" type="text" />
           <FormGroup label="Last Name" type="text" />
@@ -57,8 +63,23 @@ const YourInfo: React.FC<any> = ({ onSubmit }) => {
           </h3>
 
           <div className="grid -ml-4 justify-start md:grid-cols-3 gap-4">
-            {_contact.map((value) => (
-              <RadioFormGroup value={value} />
+            {_contact.map((opt) => (
+              <button
+                onClick={() => {
+                  if (selectTime === opt) {
+                    setTime("");
+                  } else {
+                    setTime(opt);
+                  }
+                }}
+                className={`${
+                  opt === selectTime ? "bg-brand-blue-dark" : "bg-form-btn"
+                }  info-btn bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer `}
+              >
+                <span className="font-isidorasans_regular whitespace-nowrap capitalize px-4">
+                  {opt.toUpperCase()}
+                </span>
+              </button>
             ))}
           </div>
         </div>

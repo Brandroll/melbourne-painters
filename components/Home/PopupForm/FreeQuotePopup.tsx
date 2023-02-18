@@ -1,3 +1,4 @@
+import ContactForm from "@/components/Contact/Form";
 import ProgressBox from "@/components/UI/Progress-box/Progress-box";
 import Image from "next/image";
 
@@ -5,7 +6,7 @@ import { useState } from "react";
 import MobileForm from "./MobileForm";
 import ProjectDetail from "./ProjectDetail";
 import YourInfo from "./YourInfo";
-import YourProject from "./YourProject";
+import YourProject from "./YourProject/index";
 
 type FormValues = {
   title: string;
@@ -52,11 +53,11 @@ export default function CreateOrUpdateAddressForm() {
   function onInfo(values: FormValues) {}
   return (
     <div className="min-h-screen w-full bg-form lg:px-16  p-5 sm:p-8 md:min-h-0 md:rounded-xl">
-      <div className="hidden md:block">
-        <h5 className="font-roboto  font-semibold text-form-btn text-xl">
+      <div className="hidden lg:block">
+        {/* <h5 className="font-roboto  font-semibold text-form-btn text-xl">
           Free Quote
-        </h5>
-        <div className="flex gap-8 justify-center">
+        </h5> */}
+        <div className="flex mb-3 gap-8 justify-center">
           {[
             { src: "1-done.png", label: "1 YOUR PROJECT" },
             { src: "2-done.png", label: "2 PROJECT DETAILS" },
@@ -67,7 +68,7 @@ export default function CreateOrUpdateAddressForm() {
                 currentForm - 1 === n
                   ? "opacity-100 text-form-btn"
                   : "opacity-50"
-              }`}
+              }  `}
             >
               <Image
                 className="hidden md:block"
@@ -76,11 +77,11 @@ export default function CreateOrUpdateAddressForm() {
                 width={100}
                 height={50}
               />
-              <p
+              {/* <p
                 className={` my-2 text-brand-blue-dark font-isidorasans_semi_bold text-sm font-medium   `}
               >
                 {i.label}
-              </p>
+              </p> */}
             </div>
           ))}
         </div>
@@ -138,8 +139,9 @@ export default function CreateOrUpdateAddressForm() {
           </div>
         </div>
       </div>
-      <div className="md:hidden">
-        <MobileForm />
+      <div className="lg:hidden">
+        {/* <MobileForm /> */}
+        <ContactForm />
       </div>
     </div>
   );

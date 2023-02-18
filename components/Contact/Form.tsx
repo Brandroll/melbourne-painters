@@ -44,7 +44,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
   return (
     <div className={"grid col-span-2  "}>
       {label && (
-        <label htmlFor={name} className="  text-brand-blue mb-3 ">
+        <label htmlFor={name} className="text-left  text-brand-blue mb-3 ">
           {label}
         </label>
       )}
@@ -146,7 +146,9 @@ export default function ContactForm() {
             />
 
             <div className="grid col-span-2 lg:col-span-1 ">
-              <label className=" text-brand-blue mb-3 ">Enquire About</label>
+              <label className="text-left text-brand-blue mb-3 ">
+                Enquire About
+              </label>
               <select
                 className="p-4 border-b-4 w-full border-brand-blue rounded-md outline-none"
                 placeholder="Your Phone Number"
@@ -187,7 +189,7 @@ export default function ContactForm() {
             </div>
 
             <div className="grid col-span-2 lg:col-span-1 ">
-              <label className=" text-brand-blue mb-3 ">
+              <label className="text-left text-brand-blue mb-3 ">
                 When can we contact you
               </label>
               <select

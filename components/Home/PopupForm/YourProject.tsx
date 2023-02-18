@@ -2,6 +2,7 @@ import { Form } from "@/components/UI/forms/Form";
 import * as yup from "yup";
 import Button from "@/components/UI/Button";
 import PopupButton from "./PopupButton";
+import Selection from "./SelectOptions";
 
 type ProjectInfo = {
   time_to_start:
@@ -77,8 +78,8 @@ export const YourProject: React.FC<any> = ({
               WHEN DO YOU EXPECT YOUR PROJECT TO START?*
             </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
-              {expections.map((b) => (
-                <PopupButton label={b} />
+              {expections.map((opt) => (
+                <Selection option={opt} />
               ))}
             </div>
           </section>

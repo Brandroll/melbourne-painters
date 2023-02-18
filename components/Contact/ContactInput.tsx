@@ -36,7 +36,7 @@ const ContactInput = React.forwardRef<HTMLInputElement, Props>(
         {label && (
           <label
             htmlFor={name}
-            className="text-brand-blue block mb-3 text-sm font-semibold leading-none text-body-dark"
+            className="text-brand-blue block text-left mb-3 text-sm font-semibold leading-none text-body-dark"
           >
             {label}
           </label>
@@ -56,7 +56,7 @@ const ContactInput = React.forwardRef<HTMLInputElement, Props>(
           aria-invalid={error ? "true" : "false"}
           {...rest}
         />
-        {error && <p className="mt-2 text-xs text-red-500">{error}</p>}
+        {error && <p className="mt-2 text-xs  text-red-500">{error}</p>}
       </div>
     );
   }

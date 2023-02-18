@@ -285,7 +285,18 @@ display:  inline-block;
 .post-content li>img {
   margin: 0 10px;
 }
+.radio-item input[type='radio'] {
+  display: none;
+}
 
+.radio-item label {
+ 
+  background-color: rgb(41 205 167 / var(--tw-bg-opacity));
+  font-weight: normal;
+}
+
+ 
+ 
 .has-text-align-center img {
   justify-content: center;
 }
@@ -690,7 +701,7 @@ ul.wp-block-gallery>li>figure>img {
 
 @media (max-width:840px) {
   .simple-hero{
-    height: 12rem;
+    height: 23rem;
     max-height: 22rem;
     margin-top: 64px;
 
