@@ -79,7 +79,7 @@ export default function Header() {
               viewBox="0 0 24 24"
               strokeWidth={3}
               stroke="currentColor"
-              className="w-6 h-6 text-brand-blue-dark"
+              className="w-8 h-8 text-brand-blue-dark"
             >
               <path
                 strokeLinecap="round"
