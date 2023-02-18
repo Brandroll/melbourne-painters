@@ -22,12 +22,12 @@ const FormGroup = ({
   return (
     <div className="grid my-2   ">
       <label className=" text-popup-button  font-isidorasans uppercase font-medium text-left">
-        {label}
+        {label + ":"}
       </label>
       <input
         type={type}
         className="   w-80 py-2 px-2 p-4 border-b-4 border-brand-blue rounded-md outline-none"
-        placeholder={label + " :"}
+        placeholder={label}
       />
     </div>
   );

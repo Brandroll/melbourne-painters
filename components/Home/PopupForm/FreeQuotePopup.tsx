@@ -50,13 +50,18 @@ export default function CreateOrUpdateAddressForm() {
   function onSubmit(values: FormValues) {}
   function onProjectInfo(values: ProjectInfo) {}
   function onProjectDetails(values: FormValues) {}
+  const _heading = [
+    " YOUR Requirements",
+    " PROJECT address and further DETAILS",
+    " YOUR INFO",
+  ];
   function onInfo(values: FormValues) {}
   return (
     <div className="min-h-screen w-full bg-form lg:px-16  p-5 sm:p-8 md:min-h-0 md:rounded-xl">
       <div className="hidden lg:block">
-        {/* <h5 className="font-roboto  font-semibold text-form-btn text-xl">
-          Free Quote
-        </h5> */}
+        <h5 className="font-roboto uppercase  font-semibold mb-4 text-form-btn text-xl">
+          {_heading[currentForm - 1]}
+        </h5>
         <div className="flex mb-3 gap-8 justify-center">
           {[
             { src: "1-done.png", label: "1 YOUR PROJECT" },

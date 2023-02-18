@@ -9,12 +9,12 @@ const FormGroup = ({
   return (
     <div className="grid my-2   ">
       <label className=" text-popup-button  font-isidorasans uppercase font-medium text-left">
-        {label}
+        {label + ":"}
       </label>
       <input
         type={type}
         className="   w-full py-2 px-2 p-4 border-b-4 border-brand-blue rounded-md outline-none"
-        placeholder={label + " :"}
+        placeholder={label}
       />
     </div>
   );
@@ -28,13 +28,13 @@ const ProjectDetail: React.FC<any> = ({
 }) => {
   return (
     <div className="w-full ">
-      <h1 className="uppercase  text-left px-16 text-popup-button my-4">
-        Project Details
+      <h1 className="uppercase  text-left px-16 text-popup-button  mt-2">
+        Project Details:
       </h1>
 
       <textarea
         className="font-isidorasans_regular p-4  border-b-4 border-brand-blue rounded-md   outline-none px-4"
-        placeholder="Please write any further details of your project here"
+        placeholder="Please write any further details about your project here"
         rows={5}
         cols={100}
       ></textarea>

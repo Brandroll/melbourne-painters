@@ -127,7 +127,7 @@ export default function Header() {
                   >
                     <div>
                       <p
-                        className={`font-isidorasans text-white ${
+                        className={`  font-isidorasans text-white ${
                           router.asPath === i.href ? "text-brand-blue-dark" : ""
                         }  hover:text-brand-blue cursor-pointer relative`}
                       >
@@ -150,7 +150,7 @@ export default function Header() {
                               }}
                               className="lg:absolute   top-6 bg-navbar"
                             >
-                              <div className="flex flex-col gap-4 p-2">
+                              <div className="flex flex-col gap-4 p-6">
                                 {i.subItems.map((l) => (
                                   <>
                                     <Link

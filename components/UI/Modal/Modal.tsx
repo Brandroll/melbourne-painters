@@ -55,7 +55,7 @@ export default function Modal({ open, onClose, children }: any) {
                 onClick={onClose}
                 aria-label="Close panel"
                 ref={cancelButtonRef}
-                className="absolute top-4 right-8  z-[60] inline-block outline-none focus:outline-none ltr:right-4 rtl:left-4 lg:hidden"
+                className="absolute top-4 right-8  z-[60] inline-block outline-none focus:outline-none ltr:right-4 rtl:left-4 "
               >
                 <span className="sr-only">{"text-close"}</span>
                 <CloseIcon className="h-8 w-8 " />

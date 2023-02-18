@@ -83,7 +83,7 @@ export default function MobileMainMenu() {
           <li key={`${href}${label}`}>
             <button
               onClick={() => handleClick(href)}
-              className="flex justify-between cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
+              className="flex text-md justify-between cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
             >
               {label}
 
@@ -107,7 +107,7 @@ export default function MobileMainMenu() {
             {showSubItems &&
               subItems &&
               subItems.map((item) => (
-                <li className="flex ml-4 cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-12">
+                <li className="flex ml-4 text-md  cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-12">
                   {item.label}
                 </li>
               ))}
@@ -116,14 +116,14 @@ export default function MobileMainMenu() {
         <li>
           <a
             href="tel:1300%20662%20344"
-            className=" flex cursor-pointer  font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8 gap-2"
+            className="text-md  flex cursor-pointer  font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8 gap-2"
             role="button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-4 h-4"
+              className="w-6 h-6"
             >
               <path
                 fillRule="evenodd"
