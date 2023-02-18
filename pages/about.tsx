@@ -78,12 +78,12 @@ export default function About(props: { data: any }) {
           </div>
         </div>
       </section>
-      <div className="my-16">
+      <div className="mt-16 mb-6">
         <Why cta={false} />
       </div>
-      <div className="max-w-site-full mx-auto">
+      <div className="max-w-site-full mb-10 mx-auto">
         <div className="flex px-4 flex-col  items-center justify-center   lg:justify-start">
-          <p className="text-3xl text-center font-semibold text-brand-blue my-2">
+          <p className="md:text-3xl text-center font-semibold text-brand-blue my-2">
             ASK FOR A NEXT DAY FREE QUOTE!
           </p>
           <p className="my-4 text-center">
@@ -91,7 +91,7 @@ export default function About(props: { data: any }) {
           </p>
           <button
             onClick={onFreeQuote}
-            className="text-xl  text-center bg-brand-blue hover:bg-brand-blue-dark rounded-full text-white px-16 py-4 font-thin"
+            className="text-sm md:text-xl  text-center bg-brand-blue hover:bg-brand-blue-dark rounded-full text-white px-4 md:px-16 py-4 font-thin"
           >
             NEXT DAY FREE QUOTE
           </button>

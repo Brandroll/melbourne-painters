@@ -23,7 +23,7 @@ export default function Footer() {
             className="max-w-lg"
             alt="logo"
             src={"/imgs/logo.png"}
-            width={250}
+            width={220}
             height={100}
           />
         </div>
@@ -37,13 +37,13 @@ export default function Footer() {
               </div>
             ))}
           </div>
-          <div className="flex justify-end gap-8 my-2">
+          <div className="flex justify-end gap-8 my-6">
             <div>
               <a
                 target={"_blank"}
                 href="https://www.facebook.com/melb.painters"
               >
-                <FacebookIcon className="w-6 h-6 text-brand-blue" />
+                <FacebookIcon className="w-8 h-8 text-brand-blue" />
               </a>
             </div>
             <div>
@@ -51,7 +51,7 @@ export default function Footer() {
                 target={"_blank"}
                 href="https://www.instagram.com/melbourne.painters.group/"
               >
-                <InstagramIcon className="w-6 h-6 text-brand-blue" />
+                <InstagramIcon className="w-8 h-8 text-brand-blue" />
               </a>
             </div>
             <div>
@@ -60,7 +60,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@melbourne-painters"
               >
                 <svg
-                  className="w-7 h-7 text-brand-blue"
+                  className="w-9  h-9 text-brand-blue"
                   viewBox="0 0 20 14"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@melbourne.painters"
               >
                 <svg
-                  className="w-6 h-6 text-brand-blue"
+                  className="w-8 h-8 text-brand-blue"
                   viewBox="0 0 16 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
