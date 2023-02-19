@@ -34,6 +34,7 @@ export default async function handler(
       email,
       mobile,
       contact_time,
+      apartment,
       token,
     } = req.body.data;
     const data = {
@@ -50,6 +51,7 @@ export default async function handler(
       input_15: email,
       input_17: mobile,
       input_18: contact_time,
+      input_19: apartment,
     };
 
     const tokenRes = await axios.post(

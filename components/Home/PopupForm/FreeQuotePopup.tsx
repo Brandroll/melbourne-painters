@@ -101,7 +101,7 @@ export default function CreateOrUpdateAddressForm() {
     });
     const values = Object.values(projectDetail).filter((t) => t.length > 0);
 
-    if (values.length == 5) {
+    if (values.length >= 5) {
       setCurrentForm(3);
     }
   };

@@ -108,10 +108,10 @@ const ProjectDetail: React.FC<any> = (props: {
           label="Street Address"
           type="text"
         />
-        {/* <div className="my-4"></div>
+        <div className="my-4"></div>
         <FormGroup
           isError={isError}
-          value={projectDetail.street_address}
+          value={projectDetail.apartment}
           projectDetails={projectDetail}
           onChange={setProjectDetail}
           name={"apartment"}
@@ -119,7 +119,7 @@ const ProjectDetail: React.FC<any> = (props: {
           label="Apartment number, suite number, unit number"
           placeholder="Apartment, Unit, Suite,  Number etc. (optional)"
           type="number"
-        /> */}
+        />
         <div className="grid grid-cols-8 gap-2">
           <div className="col-span-3">
             <FormGroup
