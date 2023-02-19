@@ -85,7 +85,7 @@ export const YourProject: React.FC<any> = ({
           </section>
           <section className="my-6">
             <h4 className="mb-4 text-left  font-isidorasans_semi_bold">
-              RESIDENTIAL, COMMERCIAL OR INDUSTRIAL*
+              RESIDENTIAL, COMMERCIAL OR INDUSTRIAL
             </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {resident.map((b) => (

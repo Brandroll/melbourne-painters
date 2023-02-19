@@ -17,6 +17,7 @@ import ManagedDrawer from "@/components/UI/Drawer/Managed-drawer";
 import config from "react-reveal/globals";
 import { ApolloProvider } from "@apollo/client";
 import client from "../apollo";
+import { DefaultSeo } from "next-seo";
 
 config({ ssrFadeout: true });
 const queryClient = new QueryClient();
@@ -65,6 +66,7 @@ const roboto = Roboto({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
+      <DefaultSeo description="Painters Melbourne provides Interior &amp; Exterior Painting services to Residential and Commercial clients requiring a Painter in Melbourne" />
       <style jsx global>{`
         :root {
           --roboto-font: ${roboto.style.fontFamily};

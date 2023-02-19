@@ -17,7 +17,7 @@ const contactFormSchema = yup.object().shape({
     .email("Incorrect email format")
     .required("E-mail is required"),
   enquiry: yup.string().required("Enquiry is required"),
-  contact: yup.string().required("Time to contact is required"),
+  contact: yup.number().required("Time to contact is required"),
   message: yup.string().required("Message is required"),
 });
 
@@ -68,18 +68,9 @@ export default function ContactForm() {
   const recaptchaRef = React.createRef();
   const [resetForm, setResetForm] = useState({});
   const onReCAPTCHAChange = (captchaCode: string) => {
-    // If the reCAPTCHA code is null or undefined indicating that
-    // the reCAPTCHA was expired then return early
-
     if (!captchaCode) {
       return;
     }
-    // Else reCAPTCHA was executed successfully so proceed with the
-    // alert
-
-    // Reset the reCAPTCHA so that it can be executed again if user
-    // submits another email.
-    // recaptchaRef.current.reset();
   };
   const resetValues = {
     first_name: "",
@@ -142,6 +133,7 @@ export default function ContactForm() {
             <Input
               label="Your Phone Number"
               {...register("phone")}
+              type="number"
               error={errors.phone?.message!}
             />
 

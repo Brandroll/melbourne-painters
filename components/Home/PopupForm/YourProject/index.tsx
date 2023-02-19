@@ -1,4 +1,5 @@
 import { Form } from "@/components/UI/forms/Form";
+import { useState } from "react";
 import * as yup from "yup";
 
 import Expectactions from "./Expectactions";
@@ -47,12 +48,16 @@ const serviceKinf = [
   "Special Finishes",
 ];
 export const YourProject: React.FC<any> = ({
-  onSubmit,
-  setCurrentForm,
   defaultValues,
-  isLoading,
+
+  projectInfo,
+  isError,
+
+  setProjectInfo,
 }) => {
-  const submitForm = (e) => {};
+  const [selectedExpectation] = useState(projectInfo);
+
+  const submitForm = (e: any) => {};
   return (
     <Form<ProjectInfo>
       onSubmit={submitForm}
@@ -66,9 +71,21 @@ export const YourProject: React.FC<any> = ({
     >
       {({ register, formState: {} }) => (
         <div className="max-w-site-full text-form-btn  px-12">
-          <Expectactions />
-          <Resident />
-          <ServiceType />
+          <Expectactions
+            projectInfo={projectInfo}
+            setProjectInfo={setProjectInfo}
+            isError={isError}
+          />
+          <Resident
+            isError={isError}
+            projectInfo={projectInfo}
+            setProjectInfo={setProjectInfo}
+          />
+          <ServiceType
+            projectInfo={projectInfo}
+            isError={isError}
+            setProjectInfo={setProjectInfo}
+          />
         </div>
       )}
     </Form>

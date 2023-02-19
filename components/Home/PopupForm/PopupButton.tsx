@@ -11,19 +11,5 @@ export default function PopupButton(props: any) {
         {props.label.toUpperCase()}
       </span>
     </button>
-    /* <input
-        id={props.label}
-        type={"radio"}
-        className="hidden"
-        value={props.label}
-        tabIndex={26}
-      />
-      <label
-        htmlFor={props.label}
-        className="cursor-pointer info-btn uppercase "
-      >
-        {props.label}
-      </label>
-    </> */
   );
 }
