@@ -155,18 +155,12 @@ const YourInfo: React.FC<any> = (props: {
                 }  info-btn bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer `}
               >
                 <span className="font-isidorasans_regular whitespace-nowrap capitalize px-4">
-                  {opt.toUpperCase()}
+                  {opt}
                 </span>
               </div>
             ))}
           </div>
         </div>
-        {/* <textarea
-          className="p-4 w-2/3 border-b-4 border-brand-blue rounded-md outline-none"
-          placeholder="/ Suburb"
-          required
-        /> */}
-        {/* <FormGroup label="POSTCODE/SUBURB*" type="text" /> */}
       </form>
     </div>
   );

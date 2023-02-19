@@ -7,6 +7,7 @@ import YourInfo from "./YourInfo";
 import YourProject from "./YourProject/index";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
+import { useModalAction } from "@/components/UI/Modal/Modal.context";
 
 type ProjectDetails = {
   details: string;
@@ -31,9 +32,12 @@ type Info = {
     | "ASAP"
     | "";
 };
-const _heading = [" YOUR Requirements", " PROJECT  DETAILS", " YOUR INFO"];
+const _heading = [" YOUR Requirements", " PROJECT  DETAILS", " YOUR DETAILs"];
 export default function CreateOrUpdateAddressForm() {
   const [currentForm, setCurrentForm] = useState(1);
+  const { closeModal } = useModalAction();
+
+  const [isSubmiting, setIsSubmiting] = useState(false);
   const [isError, setIsError] = useState(false);
   const [projectInfo, setProjectInfo] = useState({
     time_to_start: "",
@@ -90,13 +94,13 @@ export default function CreateOrUpdateAddressForm() {
       if (projectDetail[key].length > 0) {
         setIsError(false);
       } else {
-        setIsError(true);
         if (key === "apartment") {
           setIsError(false);
-
           return;
+        } else {
+          setIsError(true);
+          toast.error(`Please Fill ${key}  Details `);
         }
-        toast.error("Please Fill All the Required Details ");
       }
     });
     const values = Object.values(projectDetail).filter((t) => t.length > 0);
@@ -121,6 +125,7 @@ export default function CreateOrUpdateAddressForm() {
       submitForm();
     }
   };
+
   const onReCAPTCHAChange = (captchaCode: string) => {
     if (!captchaCode) {
       return;
@@ -137,20 +142,24 @@ export default function CreateOrUpdateAddressForm() {
       ...info,
       token,
     };
-
+    setIsSubmiting(true);
     axios
       .post("/api/popup-form", {
         data: { ...values },
       })
       .then((res) => {
         if (res.data.message) {
+          setIsSubmiting(false);
+
           toast.success(res.data.message);
+          closeModal();
         }
       })
       .catch((err) => {
         toast.error(err.response.data.error);
       });
   };
+
   return (
     <div className="min-h-screen w-full bg-form lg:px-16  p-5 sm:p-8 md:min-h-0 md:rounded-xl">
       <div className="hidden">
@@ -208,7 +217,7 @@ export default function CreateOrUpdateAddressForm() {
         {currentForm === 3 ? (
           <YourInfo isError={isError} info={info} setInfo={setInfo} />
         ) : null}
-
+        {isSubmiting && <span>Submitting..</span>}
         <hr />
         <div className="flex my-4 justify-end">
           <div className="flex gap-4">
@@ -239,7 +248,8 @@ export default function CreateOrUpdateAddressForm() {
             {currentForm == 3 && (
               <button
                 onClick={gotoNextStep}
-                className="info-btn py-2 bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer"
+                disabled={isSubmiting ? true : false}
+                className="info-btn py-2 disabled:bg-black bg-brand-blue hover:bg-brand-blue-dark hover:cursor-pointer"
               >
                 Submit
               </button>

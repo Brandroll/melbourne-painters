@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-
 interface ProjectDetails {
   details: string;
   street_address: string;
@@ -36,6 +34,7 @@ const FormGroup = ({
     postcode,
   }: ProjectDetails) => void;
 }) => {
+  console.log({ isError });
   return (
     <div className="grid my-2   ">
       <label className="flex flex-col text-popup-button mb-4 font-isidorasans  font-medium text-left">
