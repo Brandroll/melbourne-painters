@@ -31,11 +31,7 @@ type Info = {
     | "ASAP"
     | "";
 };
-const _heading = [
-  " YOUR Requirements",
-  " PROJECT address and further DETAILS",
-  " YOUR INFO",
-];
+const _heading = [" YOUR Requirements", " PROJECT  DETAILS", " YOUR INFO"];
 export default function CreateOrUpdateAddressForm() {
   const [currentForm, setCurrentForm] = useState(1);
   const [isError, setIsError] = useState(false);
@@ -95,7 +91,11 @@ export default function CreateOrUpdateAddressForm() {
         setIsError(false);
       } else {
         setIsError(true);
+        if (key === "apartment") {
+          setIsError(false);
 
+          return;
+        }
         toast.error("Please Fill All the Required Details ");
       }
     });
