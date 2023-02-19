@@ -259,7 +259,7 @@ export default function CreateOrUpdateAddressForm() {
       </div>
       <div className="lg:hidden mt-4">
         {/* <MobileForm /> */}
-        <ContactForm />
+        <ContactForm apiUrl={"mobile-contact"} />
       </div>
     </div>
   );

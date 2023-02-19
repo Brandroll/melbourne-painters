@@ -7,6 +7,7 @@ import Input from "./ContactInput";
 import { toast } from "react-toastify";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useModalAction } from "@/components/UI/Modal/Modal.context";
 
 const contactFormSchema = yup.object().shape({
   first_name: yup.string().required("First name is required"),
@@ -64,7 +65,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     </div>
   );
 });
-export default function ContactForm() {
+export default function ContactForm(props: any) {
   const recaptchaRef = React.createRef();
   const [resetForm, setResetForm] = useState({});
   const onReCAPTCHAChange = (captchaCode: string) => {
@@ -72,6 +73,8 @@ export default function ContactForm() {
       return;
     }
   };
+  const { closeModal } = useModalAction();
+
   const resetValues = {
     first_name: "",
     last_name: "",
@@ -87,14 +90,16 @@ export default function ContactForm() {
       toast.error("Please verify captcha");
       return;
     }
+    const url = props.apiUrl ? "/api/" + props.apiUrl : "/api/contact";
     axios
-      .post("/api/contact", {
+      .post(url, {
         data: { ...values, token },
       })
       .then((res) => {
         if (res.data.message) {
           toast.success(res.data.message);
           setResetForm(resetValues);
+          closeModal();
         }
       })
       .catch((err) => {
