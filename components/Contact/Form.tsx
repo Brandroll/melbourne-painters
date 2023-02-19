@@ -11,13 +11,13 @@ import ReCAPTCHA from "react-google-recaptcha";
 const contactFormSchema = yup.object().shape({
   first_name: yup.string().required("First name is required"),
   last_name: yup.string().required("Last name is required"),
-  phone: yup.string().required("Phone is required"),
+  phone: yup.number().required("Phone is required"),
   email: yup
     .string()
     .email("Incorrect email format")
     .required("E-mail is required"),
   enquiry: yup.string().required("Enquiry is required"),
-  contact: yup.number().required("Time to contact is required"),
+  contact: yup.string().required("Time to contact is required"),
   message: yup.string().required("Message is required"),
 });
 

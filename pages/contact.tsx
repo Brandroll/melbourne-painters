@@ -66,10 +66,6 @@ export default function Contact(props: { data: any }) {
                       </span>
                     </a>
                   </div>
-
-                  <h3 className="text-2xl my-2  text-brand-blue">
-                    Contact Form
-                  </h3>
                 </div>
               </div>
               <h3 className="px-4 py-4 text-3xl font-isidorasans_semi_bold text-brand-blue">
