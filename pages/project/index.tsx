@@ -1,22 +1,14 @@
-import Why from "@/components/Home/Why";
 import SimpleHero from "@/components/UI/SimpleHero";
-import WPHTMLContent from "@/components/UI/WPHTMLContent";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
-import { useModalAction } from "@/components/UI/Modal/Modal.context";
 import Fade from "react-reveal/Fade";
-
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 
-export default function About(props: { projects: any }) {
-  const { openModal } = useModalAction();
-  const onFreeQuote = () => {
-    openModal("FREE_QUOTE_HOME");
-  };
+export default function About(props: { projects: any; project: any }) {
   return (
     <>
-      <YoastNextSeo {...props.projects.yoast_head_json} />
+      <YoastNextSeo {...props.project.yoast_head_json} />
       <SimpleHero />
 
       <section className="grid max-w-site-full  px-4  md:grid-cols-8 md:mx-auto">
@@ -99,11 +91,14 @@ export default function About(props: { projects: any }) {
 
 export const getStaticProps = async () => {
   const url = process.env.NEXT_WP_API_URL + `/project`;
+  const project_url = process.env.NEXT_WP_API_URL + `/custom-page/719`;
   const projects = await fetch(url).then((r) => r.json());
+  const project = await fetch(project_url).then((r) => r.json());
 
   return {
     props: {
       projects,
+      project,
     },
   };
 };
