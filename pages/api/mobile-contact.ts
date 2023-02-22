@@ -19,7 +19,6 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === "POST") {
-    // Process a POST request
     const {
       first_name,
       last_name,

@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
-import { useQuery } from "@apollo/client";
-
-import { Routes } from "../../config/routes";
-import { GET_HEADER_MENU } from "@/apollo/queries/headerMenu";
+import navLink from "../../seed/navLink";
 interface NavLink {
   href: string;
   label: string;
@@ -23,27 +20,6 @@ export default function Header() {
     setDrawerView({ display: true, view });
   }
 
-  const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    {
-      label: "Services",
-      href: "/services",
-      subItems: [
-        { label: "Residential Painting", href: "/residential-painting" },
-        { label: "Commercial Painting", href: "/commercial-painting" },
-        {
-          label: "Industrial Protective Coating",
-          href: "/industrial-protective-coating",
-        },
-        { label: "Floor Coating", href: "/floor-coating" },
-        { label: "Exterior Painting", href: "/exterior-painters-melbourne" },
-        { label: "Interior Paintiing", href: "/interior-painters-melbourne" },
-      ],
-    },
-    { label: "Projects", href: "/project" },
-    { label: "Contact", href: "/contact" },
-  ];
   return (
     <div>
       <nav className=" w-full  z-40  fixed top-0 lg:py-2 p-3   lg:px-8  text-white  bg-navbar  ">
@@ -103,8 +79,8 @@ export default function Header() {
               1300 662 344
             </a>
             <div className="lg:flex hidden top-12 md:top-0 md:py-0 py bg-navbar w-full left-0 absolute md:relative justify-end gap-6">
-              {menuItems &&
-                menuItems.map((i) => (
+              {navLink &&
+                navLink.map((i) => (
                   <Link
                     key={Math.random()}
                     href={i.href}

@@ -1,41 +1,9 @@
 import { useRouter } from "next/router";
-import { Routes } from "@/config/routes";
 import DrawerWrapper from "@/components/UI/Drawer/Drawer-wrapper";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
-import { useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
-import { GET_HEADER_MENU } from "@/apollo/queries/headerMenu";
-
-const headerLinks = [
-  { href: Routes.home, label: "Home" },
-  { href: Routes.about, label: "About" },
-  {
-    href: Routes.service,
-    label: "Service",
-    subItems: [
-      {
-        href: Routes.exteriorPaintersMelbourne,
-        label: "Exterior Painters ",
-      },
-      {
-        href: Routes.interiorPaintersmelbourne,
-        label: "Interior Painters ",
-      },
-      {
-        href: Routes.housePaintersMelbourne,
-        label: "Residential Painters ",
-      },
-      {
-        href: Routes.commercialPaintersMelbourne,
-        label: "Commercial Painters ",
-      },
-    ],
-  },
-  { href: Routes.project, label: "Portfolio" },
-  { href: Routes.freeQuote, label: "Free Quote" },
-  { href: Routes.contactUs, label: "Contact" },
-];
+import { useState } from "react";
+import navLinks from "../../../seed/navLink";
 interface NavLink {
   href: string;
   label: string;
@@ -44,27 +12,10 @@ interface NavLink {
 
 export default function MobileMainMenu() {
   const [showSubItems, setShowSubItems] = useState(false);
-  // const [navLinks, setNavLinks] = useState<NavLink[]>([]);
 
   const router = useRouter();
   const [_, closeSidebar] = useAtom(drawerAtom);
-  // const { data } = useQuery(GET_HEADER_MENU);
-  // useEffect(() => {
-  //   if (data && data.menuItems) {
-  //     const formattedNavs = data.menuItems.edges.map((r: any) => {
-  //       return {
-  //         href: r.node.path,
-  //         label: r.node.label,
-  //         subItems: r.node?.childItems?.edges.map((subItem: any) => ({
-  //           href: subItem.node.path,
-  //           label: subItem.node.label,
-  //         })),
-  //       };
-  //     });
 
-  //     setNavLinks(formattedNavs);
-  //   }
-  // }, [data]);
   function handleClick(path: string) {
     const hasSubItems = navLinks.find((hed) => hed.href === path)?.subItems
       ?.length;
@@ -76,27 +27,7 @@ export default function MobileMainMenu() {
     router.push(path);
     closeSidebar({ display: false, view: "" });
   }
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    {
-      label: "Services",
-      href: "/services",
-      subItems: [
-        { label: "Residential Painting", href: "/residential-painting" },
-        { label: "Commercial Painting", href: "/commercial-painting" },
-        {
-          label: "Industrial Protective Coating",
-          href: "/industrial-protective-coating",
-        },
-        { label: "Floor Coating", href: "/floor-coating" },
-        { label: "Exterior Painting", href: "/exterior-painters-melbourne" },
-        { label: "Interior Paintiing", href: "/interior-painters-melbourne" },
-      ],
-    },
-    { label: "Projects", href: "/project" },
-    { label: "Contact", href: "/contact" },
-  ];
+
   return (
     <DrawerWrapper>
       <ul className="flex-grow">
