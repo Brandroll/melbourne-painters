@@ -13,7 +13,11 @@ export default function Services({ data }: Props) {
     <div>
       <Swiper
         className="flex"
-        autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+        autoplay={{
+          delay: 2000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           320: {
             slidesPerView: 1,

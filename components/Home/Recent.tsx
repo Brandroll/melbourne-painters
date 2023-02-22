@@ -29,6 +29,7 @@ export default function Recent({ data }: Props) {
           delay: 2000,
 
           pauseOnMouseEnter: true,
+          disableOnInteraction: false,
         }}
         breakpoints={{
           320: {
