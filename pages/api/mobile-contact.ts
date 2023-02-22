@@ -35,8 +35,8 @@ export default async function handler(
       input_3: last_name,
       input_5: email,
       input_6: phone,
-      input_7: enquiry,
-      input_8: contact,
+      input_10: enquiry,
+      input_12: contact,
       input_9: message,
     };
 
