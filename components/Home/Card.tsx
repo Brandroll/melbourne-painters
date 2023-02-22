@@ -29,13 +29,13 @@ export default function Card(props: any) {
         >
           {isAnimationPlaying && <br />}
 
-          <h4 className="text-center uppercase text-sm  my-8 lg:px-16 text-white font-medium">
+          <p className="text-center uppercase text-sm  my-8 lg:px-16 text-white font-medium">
             {props.title.rendered}
-          </h4>
+          </p>
           {isAnimationPlaying && (
             <Link href={href}>
               <button
-                className={` font-roboto text-xs -mt-8  uppercase md:font-semibold text-white py-2 px-8    rounded-full   transition-all ease-in-out duration-500 delay-150   bg-brand-blue hover:bg-brand-blue-dark active:outline-none`}
+                className={`  font-isidorasans text-xs -mt-8  uppercase md:font-semibold text-white py-2 px-8    rounded-full   transition-all ease-in-out duration-500 delay-150   bg-brand-blue hover:bg-brand-blue-dark active:outline-none`}
               >
                 View Project
               </button>
