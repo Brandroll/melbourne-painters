@@ -51,11 +51,11 @@ export default async function handler(
       });
       try {
         if (formResp.data.is_valid) {
-          res.status(200).json({ message: "Form Has Been Submitted" });
+          res.status(200).json({ message: "Form has been submitted" });
         } else {
           res
             .status(404)
-            .json({ error: "Error While Submitting", name: formResp.data });
+            .json({ error: "Error while submitting", name: formResp.data });
         }
       } catch (err) {
         res.status(404).json({ error: err });

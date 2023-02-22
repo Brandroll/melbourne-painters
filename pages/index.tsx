@@ -1,10 +1,7 @@
-import Head from "next/head";
-import Header from "@/components/Layout/Header";
-import Image from "next/image";
 import Why from "@/components/Home/Why";
 import Recent from "@/components/Home/Recent";
 import Testinominal from "@/components/Home/Testinominal";
-import Footer from "@/components/Layout/Footer";
+
 import { HomePage, Project, Service } from "@/types";
 import Hero from "@/components/UI/Hero";
 import Services from "@/components/Home/Services/Services";

@@ -100,6 +100,7 @@ const ProjectDetail: React.FC<any> = (props: {
       <div className="px-16">
         <FormGroup
           isError={isError}
+          optional={true}
           value={projectDetail.street_address}
           projectDetails={projectDetail}
           onChange={setProjectDetail}

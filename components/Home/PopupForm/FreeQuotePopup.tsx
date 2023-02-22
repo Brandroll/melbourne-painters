@@ -79,7 +79,7 @@ export default function CreateOrUpdateAddressForm() {
       if (projectInfo[key].length > 0) {
         setIsError(false);
       } else {
-        toast.error("Please Fill All the Required Details ");
+        toast.error("Please fill all the required details ");
         setIsError(true);
       }
     });
@@ -94,18 +94,18 @@ export default function CreateOrUpdateAddressForm() {
       if (projectDetail[key].length > 0) {
         setIsError(false);
       } else {
-        if (key === "apartment") {
+        if (key === "apartment" || key === "street_address") {
           setIsError(false);
           return;
         } else {
           setIsError(true);
-          toast.error(`Please Fill ${key}  Details `);
+          toast.error(`Please fill ${key}  details `);
         }
       }
     });
     const values = Object.values(projectDetail).filter((t) => t.length > 0);
 
-    if (values.length >= 5) {
+    if (values.length >= 4) {
       setCurrentForm(3);
     }
   };
@@ -116,7 +116,7 @@ export default function CreateOrUpdateAddressForm() {
       } else {
         setIsError(true);
 
-        toast.error("Please Fill All the Required Details ");
+        toast.error("Please fill all the required details ");
       }
     });
     const values = Object.values(info).filter((t) => t.length > 0);

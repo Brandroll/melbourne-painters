@@ -45,7 +45,10 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
   return (
     <div className={"grid col-span-2  "}>
       {label && (
-        <label htmlFor={name} className="text-left  text-brand-blue mb-3 ">
+        <label
+          htmlFor={name}
+          className="text-brand-blue block text-left mb-3 text-sm font-semibold leading-none text-body-dark"
+        >
           {label}
         </label>
       )}
@@ -130,63 +133,64 @@ export default function ContactForm(props: any) {
             />
 
             <Input
-              label="Your Email Address"
+              label="Your email address"
               {...register("email")}
               type="email"
               error={errors.email?.message!}
             />
             <Input
-              label="Your Phone Number"
+              label="Your phone number"
               {...register("phone")}
               type="number"
               error={errors.phone?.message!}
             />
+            {!props.apiUrl && (
+              <div className="grid col-span-2 lg:col-span-1 ">
+                <label className="text-brand-blue block text-left mb-3 text-sm font-semibold leading-none text-body-dark ">
+                  Enquire About
+                </label>
+                <select
+                  className="p-4 border-b-4 w-full border-brand-blue rounded-md outline-none"
+                  placeholder="Your Phone Number"
+                  required
+                  {...register("enquiry")}
+                >
+                  <option value="">Please select</option>
+                  <option value="Power Washing">Power Washing</option>
+                  <option value="Brick, Concrete, Drywall & Plaster Painting">
+                    Brick, Concrete, Drywall & Plaster Painting
+                  </option>
+                  <option value="Drywall & Plaster Repair">
+                    Drywall & Plaster Repair
+                  </option>
+                  <option value="Structural Steel Painting">
+                    Structural Steel Painting
+                  </option>
+                  <option value="Concrete Finishing">Concrete Finishing</option>
+                  <option value="Wood Finishing">Wood Finishing</option>
+                  <option value="Elastomer Coatings">Elastomer Coatings</option>
+                  <option value="Stripping & Refinishing">
+                    Stripping & Refinishing
+                  </option>
+                  <option value="Low Voc & No Voc Paints">
+                    Low Voc & No Voc Paints
+                  </option>
+                  <option value="Urethane & Epoxy Coatings">
+                    Urethane & Epoxy Coatings
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
+
+                {errors.enquiry && (
+                  <p className="mt-2 text-xs text-red-500">
+                    {errors.enquiry?.message}
+                  </p>
+                )}
+              </div>
+            )}
 
             <div className="grid col-span-2 lg:col-span-1 ">
-              <label className="text-left text-brand-blue mb-3 ">
-                Enquire About
-              </label>
-              <select
-                className="p-4 border-b-4 w-full border-brand-blue rounded-md outline-none"
-                placeholder="Your Phone Number"
-                required
-                {...register("enquiry")}
-              >
-                <option value="">Please select</option>
-                <option value="Power Washing">Power Washing</option>
-                <option value="Brick, Concrete, Drywall & Plaster Painting">
-                  Brick, Concrete, Drywall & Plaster Painting
-                </option>
-                <option value="Drywall & Plaster Repair">
-                  Drywall & Plaster Repair
-                </option>
-                <option value="Structural Steel Painting">
-                  Structural Steel Painting
-                </option>
-                <option value="Concrete Finishing">Concrete Finishing</option>
-                <option value="Wood Finishing">Wood Finishing</option>
-                <option value="Elastomer Coatings">Elastomer Coatings</option>
-                <option value="Stripping & Refinishing">
-                  Stripping & Refinishing
-                </option>
-                <option value="Low Voc & No Voc Paints">
-                  Low Voc & No Voc Paints
-                </option>
-                <option value="Urethane & Epoxy Coatings">
-                  Urethane & Epoxy Coatings
-                </option>
-                <option value="Other">Other</option>
-              </select>
-
-              {errors.enquiry && (
-                <p className="mt-2 text-xs text-red-500">
-                  {errors.enquiry?.message}
-                </p>
-              )}
-            </div>
-
-            <div className="grid col-span-2 lg:col-span-1 ">
-              <label className="text-left text-brand-blue mb-3 ">
+              <label className="text-brand-blue block text-left mb-3 text-sm font-semibold leading-none text-body-dark ">
                 When can we contact you
               </label>
               <select
@@ -212,7 +216,7 @@ export default function ContactForm(props: any) {
               )}
             </div>
             <TextArea
-              label="Message"
+              label={props.apiUrl ? "Project details" : "Message"}
               error={errors.message?.message}
               {...register("message")}
             />
