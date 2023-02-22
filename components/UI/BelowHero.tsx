@@ -14,7 +14,7 @@ export default function BelowHero() {
           providing <br /> preventive and proactive maintenance.
         </p>
       </div>
-      <div className=" pb-7 col-span-6  max-w-full md:col-span-2 flex justify-center md:justify-start   md:items-center gap-4">
+      <div className=" pb-7 col-span-6 self-start  max-w-full md:col-span-2 flex justify-center md:justify-start   md:items-center gap-4">
         <Image
           src="/imgs/Painters-Melbourne-Accredited-Painter-512px-300x300.jpg"
           width={110}
