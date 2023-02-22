@@ -75,7 +75,7 @@ export const YourProject: React.FC<any> = ({
         <div className="max-w-site-full text-form-btn md:px-32">
           <section className="my-6">
             <h4 className="mb-4 text-left  font-isidorasans_semi_bold">
-              WHEN DO YOU EXPECT YOUR PROJECT TO START?*
+              When do you expect your project to start:
             </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {expections.map((opt) => (
@@ -85,7 +85,7 @@ export const YourProject: React.FC<any> = ({
           </section>
           <section className="my-6">
             <h4 className="mb-4 text-left  font-isidorasans_semi_bold">
-              RESIDENTIAL, COMMERCIAL OR INDUSTRIAL
+              Residential, Commercial or Industrial:
             </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {resident.map((b) => (
@@ -95,7 +95,7 @@ export const YourProject: React.FC<any> = ({
           </section>
           <section className="my-6">
             <h4 className="mb-4 text-left font-isidorasans_semi_bold">
-              WHAT KIND OF PAINTING SERVICE DO YOU REQUIRE?*
+              What kind of painting service do you require:
             </h4>
             <div className="grid grid-cols-2  md:grid-cols-4    gap-4">
               {serviceKinf.map((b) => (
