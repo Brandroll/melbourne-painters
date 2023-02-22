@@ -44,27 +44,27 @@ interface NavLink {
 
 export default function MobileMainMenu() {
   const [showSubItems, setShowSubItems] = useState(false);
-  const [navLinks, setNavLinks] = useState<NavLink[]>([]);
+  // const [navLinks, setNavLinks] = useState<NavLink[]>([]);
 
   const router = useRouter();
   const [_, closeSidebar] = useAtom(drawerAtom);
-  const { data } = useQuery(GET_HEADER_MENU);
-  useEffect(() => {
-    if (data && data.menuItems) {
-      const formattedNavs = data.menuItems.edges.map((r: any) => {
-        return {
-          href: r.node.path,
-          label: r.node.label,
-          subItems: r.node?.childItems?.edges.map((subItem: any) => ({
-            href: subItem.node.path,
-            label: subItem.node.label,
-          })),
-        };
-      });
+  // const { data } = useQuery(GET_HEADER_MENU);
+  // useEffect(() => {
+  //   if (data && data.menuItems) {
+  //     const formattedNavs = data.menuItems.edges.map((r: any) => {
+  //       return {
+  //         href: r.node.path,
+  //         label: r.node.label,
+  //         subItems: r.node?.childItems?.edges.map((subItem: any) => ({
+  //           href: subItem.node.path,
+  //           label: subItem.node.label,
+  //         })),
+  //       };
+  //     });
 
-      setNavLinks(formattedNavs);
-    }
-  }, [data]);
+  //     setNavLinks(formattedNavs);
+  //   }
+  // }, [data]);
   function handleClick(path: string) {
     const hasSubItems = navLinks.find((hed) => hed.href === path)?.subItems
       ?.length;
@@ -72,10 +72,31 @@ export default function MobileMainMenu() {
       setShowSubItems(!showSubItems);
       return;
     }
+
     router.push(path);
     closeSidebar({ display: false, view: "" });
   }
-
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    {
+      label: "Services",
+      href: "/services",
+      subItems: [
+        { label: "Residential Painting", href: "/residential-painting" },
+        { label: "Commercial Painting", href: "/commercial-painting" },
+        {
+          label: "Industrial Protective Coating",
+          href: "/industrial-protective-coating",
+        },
+        { label: "Floor Coating", href: "/floor-coating" },
+        { label: "Exterior Painting", href: "/exterior-painters-melbourne" },
+        { label: "Interior Paintiing", href: "/interior-painters-melbourne" },
+      ],
+    },
+    { label: "Projects", href: "/project" },
+    { label: "Contact", href: "/contact" },
+  ];
   return (
     <DrawerWrapper>
       <ul className="flex-grow">
@@ -107,7 +128,10 @@ export default function MobileMainMenu() {
             {showSubItems &&
               subItems &&
               subItems.map((item) => (
-                <li className="flex ml-4 text-md  cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-12">
+                <li
+                  onClick={() => handleClick(item.href)}
+                  className="flex ml-4 text-md  cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-12"
+                >
                   {item.label}
                 </li>
               ))}

@@ -17,41 +17,35 @@ interface NavLink {
 export default function Header() {
   const router = useRouter();
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-  const [navLinks, setNavLinks] = useState<NavLink[]>([]);
   const [_, setDrawerView] = useAtom(drawerAtom);
-
-  const { data } = useQuery(GET_HEADER_MENU);
-
-  useEffect(() => {
-    if (data && data.menuItems) {
-      const formattedNavs = data.menuItems.edges.map((r: any) => {
-        return {
-          href: r.node.path,
-          label: r.node.label,
-          subItems: r.node?.childItems?.edges.map((subItem: any) => ({
-            href: subItem.node.path,
-            label: subItem.node.label,
-          })),
-        };
-      });
-
-      setNavLinks(formattedNavs);
-    }
-  }, [data]);
 
   function handleSidebar(view: string) {
     setDrawerView({ display: true, view });
   }
-  function handleClick(path: string) {
-    const hasSubItems = navLinks.find((hed) => hed.href === path)?.subItems;
-    if (hasSubItems) {
-      return;
-    }
-    router.push(path);
-  }
 
+  const menuItems = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    {
+      label: "Services",
+      href: "/services",
+      subItems: [
+        { label: "Residential Painting", href: "/residential-painting" },
+        { label: "Commercial Painting", href: "/commercial-painting" },
+        {
+          label: "Industrial Protective Coating",
+          href: "/industrial-protective-coating",
+        },
+        { label: "Floor Coating", href: "/floor-coating" },
+        { label: "Exterior Painting", href: "/exterior-painters-melbourne" },
+        { label: "Interior Paintiing", href: "/interior-painters-melbourne" },
+      ],
+    },
+    { label: "Projects", href: "/project" },
+    { label: "Contact", href: "/contact" },
+  ];
   return (
-    <div className="  ">
+    <div>
       <nav className=" w-full  z-40  fixed top-0 lg:py-2 p-3   lg:px-8  text-white  bg-navbar  ">
         <div className="max-w-site-full mx-auto flex justify-between items-center">
           <Link className="lg:block hidden" href={"/"}>
@@ -109,8 +103,8 @@ export default function Header() {
               1300 662 344
             </a>
             <div className="lg:flex hidden top-12 md:top-0 md:py-0 py bg-navbar w-full left-0 absolute md:relative justify-end gap-6">
-              {navLinks &&
-                navLinks.map((i) => (
+              {menuItems &&
+                menuItems.map((i) => (
                   <Link
                     key={Math.random()}
                     href={i.href}
