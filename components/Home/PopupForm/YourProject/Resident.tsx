@@ -7,7 +7,7 @@ export default function Resident(props: any) {
   return (
     <section className="my-6">
       <h4 className="mb-4 text-left  font-isidorasans_semi_bold">
-        RESIDENTIAL, COMMERCIAL OR INDUSTRIAL?
+        Residential, Commercial or Industrial:
         {isError && projectInfo.type.length < 1 && (
           <span className="ml-2 mt-2 text-xs  text-red-500">
             {" "}

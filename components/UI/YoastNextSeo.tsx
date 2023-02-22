@@ -9,7 +9,7 @@ export default function YoastNextSeo(props: YoastSeoData) {
     description: props.og_description,
     url: props.og_url,
     siteName: props.og_site_name,
-    // images: [props.og_image ? [...props.og_image] : null],
+    images: [props.og_image ? [...props.og_image] : ""],
   };
   return (
     <NextSeo

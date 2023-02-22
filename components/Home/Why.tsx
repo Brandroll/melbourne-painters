@@ -13,14 +13,13 @@ export default function Why({ cta }: { cta: Boolean }) {
       <Fade bottom>
         <div className="max-w-site-full mx-auto">
           <h3 className="text-center mb-4 md:mb-16 text-xl    px-10 md:my-8 text-brand-blue md:text-why font-medium">
-            {/* WHY CHOOSE MELBOURNE PAINTERS GROUP? */}
             Why Choose Melbourne Painters Group?
           </h3>
           <div className="grid gap-2 px-4  md:gap-4  md:mt-16 lg:mt-0 md:grid-cols-2 lg:grid-cols-3">
             {!error &&
               reasons &&
-              reasons[0].acf.reasons &&
-              reasons[0].acf.reasons.map((i: any) => (
+              reasons.acf.reasons &&
+              reasons.acf.reasons.map((i: any) => (
                 <>
                   <div className="flex gap-4   md:gap-6 items-center lg:justify-center pb-4 border border-r-0 border-l-0 border-t-0  border-white">
                     <Fade right>

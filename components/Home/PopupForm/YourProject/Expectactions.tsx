@@ -16,7 +16,7 @@ export default function Expectactions(props: any) {
         {/* {projectInfo.time_to_start.length < 1 && (
           <p className="mt-2 text-xs  text-red-500">This is required</p>
         )} */}
-        WHEN DO YOU EXPECT YOUR PROJECT TO START?
+        When do you expect your project to start:
         {isError && projectInfo.time_to_start.length < 1 && (
           <span className="ml-2 mt-2 text-xs  text-red-500">
             {" "}

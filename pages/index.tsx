@@ -24,7 +24,7 @@ export default function Home(props: Props) {
   return (
     <>
       <YoastNextSeo {...homePageData.yoast_head_json} />
-      {/* <div className="pb-3"></div> */}
+
       <Hero />
       <BelowHero />
 

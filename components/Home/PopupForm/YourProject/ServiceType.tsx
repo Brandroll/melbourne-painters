@@ -16,7 +16,7 @@ export default function ServiceType(props: any) {
   return (
     <section className="my-6">
       <h4 className="mb-4 text-left  font-isidorasans_semi_bold">
-        WHAT KIND OF PAINTING SERVICE DO YOU REQUIRE?
+        What kind of painting service do you require:
         {isError && projectInfo.services.length < 1 && (
           <span className=" ml-2   mt-2 text-xs  text-red-500">
             {" "}
