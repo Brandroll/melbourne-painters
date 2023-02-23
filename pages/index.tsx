@@ -1,20 +1,24 @@
-import Why from "@/components/Home/Why";
-import Recent from "@/components/Home/Recent";
-import Testinominal from "@/components/Home/Testinominal";
-
 import { HomePage, Project, Service } from "@/types";
-import Hero from "@/components/UI/Hero";
-import Services from "@/components/Home/Services/Services";
-import YoastNextSeo from "@/components/UI/YoastNextSeo";
-import Grid from "@/components/Home/Grid";
-import AlternateGrid from "@/components/Home/AlternateGrid";
-import BelowHero from "@/components/UI/BelowHero";
+import { GetStaticProps } from "next";
 
+// import BelowHero from "@/components/UI/BelowHero";
+import dynamic from "next/dynamic";
 interface Props {
   projects: Project[];
   services: Service[];
   homePageData: HomePage;
 }
+
+const YoastNextSeo = dynamic(() => import("@/components/UI/YoastNextSeo"));
+const Hero = dynamic(() => import("@/components/UI/Hero"));
+const BelowHero = dynamic(() => import("@/components/UI/BelowHero"));
+const Services = dynamic(() => import("@/components/Home/Services/Services"));
+const Why = dynamic(() => import("@/components/Home/Why"));
+const Testinominal = dynamic(() => import("@/components/Home/Testinominal"));
+const Grid = dynamic(() => import("@/components/Home/Grid"));
+const AlternateGrid = dynamic(() => import("@/components/Home/AlternateGrid"));
+const Recent = dynamic(() => import("@/components/Home/Recent"));
+
 export default function Home(props: Props) {
   const { projects, services, homePageData } = props;
 
@@ -36,7 +40,7 @@ export default function Home(props: Props) {
     </>
   );
 }
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const url = process.env.NEXT_WP_API_URL + `/project`;
   const services_url = process.env.NEXT_WP_API_URL + `/service`;
   const homepage_url = process.env.NEXT_WP_API_URL + `/custom-page/671`;
