@@ -20,6 +20,7 @@ export default async function handler(
 ) {
   if (req.method === "POST") {
     // Process a POST request
+
     const {
       first_name,
       last_name,
@@ -35,8 +36,8 @@ export default async function handler(
       input_3: last_name,
       input_5: email,
       input_6: phone,
-      input_7: enquiry,
-      input_8: contact,
+      input_10: enquiry,
+      input_11: contact,
       input_9: message,
     };
 
@@ -58,6 +59,7 @@ export default async function handler(
             .json({ error: "Error while submitting", name: formResp.data });
         }
       } catch (err) {
+        console.log({ err });
         res.status(404).json({ error: err });
       }
     }

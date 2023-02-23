@@ -89,7 +89,9 @@ export default function ContactForm(props: any) {
   };
   function onSubmit(values: CreateContactUsInput) {
     const token = recaptchaRef.current.getValue();
-    if (!token) {
+    console.log({ values });
+
+    if (!token && process.env.NODE_ENV !== "development") {
       toast.error("Please verify captcha");
       return;
     }

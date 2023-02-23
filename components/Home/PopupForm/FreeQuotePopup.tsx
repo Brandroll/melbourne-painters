@@ -8,6 +8,7 @@ import YourProject from "./YourProject/index";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import { useModalAction } from "@/components/UI/Modal/Modal.context";
+import MobileForm from "./MobileForm";
 
 type ProjectDetails = {
   details: string;
@@ -258,8 +259,8 @@ export default function CreateOrUpdateAddressForm() {
         </div>
       </div>
       <div className="lg:hidden mt-4">
-        {/* <MobileForm /> */}
-        <ContactForm apiUrl={"mobile-contact"} />
+        <MobileForm />
+        {/* <ContactForm apiUrl={"mobile-contact"} /> */}
       </div>
     </div>
   );
