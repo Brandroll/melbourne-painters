@@ -1,20 +1,20 @@
 import DOMPurify from "isomorphic-dompurify";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import WPHTMLContent from "../UI/WPHTMLContent";
 import Fade from "react-reveal/Fade";
-
-export default function AlternateGrid({
-  content,
-}: {
-  content: {
-    information: {
-      heading: string;
-      info: string;
-    };
-    image: string;
-  }[];
-}) {
+interface Content {
+  information: {
+    heading: string;
+    info: string;
+  };
+  image: string;
+}
+export default function AlternateGrid({ content }: { content: Content[] }) {
+  const [contentData, setContentData] = useState<Content | any>([]);
+  useEffect(() => {
+    setContentData(content);
+  }, [content]);
   function oddOrEven(num: number) {
     if (num % 2 == 0) return "even";
     return "odd";
@@ -28,8 +28,8 @@ export default function AlternateGrid({
 
   return (
     <section className="grid alternate-grid lg:gap-10 xl:gap-16 px-4 max-w-site-full mx-auto ">
-      {content.map((content, i) => (
-        <>
+      {contentData.map((content: Content, i: number) => (
+        <div key={Math.random()}>
           <section className="grid xl:grid-cols-2 gap-4   ">
             <div
               className={`${
@@ -84,7 +84,7 @@ export default function AlternateGrid({
               </div>
             </div>
           </section>
-        </>
+        </div>
       ))}
     </section>
   );

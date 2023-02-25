@@ -20,7 +20,7 @@ export default function Why({ cta }: { cta: Boolean }) {
               reasons &&
               reasons.acf.reasons &&
               reasons.acf.reasons.map((i: any) => (
-                <>
+                <div key={Math.random()}>
                   <div className="flex gap-4   md:gap-6 items-center lg:justify-center pb-4 border border-r-0 border-l-0 border-t-0  border-white">
                     <Fade right>
                       <div className=" bg-white p-3 rounded-full ">
@@ -41,7 +41,7 @@ export default function Why({ cta }: { cta: Boolean }) {
                       {i.info}
                     </div>
                   </div>
-                </>
+                </div>
               ))}
           </div>
           {cta && (

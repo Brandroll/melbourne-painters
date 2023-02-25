@@ -29,8 +29,8 @@ export default function Home(props: Props) {
       <BelowHero />
 
       <Services data={services} />
-
       <Why cta />
+
       <Recent data={projects} />
       <Testinominal images={homePageData.acf.clients} />
 

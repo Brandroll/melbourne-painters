@@ -1,4 +1,3 @@
-import { useClients } from "@/framework/rest/clients";
 import { AcfImage } from "@/types";
 import Image from "next/image";
 import "swiper/css";
@@ -6,8 +5,13 @@ import SwiperCore, { Autoplay } from "swiper";
 SwiperCore.use([Autoplay]);
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
 
 export default function Testinominal({ images }: { images: AcfImage[] }) {
+  const [imgsData, setImgsData] = useState<AcfImage | any>([]);
+  useEffect(() => {
+    setImgsData(images);
+  }, [images]);
   return (
     <div className="mt-12 md:mt-0 md:px-9 px-2 max-w-site-full mx-auto my-2 lg:py-4">
       <h3 className=" mb-4 text-center md:my-8 text-brand-blue font-isidorasans text-xl md:text-3xl font-medium leading-9">
@@ -41,8 +45,8 @@ export default function Testinominal({ images }: { images: AcfImage[] }) {
         slidesPerView={4}
         loop
       >
-        {images.map((i) => (
-          <SwiperSlide>
+        {imgsData.map((i: AcfImage) => (
+          <SwiperSlide key={Math.random()}>
             <Image
               alt={i.title}
               src={i.full_image_url}

@@ -1,5 +1,5 @@
 import { Project } from "@/types";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, useAnimation } from "framer-motion";
 import "swiper/css";
@@ -11,6 +11,10 @@ interface Props {
   data: Project[];
 }
 export default function Recent({ data }: Props) {
+  const [recentData, setRecentData] = useState<Project | any>([]);
+  useEffect(() => {
+    setRecentData(data);
+  }, [data]);
   if (!data) {
     return null;
   }
@@ -56,10 +60,10 @@ export default function Recent({ data }: Props) {
         }}
         // slidesPerView={4}
       >
-        {data &&
-          data.length > 0 &&
-          data.map((project) => (
-            <SwiperSlide>
+        {recentData &&
+          recentData.length > 0 &&
+          recentData.map((project: Project) => (
+            <SwiperSlide key={Math.random()}>
               <Card {...project} />
             </SwiperSlide>
           ))}

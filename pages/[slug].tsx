@@ -1,15 +1,8 @@
-import Image from "next/image";
-import Why from "@/components/Home/Why";
 import { HomePage, Service } from "@/types";
-import Hero from "@/components/UI/Hero";
+import dynamic from "next/dynamic";
+
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import YoastNextSeo from "@/components/UI/YoastNextSeo";
-import Grid from "@/components/Home/Grid";
-import AlternateGrid from "@/components/Home/AlternateGrid";
-import BelowHero from "@/components/UI/BelowHero";
-import Services from "@/components/Home/Services/Services";
-import Recent from "@/components/Home/Recent";
-import Testinominal from "@/components/Home/Testinominal";
+
 interface Props {
   service: Service;
   isSuburbs: Boolean;
@@ -17,6 +10,16 @@ interface Props {
   projects?: any;
   homePageData: HomePage;
 }
+
+const YoastNextSeo = dynamic(() => import("@/components/UI/YoastNextSeo"));
+const Hero = dynamic(() => import("@/components/UI/Hero"));
+const BelowHero = dynamic(() => import("@/components/UI/BelowHero"));
+const Services = dynamic(() => import("@/components/Home/Services/Services"));
+const Why = dynamic(() => import("@/components/Home/Why"));
+const Testinominal = dynamic(() => import("@/components/Home/Testinominal"));
+const Grid = dynamic(() => import("@/components/Home/Grid"));
+const AlternateGrid = dynamic(() => import("@/components/Home/AlternateGrid"));
+const Recent = dynamic(() => import("@/components/Home/Recent"));
 export default function SinglePage(props: Props) {
   const { service, isSuburbs, services, projects, homePageData } = props;
   if (!service) {

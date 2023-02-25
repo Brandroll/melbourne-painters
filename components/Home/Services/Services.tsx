@@ -40,7 +40,7 @@ export default function Services({ data }: Props) {
         }}
       >
         {data.map((project, i) => (
-          <SwiperSlide>
+          <SwiperSlide key={Math.random()}>
             <Card href={`/${project.slug}`} {...project} />
           </SwiperSlide>
         ))}
