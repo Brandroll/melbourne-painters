@@ -1,7 +1,6 @@
 import { HomePage, Project, Service } from "@/types";
 import { GetStaticProps } from "next";
 
-// import BelowHero from "@/components/UI/BelowHero";
 import dynamic from "next/dynamic";
 interface Props {
   projects: Project[];

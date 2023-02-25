@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="flex  flex-col gap-8 lg:gap-8 md:flex-row  mx-auto max-w-site-full justify-between">
         <div className="flex justify-center lg:block">
           <Image
-            className="max-w-lg"
+            className="max-w-lg max-h-16"
             alt="logo"
             src={"/imgs/logo.png"}
             width={220}
@@ -38,24 +38,29 @@ export default function Footer() {
             ))}
           </div>
           <div className="flex justify-end gap-8 my-6">
-            <div>
+            <div className="">
               <a
+                className="flex flex-col  gap-2 align-center justify-center  items-center "
                 target={"_blank"}
                 href="https://www.facebook.com/melb.painters"
               >
                 <FacebookIcon className="w-8 h-8 text-brand-blue" />
+                <span className="text-xs  text-brand-blue-dark">Facebook</span>
               </a>
             </div>
             <div>
               <a
+                className="flex flex-col gap-2 align-center justify-center  items-center "
                 target={"_blank"}
                 href="https://www.instagram.com/melbourne.painters.group/"
               >
                 <InstagramIcon className="w-8 h-8 text-brand-blue" />
+                <span className="text-xs  text-brand-blue-dark">Instagram</span>
               </a>
             </div>
             <div>
               <a
+                className="flex flex-col gap-1 align-center justify-center  items-center "
                 target={"_blank"}
                 href="https://www.youtube.com/@melbourne-painters"
               >
@@ -70,10 +75,13 @@ export default function Footer() {
                     fill="#29CDA7"
                   />
                 </svg>
+
+                <span className="text-xs  text-brand-blue-dark"> Youtube</span>
               </a>
             </div>
             <div>
               <a
+                className="flex flex-col gap-2 align-center justify-center  items-center "
                 target={"_blank"}
                 href="https://www.tiktok.com/@melbourne.painters"
               >
@@ -88,13 +96,17 @@ export default function Footer() {
                     fill="#29CDA7"
                   />
                 </svg>
+                <span className="text-xs  text-brand-blue-dark"> TikTok</span>
               </a>
             </div>
           </div>
         </div>
       </div>
       <p className="text-center text-sm font-roboto text-gray-500">
-        Melbourne Painters (C) 2022 All Rights Reserved | SEO by Brandroll
+        Melbourne Painters (C) 2022 All Rights Reserved |{" "}
+        <a className="underline" href="https://brandroll.com.au/">
+          SEO by Brandroll - Digital Agency
+        </a>
       </p>
     </footer>
   );
