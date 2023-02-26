@@ -19,12 +19,13 @@ export default function BelowHero() {
           src="/imgs/Painters-Melbourne-Accredited-Painter-512px-300x300.jpg"
           width={110}
           height={300}
+          style={{ objectFit: "contain", maxHeight: "120px" }}
           alt=""
         />
         <Image
           src="/imgs/warranty.png"
           width={80}
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "contain", maxHeight: "100px" }}
           height={80}
           alt=""
         />
