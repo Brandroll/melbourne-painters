@@ -1,6 +1,5 @@
 import { HomePage, Service } from "@/types";
 import dynamic from "next/dynamic";
-
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 
 interface Props {
