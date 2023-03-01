@@ -1,7 +1,9 @@
 import { YoastSeoData } from "@/types";
 import { NextSeo } from "next-seo";
+import { useEffect, useState } from "react";
 
 export default function YoastNextSeo(props: YoastSeoData) {
+  const [canonicalUrl, setCanonicalUrl] = useState("");
   const openGrap = {
     locale: props.og_locale,
     type: props.og_type,
@@ -9,13 +11,23 @@ export default function YoastNextSeo(props: YoastSeoData) {
     description: props.og_description,
     url: props.og_url,
     siteName: props.og_site_name,
-    images: [props.og_image ? [...props.og_image] : ""],
+    images: [
+      props.og_image
+        ? [...props.og_image]
+        : "https://www.melbourne-painters.com.au/imgs/logo.png",
+    ],
   };
+
   return (
     <NextSeo
       title={props.title}
+      description={props.description}
       openGraph={openGrap}
-      canonical={props.canonical}
+      canonical={
+        props.slug
+          ? process.env.NEXT_PUBLIC_SITE_URL + `/${props.slug}`
+          : process.env.NEXT_PUBLIC_SITE_URL
+      }
     />
   );
 }

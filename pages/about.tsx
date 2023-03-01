@@ -15,7 +15,7 @@ export default function About(props: { data: any }) {
   };
   return (
     <>
-      <YoastNextSeo {...props.data.yoast_head_json} />
+      <YoastNextSeo slug="about" {...props.data.yoast_head_json} />
       <SimpleHero bgImg={props.data?.x_featured_media_large} />
 
       <section className="grid max-w-site-full  px-4  md:grid-cols-8 md:mx-auto">

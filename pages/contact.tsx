@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade";
 export default function Contact(props: { data: any }) {
   return (
     <>
-      <YoastNextSeo {...props.data.yoast_head_json} />
+      <YoastNextSeo slug="contact" {...props.data.yoast_head_json} />
 
       <SimpleHero bgImg={props.data?.x_featured_media_large} />
       <Fade bottom>

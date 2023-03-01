@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function About(props: { projects: any; project: any }) {
   return (
     <>
-      <YoastNextSeo {...props.project.yoast_head_json} />
+      <YoastNextSeo slug="project" {...props.project.yoast_head_json} />
       <SimpleHero />
 
       <section className="grid max-w-site-full  px-4  md:grid-cols-8 md:mx-auto">

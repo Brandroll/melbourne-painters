@@ -130,7 +130,7 @@ module.exports = {
       },
 
       backgroundImage: {
-        "desktop-banner": "url('/imgs/desktop-banner.jpg')",
+        "desktop-banner": "url('/imgs/desktop-banner.webp')",
         "desktop-banner2": "url('/imgs/banner2.jpg')",
         "Atura-Dandenong-South-Night":
           "url('/imgs/Atura-Dandenong-South-Night.jpeg')",

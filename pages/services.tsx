@@ -15,7 +15,7 @@ export default function ServicePage(props: Props) {
 
   return (
     <>
-      <YoastNextSeo {...servicePageData.yoast_head_json} />
+      <YoastNextSeo slug="services" {...servicePageData.yoast_head_json} />
 
       <SimpleHero />
 

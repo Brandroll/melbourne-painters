@@ -26,7 +26,7 @@ export default function SinglePage(props: Props) {
   }
   return (
     <>
-      <YoastNextSeo {...service.yoast_head_json} />
+      <YoastNextSeo slug={service.slug} {...service.yoast_head_json} />
 
       <Hero bgImg={service.x_featured_media_large} />
       <BelowHero />
