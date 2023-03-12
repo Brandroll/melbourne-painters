@@ -18,7 +18,7 @@ export default function SingleProject({ project }: Props) {
 
   return (
     <>
-      <YoastNextSeo {...yoast_head_json} />
+      <YoastNextSeo slug={`projects/${project.slug}`} {...yoast_head_json} />
       <SimpleHero bgImg={x_featured_media_large} />
 
       <section className="grid max-w-site-full   px-4  md:grid-cols-8 md:mx-auto">

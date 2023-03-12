@@ -24,6 +24,7 @@ export default function SinglePage(props: Props) {
   if (!service) {
     return null;
   }
+
   return (
     <>
       <YoastNextSeo slug={service.slug} {...service.yoast_head_json} />
@@ -56,19 +57,40 @@ export const getStaticProps: GetStaticProps = async ({
 
   const projects = await fetch(project_url).then((r) => r.json());
 
+  const _porjects = projects.map((project: any) => ({
+    title: project.title,
+    slug: project.slug,
+    x_featured_media_large: project.x_featured_media_large,
+  }));
+
   if (t === null) {
     const url = process.env.NEXT_WP_API_URL + `/suburbs?slug=${slug}`;
     const services_url = process.env.NEXT_WP_API_URL + `/service`;
     const services = await fetch(services_url).then((r) => r.json());
 
     const suburbs = await fetch(url).then((r) => r.json());
+
+    const _sub = {
+      yoast_head_json: suburbs[0].yoast_head_json,
+      x_featured_media_large: suburbs[0].x_featured_media_large
+        ? suburbs[0].x_featured_media_large
+        : null,
+      acf: suburbs[0].acf,
+    };
+    const _serv = services.map((ser: any) => {
+      return {
+        title: ser.title,
+        slug: ser.slug,
+        x_featured_media_large: ser.x_featured_media_large,
+      };
+    });
     return {
       props: {
-        service: suburbs.length > 0 ? suburbs[0] : null,
+        service: suburbs.length > 0 ? _sub : null,
         isSuburbs: true,
-        projects,
-        services,
-        homePageData,
+        projects: _porjects,
+        services: _serv,
+        homePageData: { acf: { clients: homePageData.acf.clients } },
       },
     };
   } else {
@@ -76,8 +98,8 @@ export const getStaticProps: GetStaticProps = async ({
       props: {
         service: t,
         isSuburbs: false,
-        projects,
-        homePageData,
+        projects: _porjects,
+        homePageData: { acf: { clients: homePageData.acf.clients } },
       },
     };
   }
