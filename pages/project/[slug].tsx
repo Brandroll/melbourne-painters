@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Project } from "@/types";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
 import ImageGallery from "@/components/UI/ImageGallery";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import Link from "next/link";
 import SimpleHero from "@/components/UI/SimpleHero";
 
@@ -27,13 +27,11 @@ export default function SingleProject({ project }: Props) {
           // style={{ backgroundColor: "#FAFAFA" }}
           className="col-span-6 xl:col-span-2 -mt-10 mb-8  "
         >
-          <Fade bottom>
-            <div className="  px-8 xl:px-12 py-8  pb-3.67  bg-brand-blue ">
-              <h1 className="text-white    mt-4  font-semibold text-3xl xl:text-5xl lg:text-4xl">
-                {title.rendered}
-              </h1>
-            </div>
-          </Fade>
+          <div className="  px-8 xl:px-12 py-8  pb-3.67  bg-brand-blue ">
+            <h1 className="text-white    mt-4  font-semibold text-3xl xl:text-5xl lg:text-4xl">
+              {title.rendered}
+            </h1>
+          </div>
         </div>
         <div className="col-span-8 xl:col-span-6">
           {/* <div className="flex justify-center gap-2 lg:justify-end">
@@ -55,11 +53,9 @@ export default function SingleProject({ project }: Props) {
             style={{ backgroundColor: "#FAFAFA" }}
             className="  px-8 xl:px-16 py-12 font-thin post-content"
           >
-            <Fade bottom>
-              <div className="project">
-                <WPHTMLContent html={content.rendered} />
-              </div>
-            </Fade>
+            <div className="project">
+              <WPHTMLContent html={content.rendered} />
+            </div>
           </div>
         </div>
       </section>

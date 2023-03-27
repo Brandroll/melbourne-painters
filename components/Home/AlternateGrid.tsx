@@ -2,7 +2,7 @@ import DOMPurify from "isomorphic-dompurify";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import WPHTMLContent from "../UI/WPHTMLContent";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 interface Content {
   information: {
     heading: string;
@@ -39,31 +39,31 @@ export default function AlternateGrid({ content }: { content: Content[] }) {
               {calc(i) === "even" ? (
                 <>
                   <div className="lg:block hidden">
-                    <Fade right>
-                      <Image
-                        src={content.image}
-                        alt=""
-                        width={1020}
-                        height={900}
-                      />
-                    </Fade>
+                    {/* <Fade right> */}
+                    <Image
+                      src={content.image}
+                      alt=""
+                      width={1020}
+                      height={900}
+                    />
+                    {/* </Fade> */}
                   </div>
 
                   <div className="block lg:hidden">
-                    <Fade left>
-                      <Image
-                        src={content.image}
-                        alt=""
-                        width={1020}
-                        height={900}
-                      />
-                    </Fade>
+                    {/* <Fade left> */}
+                    <Image
+                      src={content.image}
+                      alt=""
+                      width={1020}
+                      height={900}
+                    />
+                    {/* </Fade> */}
                   </div>
                 </>
               ) : (
-                <Fade left>
-                  <Image src={content.image} alt="" width={1020} height={900} />
-                </Fade>
+                // <Fade left>
+                <Image src={content.image} alt="" width={1020} height={900} />
+                // </Fade>
               )}
             </div>
             <div
