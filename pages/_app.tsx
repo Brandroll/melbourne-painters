@@ -18,6 +18,7 @@ import config from "react-reveal/globals";
 import { ApolloProvider } from "@apollo/client";
 import client from "../apollo";
 import { DefaultSeo } from "next-seo";
+import Script from "next/script";
 
 config({ ssrFadeout: true });
 const queryClient = new QueryClient();
@@ -81,6 +82,19 @@ export default function App({ Component, pageProps }: AppProps) {
       <ApolloProvider client={client}>
         <ModalProvider>
           <>
+            <Script
+              strategy="beforeInteractive"
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-RK2RG38DFS"
+            />
+
+            <Script strategy="lazyOnload">
+              {`  window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-RK2RG38DFS');`}
+            </Script>
             <Header />
 
             <Component {...pageProps} />
