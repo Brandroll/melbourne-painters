@@ -47,6 +47,11 @@ export const getStaticProps: GetStaticProps = async ({
 }: GetStaticPropsContext) => {
   const { slug } = params!;
   const url = process.env.NEXT_WP_API_URL + `/service?slug=${slug}`;
+  if (url.includes("sw.js")) {
+    return {
+      props: {},
+    };
+  }
 
   const services = await fetch(url).then((r) => r.json());
   const homepage_url = process.env.NEXT_WP_API_URL + `/custom-page/671`;
@@ -67,11 +72,11 @@ export const getStaticProps: GetStaticProps = async ({
     const url = process.env.NEXT_WP_API_URL + `/suburbs?slug=${slug}`;
     const services_url = process.env.NEXT_WP_API_URL + `/service`;
     const services = await fetch(services_url).then((r) => r.json());
-
+    console.log({ url });
     const suburbs = await fetch(url).then((r) => r.json());
-
+    console.log({ suburbs });
     const _sub = {
-      yoast_head_json: suburbs[0].yoast_head_json,
+      yoast_head_json: suburbs[0]?.yoast_head_json,
       x_featured_media_large: suburbs[0].x_featured_media_large
         ? suburbs[0].x_featured_media_large
         : null,

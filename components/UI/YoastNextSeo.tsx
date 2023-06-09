@@ -3,7 +3,6 @@ import { NextSeo } from "next-seo";
 import { useEffect, useState } from "react";
 
 export default function YoastNextSeo(props: YoastSeoData) {
-  const [canonicalUrl, setCanonicalUrl] = useState("");
   const openGrap = {
     locale: props.og_locale,
     type: props.og_type,
