@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const projects = await fetch(url).then((r) => r.json());
   const services = await fetch(services_url).then((r) => r.json());
   const homePageData = await fetch(homepage_url).then((r) => r.json());
-
+  console.log({ services_url });
   return {
     props: {
       projects,

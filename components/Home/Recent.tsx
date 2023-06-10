@@ -1,7 +1,6 @@
 import { Project } from "@/types";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion, useAnimation } from "framer-motion";
 import "swiper/css";
 import Card from "./Card";
 
