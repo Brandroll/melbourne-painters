@@ -256,7 +256,7 @@ export default function Contact(props: { data: any }) {
     </>
   );
 }
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const url = process.env.NEXT_WP_API_URL + "/pages?slug=free-quote";
   const data = await fetch(url).then((r) => r.json());
 

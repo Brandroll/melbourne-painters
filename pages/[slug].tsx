@@ -1,6 +1,6 @@
 import { HomePage, Service } from "@/types";
 import dynamic from "next/dynamic";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 
 interface Props {
   service: Service;
@@ -42,7 +42,7 @@ export default function SinglePage(props: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({
+export const getServerSideProps: GetServerSideProps = async ({
   params,
 }: GetStaticPropsContext) => {
   const { slug } = params!;

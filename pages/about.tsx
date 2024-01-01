@@ -98,7 +98,7 @@ export default function About(props: { data: any }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const url = process.env.NEXT_WP_API_URL + "/custom-page/672";
   const data = await fetch(url).then((r) => r.json());
 

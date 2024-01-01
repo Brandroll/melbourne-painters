@@ -1,5 +1,5 @@
 import { HomePage, Project, Service } from "@/types";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 
 import dynamic from "next/dynamic";
 interface Props {
@@ -39,7 +39,7 @@ export default function Home(props: Props) {
     </>
   );
 }
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const url = process.env.NEXT_WP_API_URL + `/project`;
   const services_url = process.env.NEXT_WP_API_URL + `/service`;
   const homepage_url = process.env.NEXT_WP_API_URL + `/custom-page/671`;

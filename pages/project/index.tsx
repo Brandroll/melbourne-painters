@@ -89,7 +89,7 @@ export default function About(props: { projects: any; project: any }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const url = process.env.NEXT_WP_API_URL + `/project`;
   const project_url = process.env.NEXT_WP_API_URL + `/custom-page/719`;
   const projects = await fetch(url).then((r) => r.json());

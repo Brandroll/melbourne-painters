@@ -1,5 +1,5 @@
 import WPHTMLContent from "@/components/UI/WPHTMLContent";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import Image from "next/image";
 import { Project } from "@/types";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
@@ -83,7 +83,7 @@ export default function SingleProject({ project }: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({
+export const getServerSideProps: GetServerSideProps = async ({
   params,
 }: GetStaticPropsContext) => {
   const { slug } = params!;

@@ -95,7 +95,7 @@ export default function ServicePage(props: Props) {
     </>
   );
 }
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const url = process.env.NEXT_WP_API_URL + `/projects`;
   const service_url = process.env.NEXT_WP_API_URL + `/custom-page/718`;
   const services_url = process.env.NEXT_WP_API_URL + `/service`;
