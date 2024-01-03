@@ -97,19 +97,19 @@ export const getServerSideProps: GetServerSideProps = async ({
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const projects = await fetch(process.env.NEXT_WP_API_URL + "/project").then(
-    (r) => r.json()
-  );
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const projects = await fetch(process.env.NEXT_WP_API_URL + "/project").then(
+//     (r) => r.json()
+//   );
 
-  const paths = projects.map((project: any) => {
-    return {
-      params: { slug: project.slug.toString() },
-    };
-  });
+//   const paths = projects.map((project: any) => {
+//     return {
+//       params: { slug: project.slug.toString() },
+//     };
+//   });
 
-  return {
-    paths,
-    fallback: "blocking",
-  };
-};
+//   return {
+//     paths,
+//     fallback: "blocking",
+//   };
+// };
