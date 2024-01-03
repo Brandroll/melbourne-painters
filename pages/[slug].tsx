@@ -110,28 +110,28 @@ export const getServerSideProps: GetServerSideProps = async ({
   }
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const suburbs_url = process.env.NEXT_WP_API_URL + "/suburbs";
-  const projects = await fetch(process.env.NEXT_WP_API_URL + "/service").then(
-    (r) => r.json()
-  );
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const suburbs_url = process.env.NEXT_WP_API_URL + "/suburbs";
+//   const projects = await fetch(process.env.NEXT_WP_API_URL + "/service").then(
+//     (r) => r.json()
+//   );
 
-  const suburbs = await fetch(suburbs_url).then((r) => r.json());
+//   const suburbs = await fetch(suburbs_url).then((r) => r.json());
 
-  const projects_path = projects.map((project: any) => {
-    return {
-      params: { slug: project.slug.toString() },
-    };
-  });
-  const suburbs_path = suburbs.map((project: any) => {
-    return {
-      params: { slug: project.slug.toString() },
-    };
-  });
-  const paths = projects_path.concat(suburbs_path);
+//   const projects_path = projects.map((project: any) => {
+//     return {
+//       params: { slug: project.slug.toString() },
+//     };
+//   });
+//   const suburbs_path = suburbs.map((project: any) => {
+//     return {
+//       params: { slug: project.slug.toString() },
+//     };
+//   });
+//   const paths = projects_path.concat(suburbs_path);
 
-  return {
-    paths,
-    fallback: "blocking",
-  };
-};
+//   return {
+//     paths,
+//     fallback: "blocking",
+//   };
+// };
