@@ -1,6 +1,7 @@
 import { HomePage, Service } from "@/types";
 import dynamic from "next/dynamic";
 import { GetServerSideProps, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { useRouter } from "next/router";
 
 interface Props {
   service: Service;
@@ -21,16 +22,21 @@ const AlternateGrid = dynamic(() => import("@/components/Home/AlternateGrid"));
 const Recent = dynamic(() => import("@/components/Home/Recent"));
 export default function SinglePage(props: Props) {
   const { service, isSuburbs, services, projects, homePageData } = props;
+  const {query} = useRouter();
+
+  //console.log("🚀 ~ file: [slug].tsx:24 ~ SinglePage ~ service:", service)
+
   if (!service) {
     return null;
   }
 
   return (
     <>
-      <YoastNextSeo slug={service.slug} {...service.yoast_head_json} />
-
+    
+      <YoastNextSeo slug={service.slug || query.slug} {...service.yoast_head_json} />
       <Hero bgImg={service.x_featured_media_large} />
       <BelowHero />
+
       {isSuburbs && services && <Services data={services} />}
       <Why cta={false} />
       {projects && <Recent data={projects} />}

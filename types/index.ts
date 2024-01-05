@@ -278,7 +278,7 @@ export interface AcfImage {
 }
 export interface YoastSeoData {
   title: string;
-  slug?: string;
+  slug?: any;
   description: string;
   canonical: string;
   og_locale: string;
