@@ -3,5 +3,8 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: "daily",
   priority: 0.7,
-  exclude: ["/protected-page", "/api/contact"],
+  sitemapSize: 7000,
+ // exclude: ["/protected-page", "/api/contact"],
+ 
+ 
 };
