@@ -6,6 +6,7 @@ import React from "react";
 import Link from "next/link";
 
 export default function About(props: { projects: any; project: any }) {
+  console.log("🚀 ~ file: index.tsx:9 ~ About ~ projects:", props.projects)
   return (
     <>
       <YoastNextSeo slug="project" {...props.project.yoast_head_json} />
