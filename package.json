@@ -4,11 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+<<<<<<< HEAD
     "start": "next start",
     "lint": "next lint",
     "build": "next build && node next-sitemap.js",
 
    
+=======
+    "build": "next build && node next-sitemap.js",
+    "start": "next start",
+    "lint": "next lint",
+>>>>>>> 13bb86cde790c492e936646669a4b0cda6155793
     "sitemap": "node next-sitemap.js"
   },
   "dependencies": {
