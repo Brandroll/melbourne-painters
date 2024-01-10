@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      <url><loc>https://www.melbourne-painters.com.au</loc><lastmod>2024-01-10T14:10:19+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-      <url><loc>https://www.melbourne-painters.com.au/about</loc><lastmod>2024-01-10T14:10:19+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-      <url><loc>https://www.melbourne-painters.com.au/contact</loc><lastmod>2024-01-10T14:10:19+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-      <url><loc>https://www.melbourne-painters.com.au/free-quote</loc><lastmod>2024-01-10T14:10:19+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-      <url><loc>https://www.melbourne-painters.com.au/project</loc><lastmod>2024-01-10T14:10:19+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-      <url><loc>https://www.melbourne-painters.com.au/services</loc><lastmod>2024-01-10T14:10:19+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+      <url><loc>https://www.melbourne-painters.com.au</loc><lastmod>2024-01-10T14:20:31+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+      <url><loc>https://www.melbourne-painters.com.au/about</loc><lastmod>2024-01-10T14:20:31+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+      <url><loc>https://www.melbourne-painters.com.au/contact</loc><lastmod>2024-01-10T14:20:31+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+      <url><loc>https://www.melbourne-painters.com.au/free-quote</loc><lastmod>2024-01-10T14:20:31+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+      <url><loc>https://www.melbourne-painters.com.au/project</loc><lastmod>2024-01-10T14:20:31+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+      <url><loc>https://www.melbourne-painters.com.au/services</loc><lastmod>2024-01-10T14:20:31+00:00</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
       <url>
       <loc>https://www.melbourne-painters.com.au/project/fenton-st-ascot-vale</loc>
         <lastmod>2023-02-20T07:34:07+00:00</lastmod>
@@ -78,36 +78,6 @@
           <changefreq>daily</changefreq>
           <priority>0.80</priority>
         </url> 
-          <url>
-          <loc>https://www.melbourne-painters.com.au/floor-coating</loc>
-            <lastmod>2023-02-21T15:03:05+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.80</priority>
-          </url> <url>
-          <loc>https://www.melbourne-painters.com.au/industrial-protective-coating</loc>
-            <lastmod>2023-02-15T13:51:06+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.80</priority>
-          </url> <url>
-          <loc>https://www.melbourne-painters.com.au/residential-painting</loc>
-            <lastmod>2023-06-10T05:25:44+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.80</priority>
-          </url> <url>
-          <loc>https://www.melbourne-painters.com.au/commercial-painting</loc>
-            <lastmod>2023-02-11T00:26:58+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.80</priority>
-          </url> <url>
-          <loc>https://www.melbourne-painters.com.au/interior-painters-melbourne</loc>
-            <lastmod>2023-02-11T18:49:38+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.80</priority>
-          </url> <url>
-          <loc>https://www.melbourne-painters.com.au/exterior-painters-melbourne</loc>
-            <lastmod>2023-02-15T02:39:41+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.80</priority>
-          </url> 
+          
     </urlset>
   
